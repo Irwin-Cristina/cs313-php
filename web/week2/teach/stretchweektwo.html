@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CS 313 Week 2 Teach Assignment Stretch</title>
+        <link type="text/css" rel="stylesheet" href="styles/main.css"/>
+        <script type="text/javascript"  src="scripts/twoscripts.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#green").fadeIn();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="pink" >
+            <p>Div one</p>
+            <p></p>
+        </div>
+        <div id="green">
+            <p>Div two</p>
+        </div>
+        <div id="purple">
+            <p>Div three</p>
+        </div>
+        <button class="button" onclick="myClick()">Click me</button>
+        <br>
+         
+        <label for="newtxtColor"></label>
+        <br>
+        <input type="text" id="newtxtColor" placeholder="please type a color (example: red)"><br/>
+        <button class="button" onclick="changeColor()">Change color of first box</button>
+        <br>
+        <button class="button">Now you see me, now you don't</button>
+        
+    </body>
+    
+</html>
