@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CS 313 Assignments</title>
+        <link type="text/css" rel="stylesheet" href="styles/main.css"/>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+            <img src="images/logo.png" alt="website logo">
+            </div>
+            <nav>
+                
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="assignments.php">Assignments</a></li>
+                    <li><a href="#">Quotes</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <main>
+            <h2>CS 313-Assignment Portal</h2>
+            <ul>
+                <li>Week 1: <a href="https://fierce-basin-16273.herokuapp.com/hello.html">Hello.html</a></li>
+                <li>Week 2: <a href="https://fierce-basin-16273.herokuapp.com/week2/index.php">Homepage</a></li>
+                <li>Week 3: <a href="#"></a></li>
+                <li>Week 4: <a href="#"></a></li>
+                <li>Week 5: <a href="#"></a></li>
+                <li>Week 6: <a href="#"></a></li>
+                <li>Week 7: <a href="#"></a></li>
+                <li>Week 8: <a href="#"></a></li>
+                <li>Week 9: <a href="#"></a></li>
+                <li>Week 10: <a href="#"></a></li>
+                <li>Week 11: <a href="#"></a></li>
+                <li>Week 12: <a href="#"></a></li>
+                <li>Week 13: <a href="#"></a></li>
+                <li>Week 14: <a href="#"></a></li>
+            </ul>
+        </main>
+        </main>
+        <footer>
+            <div>
+                <p>All content &copy; Bella Paper Design</p>
+                <?php
+                    echo "Hello World"
+                ?>
+                
+            </div>
+        </footer>
+
+    </body>
+</html>
