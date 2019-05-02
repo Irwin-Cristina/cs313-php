@@ -57,9 +57,9 @@
             <div>
                 <p>All content &copy; Bella Paper Design</p>
                 <?php
-                    $now = new DateTime(null, new DateTimeZone('America/New_York'));
-                    echo $now->format("Y-m-d|TH:i:s0);
+                    echo "Hello World"
                 ?>
+                
             </div>
         </footer>
 
