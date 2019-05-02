@@ -19,9 +19,8 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <main>
-            <h2>CS 313-Assignment Portal</h2>
+        <main class="assignments">
+            <h1>CS 313-Assignment Portal</h1>
             <ul>
                 <li>Week 1: <a href="https://fierce-basin-16273.herokuapp.com/hello.html">Hello.html</a></li>
                 <li>Week 2: <a href="https://fierce-basin-16273.herokuapp.com/week2/index.php">Homepage</a></li>
@@ -38,7 +37,6 @@
                 <li>Week 13: <a href="#"></a></li>
                 <li>Week 14: <a href="#"></a></li>
             </ul>
-        </main>
         </main>
         <footer>
             <div>

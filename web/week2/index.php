@@ -14,8 +14,8 @@
             <nav>
                 
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="assignments.php">Assignments</a></li>
                     <li><a href="#">Quotes</a></li>
                 </ul>
             </nav>
