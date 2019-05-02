@@ -96,7 +96,7 @@ body {
 }
 
 .holder {
-    background-color: clear;
+    
     position: relative;
     width: 410px;
     height: 660px;
@@ -140,6 +140,8 @@ figure {
 .holder img {
     width: 200px;
 }
+
+
 
 h1 {
     font-size: 3em;
