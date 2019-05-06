@@ -1,5 +1,5 @@
 <?php
-$username =htmlspecialchars$_POST['username'];
+$username =htmlspecialchars($_POST['username']);
 ?>
 
 <!DOCType html>
