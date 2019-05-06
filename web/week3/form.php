@@ -131,6 +131,6 @@
     echo "<br>";
     echo $gender;
     ?>
-
+    <?php include 'footer.php';?> 
     </body>
 </html>
