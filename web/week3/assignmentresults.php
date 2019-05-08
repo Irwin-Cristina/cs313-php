@@ -23,11 +23,12 @@ $continent =htmlspecialchars($_POST['continent']);
     <p>Comments: <?php echo $comment;?></p>
     
 <!--    Part 3-->
-     <h2>Visited Continents <?php if(!empty($_POST["continent"])) {
-    foreach($_POST["continent"] as $check) {
-        echo $check . "<br>";
+     <h2>Visited Continents:</h2> 
+    <p><?php if(!empty($_POST["continent"])) {
+    foreach($_POST["continent"] as $continent) {
+        echo $continent . "<br>";
     }
-}?></h2>
+}?></p>
     
 </body>
 
