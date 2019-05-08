@@ -25,7 +25,7 @@ $continent =htmlspecialchars($_POST['continent']);
     <p>Comments: <?php echo $comment;?></p>
     
 <!--    Part 3-->
-     <h2>Visited Continents <?php echo $continent;?></h2>
+     <h2>Visited Continents <?php echo $check;?></h2>
     
 </body>
 
