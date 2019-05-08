@@ -21,7 +21,12 @@
             array("Computer Engineering", "radio", "major")
             );
         
-                echo '<br><br>'. 'input type='.$majors[0][1].'name='.$major[0][2].' value='.$majors[0][0].'>'.$majors[0][0].'<br>';
+                echo '<br><br><input type="radio" name="major" value= "'.$majors[0][0].'"<br>';
+                echo '<br><br><input type="radio" name="major" value= "'.$majors[1][0].'"<br>';
+                echo '<br><br><input type="radio" name="major" value= "'.$majors[2][0].'"<br>';
+                echo '<br><br><input type="radio" name="major" value= "'.$majors[3][0].'"<br>';
+            
+            
             
         
         ?>
