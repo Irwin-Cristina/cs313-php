@@ -12,13 +12,14 @@
         <br><br>
         
         <label>Major:</label>
+        <br><br>
         <?php
         $majors = array("Computer Science", "Web Design and Development", "Computer Information Technology", "Computer Engineering" );
            
-                echo '<br><input type="radio" name="major" value= "'.$majors[0].'">';
-                echo '<br><br><input type="radio" name="major" value= "'.$majors[1].'">';
-                echo '<br><br><input type="radio" name="major" value= "'.$majors[2].'">';
-                echo '<br><br><input type="radio" name="major" value= "'.$majors[3].'">';
+                echo '<br><input type="radio" name="major" value= "'.$majors[0].'">'.$majors[0];
+                echo '<br><input type="radio" name="major" value= "'.$majors[1].'">'.$majors[1];
+                echo '<br><input type="radio" name="major" value= "'.$majors[2].'">'.$majors[2];
+                echo '<br><input type="radio" name="major" value= "'.$majors[3].'">'.$majors[3];
             
             
             
