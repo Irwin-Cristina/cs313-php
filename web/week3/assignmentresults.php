@@ -13,7 +13,7 @@ $continent =htmlspecialchars($_POST['continent']);
 <!DOCType html>
 <html>
 <head>
-    <title></title>
+    <title>Team Assignent 3 results</title>
     
 </head>
 <body>
