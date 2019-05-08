@@ -13,18 +13,12 @@
         
         <label>Major:</label>
         <?php
-        $majors = array
-            (
-            array("Computer Science", "radio", "major"),
-            array("Web Design and Development", "radio", "major"),
-            array("Computer Information Technology", "radio", "major"),
-            array("Computer Engineering", "radio", "major")
-            );
-        
-                echo '<br><br><input type="radio" name="major" value= "'.$majors[0][0].'"<br>';
-                echo '<br><br><input type="radio" name="major" value= "'.$majors[1][0].'"<br>';
-                echo '<br><br><input type="radio" name="major" value= "'.$majors[2][0].'"<br>';
-                echo '<br><br><input type="radio" name="major" value= "'.$majors[3][0].'"<br>';
+        $majors = array("Computer Science", "Web Design and Development", "Computer Information Technology", "Computer Engineering" );
+           
+                echo '<br><input type="radio" name="major" value= "'.$majors[0].'">';
+                echo '<br><br><input type="radio" name="major" value= "'.$majors[1].'">';
+                echo '<br><br><input type="radio" name="major" value= "'.$majors[2].'">';
+                echo '<br><br><input type="radio" name="major" value= "'.$majors[3].'">';
             
             
             
@@ -39,7 +33,7 @@
             <input type="radio" name="major" value="Computer Information Technology" id="cit">Computer Information Technology
             <input type="radio" name="major" value="Computer Engineering" id="ce">Computer Engineering
         <br><br>-->
-        
+        <br><br>
         <label>Comment: <textarea name="comment" rows="5" cols="40"></textarea></label>
         <br><br>
       
