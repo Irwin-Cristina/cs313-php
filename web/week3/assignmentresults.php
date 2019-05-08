@@ -4,12 +4,10 @@ $email =htmlspecialchars($_POST['email']);
 $major =htmlspecialchars($_POST['major']);
 $comment =htmlspecialchars($_POST['comment']);
 
-if(!empty($_POST["continent"])) {
-    foreach($_POST["continent"] as $check) {
-        echo $check . "<br>";
-    }
-}
+
+/*
 $continent =htmlspecialchars($_POST['continent']);
+*/
 ?>
 
 <!DOCType html>
@@ -25,7 +23,11 @@ $continent =htmlspecialchars($_POST['continent']);
     <p>Comments: <?php echo $comment;?></p>
     
 <!--    Part 3-->
-     <h2>Visited Continents <?php echo $check;?></h2>
+     <h2>Visited Continents <?php if(!empty($_POST["continent"])) {
+    foreach($_POST["continent"] as $check) {
+        echo $check . "<br>";
+    }
+}?></h2>
     
 </body>
 
