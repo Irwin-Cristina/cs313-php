@@ -6,37 +6,39 @@
 </head>
 <body>
     <form method="post" action="assignmentresults.php">
-        Name: <input type="text" name="name">
+        <label>Name: <input type="text" name="name"></label>
         <br><br>
-        E-mail:<input type="text" name="email">
+        <label>E-mail:<input type="text" name="email"></label>
         <br><br>
         
-        Major:
+        <label>Major:</label>
+        <br><br>
             <input type="radio" name="major" value="Computer_Science">Computer Science
             <input type="radio" name="major" value="Web_Design_development">Web Design and Development
+            <input type="radio" name="major" value="Computer_Engineering">Computer Information Technology
             <input type="radio" name="major" value="Computer_Engineering">Computer Engineering
         <br><br>
         
-        Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+        <label>Comment: <textarea name="comment" rows="5" cols="40"></textarea></label>
         <br><br>
       
         
         <!--    Part 3-->
-        Continents Visited:
+        <label>Continents Visited:</label>
         <br><br>
-            <input type="checkbox" name="continent" value="North_America">North America
+            <input type="checkbox" name="continent[]" value="North_America">North America
             <br><br>
-            <input type="checkbox" name="continent" value="South_America">South_America
+            <input type="checkbox" name="continent[]" value="South_America">South_America
             <br><br>
-            <input type="checkbox" name="continent" value="Europe">Europe
+            <input type="checkbox" name="continent[]" value="Europe">Europe
             <br><br>
-            <input type="checkbox" name="continent" value="Asia">Asia
+            <input type="checkbox" name="continent[]" value="Asia">Asia
             <br><br>
-            <input type="checkbox" name="continent" value="Australia">Australia
+            <input type="checkbox" name="continent[]" value="Australia">Australia
             <br><br>
-            <input type="checkbox" name="continent" value="Africa">Africa
+            <input type="checkbox" name="continent[]" value="Africa">Africa
             <br><br>
-            <input type="checkbox" name="continent" value="Antartica">Antartica
+            <input type="checkbox" name="continent[]" value="Antartica">Antartica
             <br><br>
           <input type="submit" name="submit" value="Submit">
     
