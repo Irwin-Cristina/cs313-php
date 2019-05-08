@@ -1,12 +1,3 @@
-<?php
-    $majors = array
-        (
-        array("Computer Science", "radio", "major"),
-        array("Web Design and Development", "radio", "major"),
-        array("Computer Information Technology", "radio", "major"),
-        array("Computer Engineering", "radio", "major")
-        );
-?>
 <!DOCType html>
 <html>
 <head>
@@ -21,11 +12,22 @@
         <br><br>
         
         <label>Major:</label>
-       
-        
         <?php
-         echo "<br><br>". "input type=".$majors[0][1]."name=".$major[0][2]" value=".$majors[0][0].">".$majors[0][0]."<br>";
+        $majors = array
+            (
+            array("Computer Science", "radio", "major"),
+            array("Web Design and Development", "radio", "major"),
+            array("Computer Information Technology", "radio", "major"),
+            array("Computer Engineering", "radio", "major")
+            );
+        
+                echo '<br><br>'. 'input type='.$majors[0][1].'name='.$major[0][2].' value='.$majors[0][0].'>'.$majors[0][0].'<br>';
+            
+        
         ?>
+        
+        
+        
         <!--<br><br>
             <input type="radio" name="major" value="Computer Science" id="cs">Computer Science
             <input type="radio" name="major" value="Web Design development" id="wdd">Web Design and Development
