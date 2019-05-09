@@ -20,10 +20,6 @@
                 echo '<br><input type="radio" name="major" value= "'.$majors[1].'">'.$majors[1];
                 echo '<br><input type="radio" name="major" value= "'.$majors[2].'">'.$majors[2];
                 echo '<br><input type="radio" name="major" value= "'.$majors[3].'">'.$majors[3];
-            
-            
-            
-        
         ?>
         
         
@@ -42,9 +38,9 @@
         <!--    Part 3-->
         <label>Continents Visited:</label>
         <br><br>
-            <input type="checkbox" name="continent[]" value="North_America">North America
+            <input type="checkbox" name="continent[]" value="North America">North America
             <br><br>
-            <input type="checkbox" name="continent[]" value="South_America">South_America
+            <input type="checkbox" name="continent[]" value="South America">South America
             <br><br>
             <input type="checkbox" name="continent[]" value="Europe">Europe
             <br><br>
