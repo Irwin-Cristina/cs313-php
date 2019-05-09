@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600|Sorts+Mill+Goudy:400,400i');
+/* Colors */
+/* #223e7b-Navy*/
+/* #e3dbd7-cream*/
+/* #eab569-yellow*/
+/* #de5e55-coral*/
+
+
+
+body {
+    font-family: 'Sorts Mill Goudy', serif;
+    min-width: 1000px;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+	height: 100%;
+	margin: auto;
+	overflow: hidden;
+	background-color: #eab569;
+}
+
+header .logo{
+	position: relative;
+	text-align: center;
+    padding-left: 10px;
+	margin: auto;
+}
+
+header img{
+  height: 120px;
+  padding: 30px 0 30px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    
+}
+
+#mainnav {
+	height: 75px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	background-color: white;
+	width: 100%;
+	margin: auto;
+    background-color: #223e7b;
+}
+
+#mainnav ul {
+    padding-top: 25px;
+	margin: 0px;
+	list-style: none;
+	width: 100%;
+	padding: 25px 0px 0px 0px;
+	
+	}
+	
+#mainnav li {
+	display: inline;
+  
+	
+	}
+#mainnav a {
+	font-size: 1.10em;
+	color: #e3dbd7; /* cream*/
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 5px;
+	margin: 10px 50px 10px 40px;	
+}
+
+ #mainnav a:link {
+    color: #e3dbd7; /*link unvisited*/
+}
+
+#mainnav a:visited {
+    color:#e3dbd7; /*links visited*/
+}
+
+#mainnav a:focus {
+    color:#e3dbd7; /*tab*/
+}
+
+#mainnav a:hover {
+    color: #eab569;
+    border: 2px solid #eab569; /*mouse*/
+}
+
+#mainnav a:active {
+    color:#eab569; /*click*/
+    border: 2px solid #eab569;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.game {
+    background-color: gray;
+    flex: 200px;
+    margin: 10px;
+    text-align: center;
+    height: 800px;
+
+}
+.game img {
+    width: 300px;
+    padding: 10px;
+}
+
+.game p {
+    margin: 20px 50px 20px 50px;
+    text-align: left;
+    font-size: 1.5em;
+}
+
+input[type=checkbox] {
+    transform: scale(3);
+    margin: 5px;
+}
+
+form input#submitbtn[type=submit] {
+    width: 25%;
+    background-color: #de5e55;
+    font-size: 1em;
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    
+    
+}
