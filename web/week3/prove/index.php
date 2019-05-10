@@ -37,7 +37,13 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
    <title>Shopping cart Prove Week 3</title>     
 </head>
 <style>
-    
+    #active_link {
+        color:chartreuse;
+        text-decoration: none;
+    }
+    #non_active_link {
+        color: coral;
+    }
     
 </style>
 <body>
