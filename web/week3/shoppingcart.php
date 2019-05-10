@@ -34,7 +34,7 @@ if(isset($_POST["game"])) {
                         <h2>Cover Your Assets</h2>
                         <img src="images/cover_your_assets.jpg" alt="cover your assets">
                         <p>Family-friendly game enjoyed by kids, teans and adults. Simple to learn and play. Guarenteed family fun and fun for all ages.</p>
-                        <input type="submit" name="game[]" value="Add to cart">
+                        <input type="submit" name="game[]" id="" value="Cover">
                     </div>
 
                     <div class="game">
