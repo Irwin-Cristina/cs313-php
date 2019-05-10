@@ -20,11 +20,11 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
     $price = $_GET["price"]; //$price = "10.99"
     $product = new Product($product_name, $price); 
     
-    if (!in_array($products, $_SESSION["product"])) { 
-        array_push($_SESSION["product"], $products); //$_SESSION =>(array(cover your assets))
-        
-     if (!in_array($prices, $_SESSION["price"])) { 
-        array_push($_SESSION["price"], $prices); //$_SESSION =>(array(10.99))   
+    if (!in_array($product, $_SESSION["product"])) { 
+        array_push($_SESSION["product"], $product); //$_SESSION =>(array(cover your assets))
+    }
+     if (!in_array($price, $_SESSION["price"])) { 
+        array_push($_SESSION["price"], $price); //$_SESSION =>(array(10.99))   
     }
 }
 ?>
