@@ -1,6 +1,6 @@
 <?php
 session_start();
-$products = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
+$product = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
 $prices = array("10.99", "12.99", "9.99", "14.99", "8.99", "16.99");
 
 //create shopping cart and check if array is set (isset). Have you given it a value?
@@ -17,7 +17,7 @@ if (!isset($_SESSION["price"])) {
 //add products to the cart
 if (isset($GET["product"]) && isset($_GET["price"])) {
     $product_name = $_GET["product"];
-    $price = $_GET["price"];
+    $prices = $_GET["price"];
     $product = new Product($product_name, $price);
     
     if (!in_array($product, $_SESSION["cart"])) {
@@ -36,9 +36,9 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
     ?>
     <div id="product">
         <div id="product_img"></div>
-        <div id="product_name"><?php echo $products[$i]; ?></div>
+        <div id="product_name"><?php echo $product[$i]; ?></div>
         <div id="product_price"><?php echo $prices[$i]; ?></div>
-        <a href ="index.php?product=<?php echo $products[i]; ?>&price=<?php echo $prices[$i]; ?>active=HOME">Add to cart</a>
+        <a href ="index.php?product=<?php echo $product[i]; ?>&price=<?php echo $prices[$i]; ?>active=HOME">Add to cart</a>
     
     
     </div><br>
