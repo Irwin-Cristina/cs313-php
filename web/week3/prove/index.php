@@ -18,7 +18,7 @@ if (!isset($_SESSION["price"])) {
 if (isset($GET["product"]) && isset($_GET["price"])) {
     $product_name = $_GET["product"];
     $prices = $_GET["price"];
-    $product = new Product($product_name, $price);
+    $product = new Product($product_name, $prices);
     
     if (!in_array($product, $_SESSION["cart"])) {
         array_push($_SESSION["cart"], $product);
