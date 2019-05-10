@@ -43,6 +43,7 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
     }
     #non_active_link {
         color: coral;
+        text-decoration: none;
     }
     
 </style>
