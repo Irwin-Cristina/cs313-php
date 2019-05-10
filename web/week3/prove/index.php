@@ -18,10 +18,10 @@ if (!isset($_SESSION["price"])) {
 if (isset($GET["product"]) && isset($_GET["price"])) {
     $product_name = $_GET["product"];
     $prices = $_GET["price"];
-    $product = new Product($product_name, $prices);
+    $products = new Product($product_name, $prices);
     
-    if (!in_array($product, $_SESSION["cart"])) {
-        array_push($_SESSION["cart"], $product);
+    if (!in_array($products, $_SESSION["cart"])) {
+        array_push($_SESSION["cart"], $products);
     }
 }
 ?>
@@ -32,7 +32,7 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
 </head>
 <body>
    <?php 
-        for($i=0; $i < count($product); $i++){
+        for($i=0; $i < count($products); $i++){
     ?>
     <div id="product">
         <div id="product_img"></div>
