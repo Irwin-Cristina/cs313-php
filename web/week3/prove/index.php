@@ -23,10 +23,6 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
     if (!in_array($product, $_SESSION["product"])) {
         array_push($_SESSION["product"], $product);
     }
-    if (!in_array($product, $_SESSION["price"])) {
-        array_push($_SESSION["price"], $product);
-    }
-    
 }
 ?>
 <!DOCTYPE html>
