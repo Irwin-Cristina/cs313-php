@@ -17,10 +17,10 @@ if (!isset($_SESSION["price"])) {
 //add products to the cart
 if (isset($GET["product"]) && isset($_GET["price"])) {
     $product_name = $_GET["product"];
-    $prices = $_GET["price"];
-    $products = new Product($product_name, $prices);
+    $price = $_GET["price"];
+    $product = new Product($product_name, $price);
     
-    if (!in_array($products, $_SESSION["cart"])) {
+    if (!in_array($product, $_SESSION["cart"])) {
         array_push($_SESSION["cart"], $products);
     }
 }
