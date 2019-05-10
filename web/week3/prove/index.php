@@ -23,8 +23,8 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
     if (!in_array($product, $_SESSION["product"])) { 
         array_push($_SESSION["product"], $product); //$_SESSION =>(array(cover your assets))
     }
-     if (!in_array($price, $_SESSION["price"])) { 
-        array_push($_SESSION["price"], $price); //$_SESSION =>(array(10.99))   
+     if (!in_array($product, $_SESSION["price"])) { 
+        array_push($_SESSION["price"], $product); //$_SESSION =>(array(10.99))   
     }
 }
 ?>
