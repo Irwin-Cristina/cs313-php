@@ -16,12 +16,15 @@ if (!isset($_SESSION["price"])) {
 
 //add products to the cart
 if (isset($GET["product"]) && isset($_GET["price"])) {
-    $product_name = $_GET["product"];
-    $price = $_GET["price"];
-    $product = new Product($product_name, $price);
+    $product_name = $_GET["product"]; //product_name ="Cover your Assets"
+    $price = $_GET["price"]; //$price = "10.99"
+    $product = new Product($product_name, $price); 
     
-    if (!in_array($product, $_SESSION["cart"])) {
-        array_push($_SESSION["cart"], $products);
+    if (!in_array($product, $_SESSION["product"])) { 
+        array_push($_SESSION["product"], $products); //$_SESSION =>(array(cover your assets))
+        
+     if (!in_array($product, $_SESSION["price"])) { 
+        array_push($_SESSION["price"], $products); //$_SESSION =>(array(10.99))   
     }
 }
 ?>
