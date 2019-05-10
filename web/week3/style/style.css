@@ -120,7 +120,7 @@ h1 {
 .game p {
     margin: 20px 50px 20px 50px;
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 input[type=checkbox] {
@@ -128,7 +128,7 @@ input[type=checkbox] {
     margin: 5px;
 }
 
-form input#submitbtn[type=submit] {
+form input.submitbtn[type=submit] {
     width: 25%;
     background-color: #de5e55;
     font-size: 1em;

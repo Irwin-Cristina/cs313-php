@@ -1,30 +1,41 @@
 <?php
-/*$name =htmlspecialchars($_POST['name']);
-$email =htmlspecialchars($_POST['email']);
-$major =htmlspecialchars($_POST['major']);
-$comment =htmlspecialchars($_POST['comment']);
+//Start the session
+session_start();
 
-
-
-$continent =htmlspecialchars($_POST['continent']);
-*/
+if(isset($_POST["game"])) {
+    $_SESSION["game"] =$_POST["game"];
+}
 ?>
-
-<!DOCType html>
-<html>
-<head>
-    <title>Shopping Cart</title>
-    
-</head>
-<body>
-    
-     <h2>Items in your shopping cart:</h2> 
-    <p><?php if(!empty($_POST["game"])) {
-    foreach($_POST["game"] as $game) {
-        echo $game . "<br>";
-    }
-}?></p>
-    
-</body>
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Games for Sale</title>
+        <meta charset="utf-8"/>
+        <link type="text/css" rel="stylesheet" href="style/style.css"/>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Games 4 Sale logo">
+            </div>
+            <nav id="mainnav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Cart</a></li>
+                   <li><a href="#">Checkout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Shopping Cart</h1>
+            <h2>Items in your shopping cart:</h2> 
+            <p><?php if(!empty($_POST["game"])) {
+                foreach($_POST["game"] as $game) {
+                echo $game . "<br>";
+                    }
+                }?>
+            </p>
+        </main> 
+    </body>
 
 </html>
