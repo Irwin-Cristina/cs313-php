@@ -23,8 +23,8 @@
         //$product_name=$_GET["delete"];
         $games=$_GET["delete"];
         
-        if (isset($_SESSION["product"])) {
-
+        //if (isset($_SESSION["product"])) {
+        if (isset($_SESSION["product"]) && isset($_SESSION["price"])) {
             //foreach ($_SESSION["product"] as $item) {
               for ($i=0; $i < count($_SESSION["product"]); $i++) {
                 //if ($item->name === $product_name) {
