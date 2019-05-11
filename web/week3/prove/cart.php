@@ -20,7 +20,8 @@
     }
 
     if (isset($_GET["delete"])) {
-        $product_name=$_GET["delete"];
+        //$product_name=$_GET["delete"];
+        $games=$_GET["delete"];
         
         if (isset($_SESSION["product"])) {
 
