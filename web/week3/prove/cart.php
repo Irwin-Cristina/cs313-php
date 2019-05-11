@@ -23,7 +23,7 @@ if (isset($_GET["delete"])) {
 }
 
 if (isset($_SESSION["product"])) {
-    for ($i=0, $i < count($_SESSION["product"]), $i++) {
+    for ($i=0; $i < count($_SESSION["product"]); $i++) {
     //foreach ($_SESSION["product"] as $item) {
        // if(isset($item->name)) {
             
@@ -35,11 +35,13 @@ if (isset($_SESSION["product"])) {
 </head>
 <style>
     #active_link {
-        color:chartreuse;
+        font-size: 2em;
+        color:green;
         text-decoration: none;
     }
     #non_active_link {
-        color: coral;
+        font-size: 2em;
+        color: orangered;
         text-decoration: none;
     }
     
@@ -62,7 +64,7 @@ if (isset($_SESSION["product"])) {
         <div id="cart_display">
             <div id="name"> <?php echo $products[i]; ?></div>
             <div id="price"> <?php echo $prices[i]; ?></div>
-            <a href="cart.php?remove=<?php echo $products[i]; ?>&active=CART">Delete Item</a>
+            <a href="cart.php?delete=<?php echo $products[i]; ?>&active=CART">Delete Item</a>
         </div>
 <?php
         }

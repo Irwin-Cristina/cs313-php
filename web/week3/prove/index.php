@@ -38,11 +38,13 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
 </head>
 <style>
     #active_link {
-        color:chartreuse;
+        font-size: 2em;
+        color:green;
         text-decoration: none;
     }
     #non_active_link {
-        color: coral;
+        font-size: 2em;
+        color: orangered;
         text-decoration: none;
     }
     
