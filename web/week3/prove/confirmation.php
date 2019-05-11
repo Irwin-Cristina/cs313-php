@@ -17,7 +17,7 @@
     for ($i=0; $i < count($_SESSION["product"]); $i++) {
 ?>
     <div id="confirmed_items">
-        <div id="item"><?php echo $products[$i] ." ". $prices[$i];?></div>
+        <div id="item"><?php echo $games[$i] ." ". $prices[$i];?></div>
         <br><br>
 
     </div><br>
