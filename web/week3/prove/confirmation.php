@@ -1,5 +1,5 @@
 <?php
-    $games = array();
+    $products = array();
     $prices = array();
 
     session_start();
@@ -13,12 +13,11 @@
     }
 
     echo "<h2>Items Purchased</h2>";
-    //foreach ($purchased as $item) {
-    if (isset($_SESSION["product"])) {
-        for ($i=0; $i < count($_SESSION["product"]); $i++) {
+    foreach ($purchased as $item) {
+    //
 ?>
     <div id="confirmed_items">
-        <div id="item"><?php echo $games[$i] ." ". $prices[$i];?></div>
+        <div id="item"><?php echo $products[i] ." ". $prices[i];?></div>
         <br><br>
 
     </div><br>
