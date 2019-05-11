@@ -69,7 +69,7 @@ if (isset($_GET["delete"])) {
        // if(isset($item->name)) {
 ?>
         <div id="cart_display">
-            <div id="name"> <?php echo ($_SESSION["product"]); ?></div>
+            <div id="name"> <?php echo $games[$i]; ?></div>
             <div id="price"> <?php echo $prices[$i]; ?></div>
             <a href="cart.php?delete=<?php echo $games[$i]; ?>&active=CART">Delete Item</a>
         </div>
