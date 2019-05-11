@@ -17,7 +17,7 @@
     //
 ?>
     <div id="confirmed_items">
-        <div id="item"><?php echo $products[i] ." ". $prices[i];?></div>
+        <div id="item"><?php echo $products[$i] ." ". $prices[$i];?></div>
         <br><br>
 
     </div><br>
