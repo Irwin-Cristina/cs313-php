@@ -18,20 +18,24 @@
     if (isset($_SESSION["price"])) {
         $prices= $_SESSION["price"]; 
     }
+
     if (isset($_GET["delete"])) {
         $product_name=$_GET["delete"];
+        
         if (isset($_SESSION["product"])) {
 
-            foreach ($_SESSION["product"] as $item) {
-                if ($item->name === $product_name) {
-                    if(($item = array_search($item, $_SESSION["product"])) !==false) {
-                        unset($_SESSION["product"][$item]);
+            //foreach ($_SESSION["product"] as $item) {
+              for ($i=0; $i < count($_SESSION["product"]); $i++) {
+                //if ($item->name === $product_name) {
+                    //if(($item = array_search($item, $_SESSION["product"])) !==false) {
+                    if(($_SESSION["product"]) !==false) {
+                        unset($_SESSION["product"]);
                         break;
                     }
-                }
             }
-        }
+
     }
+    
 
      
   ?>
