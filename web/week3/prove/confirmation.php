@@ -1,5 +1,5 @@
 <?php
-    $products = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
+    $games = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
     $prices = array("10.99", "12.99", "9.99", "14.99", "8.99", "16.99");
 
     session_start();
@@ -16,7 +16,7 @@
     foreach ($purchased as $item) {
 ?>
     <div id="confirmed_items">
-        <div id="item"><?php echo $products[i] ." ". $prices[i];?></div>
+        <div id="item"><?php echo $games[i] ." ". $prices[i];?></div>
         <br><br>
 
     </div><br>

@@ -1,11 +1,17 @@
 <?php
-$products = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
-$prices = array("10.99", "12.99", "9.99", "14.99", "8.99", "16.99");
+$games = array();
+$prices = array();
 
 //create shopping cart and check if array is set (isset). Have you given it a value?
 session_start();
 
 //$_SESSION => ()
+if (isset($_SESSION["product"])) {
+    $games= $_SESSION["product"]; 
+}
+if (isset($_SESSION["price"])) {
+    $prices= $_SESSION["price"]; 
+}
 if (isset($_GET["delete"])) {
     $product_name=$_GET["delete"];
     if (isset($_SESSION["product"])) {
@@ -22,11 +28,7 @@ if (isset($_GET["delete"])) {
 
 }
 
-if (isset($_SESSION["product"])) {
-    for ($i=0; $i < count($_SESSION["product"]); $i++) {
-    //foreach ($_SESSION["product"] as $item) {
-       // if(isset($item->name)) {
-            
+     
   ?>
 <!DOCTYPE html>
 <html>
@@ -60,11 +62,16 @@ if (isset($_SESSION["product"])) {
             <a href='index.php?active=CHECKOUT' id="<?php echo ($active==="CHECKOUT" ? "active_link" : "non_active_link") ?>">CHECKOUT</a>
         </div>
     </header>     
-       
+<?php
+    if (isset($_SESSION["product"])) {
+    for ($i=0; $i < count($_SESSION["product"]); $i++) {
+    //foreach ($_SESSION["product"] as $item) {
+       // if(isset($item->name)) {
+?>
         <div id="cart_display">
-            <div id="name"> <?php echo $products[i]; ?></div>
+            <div id="name"> <?php echo $games[i]; ?></div>
             <div id="price"> <?php echo $prices[i]; ?></div>
-            <a href="cart.php?delete=<?php echo $products[i]; ?>&active=CART">Delete Item</a>
+            <a href="cart.php?delete=<?php echo $games[i]; ?>&active=CART">Delete Item</a>
         </div>
 <?php
         }
