@@ -34,8 +34,8 @@
     <div id ="address">
         <div id="name">
             <?php
-                if (isset($_POST["first-name"]) && isset($_POST["last_name"])) {
-                    echo strip_tags ($_POST["first_name"]) . " " .strip_tags ($_POST["last_name"]);
+                if (isset($_POST["firstname"]) && isset($_POST["lastname"])) {
+                    echo strip_tags ($_POST["firstname"]) . " " .strip_tags ($_POST["lastname"]);
                 }
             ?>
         </div>
