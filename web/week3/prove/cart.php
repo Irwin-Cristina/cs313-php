@@ -1,9 +1,10 @@
 <?php
+    session_start();
+
     $games = array();
     $prices = array();
 
     //create shopping cart and check if array is set (isset). Have you given it a value?
-    session_start();
 
     $active = "";
     if (isset($_GET["active"])) {

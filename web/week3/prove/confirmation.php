@@ -1,8 +1,9 @@
 <?php
+    session_start();
+
     $games = array();
     $prices = array();
 
-    session_start();
     
     echo "<h1>Transaction Complete</h1><br>";
     
