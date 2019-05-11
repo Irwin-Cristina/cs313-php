@@ -1,13 +1,15 @@
 <?php
-    $products = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
-    $prices = array("10.99", "12.99", "9.99", "14.99", "8.99", "16.99");
+    //$games = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
+    //$prices = array("10.99", "12.99", "9.99", "14.99", "8.99", "16.99");
+    $games = array();
+    $prices = array();
 
     session_start();
 
     $total=0.0;
     if (isset($_SESSION["product"])) {
-        for ($i=0; $i <count($_SESSION["product"]); i++) {
-            $price = floatval($price[i]);
+        for ($i=0; $i <count($_SESSION["product"]); $i++) {
+            $price = floatval($price[$i]);
             $total = $price;
         }
     }

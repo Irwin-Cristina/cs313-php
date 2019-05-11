@@ -73,6 +73,7 @@ if (isset($_GET["delete"])) {
             <div id="price"> <?php echo $prices[$i]; ?></div>
             <a href="cart.php?delete=<?php echo $games[$i]; ?>&active=CART">Delete Item</a>
         </div>
+        <br>
 <?php
         }
     }
