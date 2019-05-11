@@ -26,8 +26,8 @@
         if (isset($_SESSION["product"])) {
 
             foreach ($_SESSION["product"] as $item) {
-              for ($i=0; $i < count($_SESSION["product"]); $i++) {
-                //if ($item->name === $product_name) {
+              //for ($i=0; $i < count($_SESSION["product"]); $i++) {
+                if ($item->name === $product_name) {
                     if(($item = array_search($item, $_SESSION["product"])) !==false) {
                     //if(($_SESSION["product"]) !==false) {
                         unset($_SESSION["product"][$item]);
