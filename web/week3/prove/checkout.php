@@ -9,8 +9,8 @@
     $total=0.0;
     if (isset($_SESSION["product"])) {
         for ($i=0; $i <count($_SESSION["product"]); $i++) {
-            $price = floatval($prices[$i]);
-            $total = $price;
+            $prices = floatval($prices[$i]);
+            $total = $prices;
         }
     }
 
