@@ -23,12 +23,15 @@
         //$product_name=$_GET["delete"];
         $games=$_GET["delete"];
         
-        //if (isset($_SESSION["product"])) {
-        if (isset($_SESSION["product"]) && isset($_SESSION["price"])) {
-            //foreach ($_SESSION["product"] as $item) {
+       if (isset($_SESSION["product"])) {
+         //if (isset($_SESSION["product"]) && isset($_SESSION["price"])) {
+           
+            foreach ($_SESSION["product"] as $item) {
               for ($i=0; $i < count($_SESSION["product"]); $i++) {
-                //if ($item->name === $product_name) {
+                
+               //if ($item->name === $product_name) {
                     //if(($item = array_search($item, $_SESSION["product"])) !==false) {
+                   
                     if(($_SESSION["product"]) !==false) {
                         //unset($_SESSION["product"][$item]);
                         unset($_SESSION["product"]);
@@ -38,7 +41,7 @@
             }
         }
     
-    //}
+   }
      
   ?>
 <!DOCTYPE html>
