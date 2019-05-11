@@ -6,6 +6,12 @@
 
     session_start();
 
+    $active = "";
+    if (isset($_GET["active"])) {
+        $active = $_GET["active"];
+    }
+    
+
     $total=0.0;
     if (isset($_SESSION["product"])) {
         for ($i=0; $i <count($_SESSION["product"]); $i++) {
@@ -38,12 +44,7 @@
 </style>
 <body>
     <header>
-        <?php
-        $active = "";
-        if (isset($_GET["active"])) {
-            $active = $_GET["active"];
-        }
-        ?>
+        
         <div id='nav'>
             <a href='index.php?active=HOME' id="<?php echo ($active==="HOME" ? "active_link" : "non_active_link") ?>">HOME</a>
             <a href='cart.php?active=CART' id="<?php echo ($active==="CART" ? "active_link" : "non_active_link") ?>">CART</a>

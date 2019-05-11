@@ -1,35 +1,41 @@
 <?php
-$games = array();
-$prices = array();
+    $games = array();
+    $prices = array();
 
-//create shopping cart and check if array is set (isset). Have you given it a value?
-session_start();
+    //create shopping cart and check if array is set (isset). Have you given it a value?
+    session_start();
 
-//$_SESSION => ()
-if (isset($_SESSION["product"])) {
-    $games= $_SESSION["product"]; 
-}
-if (isset($_SESSION["price"])) {
-    $prices= $_SESSION["price"]; 
-}
-if (isset($_GET["delete"])) {
-    $product_name=$_GET["delete"];
+    $active = "";
+    if (isset($_GET["active"])) {
+        $active = $_GET["active"];
+    }
+
+
+    //$_SESSION => ()
     if (isset($_SESSION["product"])) {
-        
-        foreach ($_SESSION["product"] as $item) {
-            if ($item->name === $product_name) {
-                if(($item = array_search($item, $_SESSION["product"])) !==false) {
-                    unset($_SESSION["product"][$item]);
-                    break;
+        $games= $_SESSION["product"]; 
+    }
+    if (isset($_SESSION["price"])) {
+        $prices= $_SESSION["price"]; 
+    }
+    if (isset($_GET["delete"])) {
+        $product_name=$_GET["delete"];
+        if (isset($_SESSION["product"])) {
+
+            foreach ($_SESSION["product"] as $item) {
+                if ($item->name === $product_name) {
+                    if(($item = array_search($item, $_SESSION["product"])) !==false) {
+                        unset($_SESSION["product"][$item]);
+                        break;
+                    }
                 }
             }
         }
+
     }
 
-}
-
      
-  ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,12 +56,7 @@ if (isset($_GET["delete"])) {
 </style>
 <body>
     <header>
-        <?php
-        $active = "";
-        if (isset($_GET["active"])) {
-            $active = $_GET["active"];
-        }
-        ?>
+        
         <div id='nav'>
             <a href='index.php?active=HOME' id="<?php echo ($active==="HOME" ? "active_link" : "non_active_link") ?>">HOME</a>
             <a href='cart.php?active=CART' id="<?php echo ($active==="CART" ? "active_link" : "non_active_link") ?>">CART</a>
