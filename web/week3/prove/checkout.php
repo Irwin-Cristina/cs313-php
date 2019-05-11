@@ -57,6 +57,7 @@
             Street Name: <input type="text" name="street"><br>
             City: <input type="text" name="city"><br>
             State: <input type="text" name="state"><br>
+            <button>Submit Transaction</button>
         </form>
     </body>
 </html>
