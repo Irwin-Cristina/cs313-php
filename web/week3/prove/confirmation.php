@@ -20,7 +20,7 @@
 ?>
     <div id="confirmed_items">
         <div id="item"> <?php echo ($_SESSION["product"]);?></div>
-<!--        <div id="item"> <?php echo $games[$i] ." ". $prices[$i];?></div>-->
+
         
 
         <br><br>
