@@ -31,11 +31,10 @@
                 }
             }
         }
-
     }
 
      
-?>
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
