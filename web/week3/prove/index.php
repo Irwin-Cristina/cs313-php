@@ -1,17 +1,17 @@
 <?php
 session_start();
-$products = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
+$games = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
 $prices = array("10.99", "12.99", "9.99", "14.99", "8.99", "16.99");
 
 //create shopping cart and check if array is set (isset). Have you given it a value?
 
-//$_SESSION => ()
+//$_SESSION => () variable is product
 if (!isset($_SESSION["product"])) {
     $_SESSION["product"] = array();
 }
 //$_SESSION => (array())
 
-//$_SESSION => ()
+//$_SESSION => () variable is price
 if (!isset($_SESSION["price"])) {
     $_SESSION["price"] = array();
 }
@@ -64,13 +64,13 @@ if (isset($GET["product"]) && isset($_GET["price"])) {
         </div>
     </header>
    <?php 
-        for($i=0; $i < count($products); $i++){
+        for($i=0; $i < count($games); $i++){
     ?>
     <div id="product">
         <div id="product_img"></div>
-        <div id="product_name"><?php echo $products[$i]; ?></div>
+        <div id="product_name"><?php echo $games[$i]; ?></div>
         <div id="product_price"><?php echo $prices[$i]; ?></div>
-        <a href ="index.php?product=<?php echo $products[$i]; ?>&price=<?php echo $prices[$i]; ?>&active=HOME">Add to cart</a>
+        <a href ="index.php?product=<?php echo $games[$i]; ?>&price=<?php echo $prices[$i]; ?>&active=HOME">Add to cart</a>
     
     
     </div><br>
