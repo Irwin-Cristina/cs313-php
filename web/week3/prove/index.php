@@ -18,10 +18,20 @@ if (!isset($_SESSION["price"])) {
 //$_SESSION => (array())
 
 //add products to the cart
-if (isset($GET["product"]) && isset($_GET["price"])) {
+if (isset($_GET["product"]) && isset($_GET["price"])) {
     $product_name = $_GET["product"]; //$product_name ="Cover your Assets"
     $price = $_GET["price"]; //$price = "10.99"
-    $product = new Product($product_name, $price); 
+    // class Product {
+        //var $product_name;
+        //var $price;
+    //}
+    $product = new Product($product_name, $price); // PHP Class is a Custom data type $product made up of product_name and price
+    
+    // class Product {
+        //var $product_name;
+        //var $price;
+    //}
+    
     
     if (!in_array($product, $_SESSION["product"])) { 
         array_push($_SESSION["product"], $product); //$_SESSION =>(array(cover your assets))
