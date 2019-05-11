@@ -19,7 +19,7 @@
     //for($i=0; $i < count($games); $i++){
 ?>
     <div id="confirmed_items">
-        <div id="item"> <?php echo ($_SESSION["product"]);?></div>
+        <div id="item"> <?php echo ($_SESSION["product"][$i]);?></div>
 
         
 
