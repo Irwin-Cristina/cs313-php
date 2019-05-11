@@ -1,6 +1,6 @@
 <?php
-    $games = array("Cover Your Assets", "Exploding Kittens", "Factions", "Game of Phones", "Qwixx", "Tenzi");
-    $prices = array("10.99", "12.99", "9.99", "14.99", "8.99", "16.99");
+    $games = array();
+    $prices = array();
 
     session_start();
     
@@ -13,10 +13,12 @@
     }
 
     echo "<h2>Items Purchased</h2>";
-    foreach ($purchased as $item) {
+    //foreach ($purchased as $item) {
+    if (isset($_SESSION["product"])) {
+        for ($i=0; $i < count($_SESSION["product"]); $i++) {
 ?>
     <div id="confirmed_items">
-        <div id="item"><?php echo $games[i] ." ". $prices[i];?></div>
+        <div id="item"><?php echo $games[$i] ." ". $prices[$i];?></div>
         <br><br>
 
     </div><br>
