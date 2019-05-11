@@ -32,10 +32,12 @@
                 
                 if (isset($_SESSION["product"]) && isset($_SESSION["price"])) {
                 //if ($item->name === $product_name) {
+                    
                     if(($item = array_search($item, $_SESSION["product"])) !==false) {
                     //if(($_SESSION["product"]) !==false) {
-                        unset($_SESSION["product"][$item]);
-                        //unset($_SESSION["product"]);
+                        
+                        //unset($_SESSION["product"][$item]);
+                        unset($_SESSION["product"]);
                         break;
                     }
                 }
