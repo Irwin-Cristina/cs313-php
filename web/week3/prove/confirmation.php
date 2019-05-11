@@ -1,5 +1,5 @@
 <?php
-    $products = array();
+    $games = array();
     $prices = array();
 
     session_start();
@@ -17,7 +17,7 @@
     for ($i=0; $i < count($_SESSION["product"]); $i++) {
 ?>
     <div id="confirmed_items">
-        <div id="item"><?php echo $games[$i] ." ". $prices[$i];?></div>
+        <div id="item"> <?php echo $games[$i] ." ". $prices[$i];?></div>
         <br><br>
 
     </div><br>
@@ -30,7 +30,7 @@
     }
 
 ?>
-    <div>Address</div>
+    <div>Name and Address</div>
     <div id ="address">
         <div id="name">
             <?php
