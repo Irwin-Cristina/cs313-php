@@ -13,8 +13,8 @@
     }
 
     echo "<h2>Items Purchased</h2>";
-    foreach ($purchased as $item) {
-    //
+    //foreach ($purchased as $item) {
+    for ($i=0; $i < count($_SESSION["product"]); $i++) {
 ?>
     <div id="confirmed_items">
         <div id="item"><?php echo $products[$i] ." ". $prices[$i];?></div>
