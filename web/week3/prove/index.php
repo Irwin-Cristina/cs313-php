@@ -25,7 +25,7 @@ if (isset($_GET["product"]) && isset($_GET["price"])) {
         //var $product_name;
         //var $price;
     //}
-    $product = new Product($product_name, $price); // PHP Class is a Custom data type $product made up of product_name and price
+    //$product = new Product($product_name, $price); // PHP Class is a Custom data type $product made up of product_name and price
     
     // class Product {
         //var $product_name;
