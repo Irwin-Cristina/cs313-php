@@ -30,7 +30,10 @@
             foreach ($_SESSION["product"] as $item) {
               //for ($i=0; $i < count($_SESSION["product"]); $i++) {
                 
-                if (isset($_SESSION["product"]) && isset($_SESSION["price"])) {
+                if (($_SESSION["product"]) && ($_SESSION["price"])) {
+                //if (isset($_SESSION["product"]) && isset($_SESSION["price"])) {
+
+                //if ($item->($_SESSION["product"]) === $product_name) {
                 //if ($item->name === $product_name) {
                     
                     if(($item = array_search($item, $_SESSION["product"])) !==false) {
