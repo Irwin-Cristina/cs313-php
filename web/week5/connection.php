@@ -34,4 +34,11 @@ foreach ($db->query('SELECT now()') as $row)
  print "<p>$row[0]</p>\n\n";
 }
 
+foreach ($db->query('SELECT username, password FROM note_user') as $row)
+{
+ echo 'user: ' . $row['username'];
+ echo ' password: ' . $row['password'];
+ echo '<br/>';
+}
+
 ?>
