@@ -21,21 +21,28 @@ require_once 'connection.php';
         <h1>Scripture Resources</h1>
         
         <?php
-        foreach ($db->query('SELECT book, content FROM scriptures') as $row)
-            {
-            echo 'book: ' . $row['book'];
-            echo ' content: ' . $row['content'];
-            echo '<br/>';
-            }
-        //foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
+        //foreach ($db->query('SELECT book, content FROM scriptures') as $row)
             //{
-            //echo '<p><span>' . $row['book'] . $row['chapter'] . $row['verse'] . '</span>'  .$row['content'] . '</p>';
-           // echo '<br/>';
+           // echo 'book: ' . $row['book'];
+           // echo ' content: ' . $row['content'];
+            //echo '<br/>';
             //}
-        $statement = $db->query('SELECT username, password FROM note_user');
+       //foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
+           //{
+            //echo '<p><span>' . $row['book'] . $row['chapter'] . $row['verse'] . '</span>'  .$row['content'] . '</p>';
+            //echo '<br/>';
+            //}
+        $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
+        $statement->execute();
+        
             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
             {
-              echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
+              $book = $row['book'];
+              $chapter = $row['chapter'];
+              $verse = $row['verse'];
+              $content = $row['content'];
+                
+              echo '<p><span>'. $book . $chapter . $verse . '</span>' . $content . '<p>';
             }
         ?>
     
