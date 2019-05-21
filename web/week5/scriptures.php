@@ -51,7 +51,7 @@ foreach ($db->query('SELECT username, password FROM note_user') as $row)
         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
         $statement->execute();
         
-        foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
+        foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
             {
             echo '<p><span>' . $row['book'] . $row['chapter'] . $row['verse'] . '</span>'  .$row['content'] . '</p>';
             echo '<br/>';
