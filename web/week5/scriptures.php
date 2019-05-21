@@ -21,7 +21,7 @@ require_once 'connection.php';
         <h1>Scripture Resources</h1>
         
         <?php
-        $statement = $db->prepare('SELECT book, chapter, verse, content FROM scriptures');
+        $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
         $statement->execute();
         
         foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
