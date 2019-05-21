@@ -44,7 +44,7 @@ $db = get_dbconnection();
                 
                 echo '<p><span>'. $book . $chapter . $verse . '</span>' . $content . '<p>';
                 
-                echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
+               // echo "<p><strong>$book $chapter:$verse</strong> - "$content"<p>";
             }
         ?>
     
