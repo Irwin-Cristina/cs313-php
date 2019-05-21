@@ -1,9 +1,9 @@
 <?php
 
 require_once 'connection.php';
+$db = get_dbconnection();
 
 ?>
-
 <!doctype html>
 <html lang="en-us">
     <head>
@@ -32,7 +32,7 @@ require_once 'connection.php';
             //echo '<p><span>' . $row['book'] . $row['chapter'] . $row['verse'] . '</span>'  .$row['content'] . '</p>';
             //echo '<br/>';
             //}
-        $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
+        $statement = $db->prepare('SELECT book, chapter, verse, content FROM scriptures');
         $statement->execute();
         
             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -43,6 +43,8 @@ require_once 'connection.php';
               $content = $row['content'];
                 
               echo '<p><span>'. $book . $chapter . $verse . '</span>' . $content . '<p>';
+                
+            echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
             }
         ?>
     
