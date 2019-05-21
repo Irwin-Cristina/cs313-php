@@ -21,11 +21,17 @@ require_once 'connection.php';
         <h1>Scripture Resources</h1>
         
         <?php
-        foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
+        foreach ($db->query('SELECT username, password FROM note_user') as $row)
             {
-            echo '<p><span>' . $row['book'] . $row['chapter'] . $row['verse'] . '</span>'  .$row['content'] . '</p>';
+            echo 'user: ' . $row['username'];
+            echo ' password: ' . $row['password'];
             echo '<br/>';
             }
+        //foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row)
+            //{
+            //echo '<p><span>' . $row['book'] . $row['chapter'] . $row['verse'] . '</span>'  .$row['content'] . '</p>';
+           // echo '<br/>';
+            //}
         ?>
     
     
