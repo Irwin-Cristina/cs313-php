@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once 'connection1.php';
 $db = get_dbconnection();
 
 ?>
@@ -42,10 +42,17 @@ $db = get_dbconnection();
                 $verse = $row['verse'];
                 $content = $row['content'];
                 
-                echo '<p><span>'. $book . $chapter . $verse . '</span>' . $content . '<p>';
+                echo '<p><span>'. $book . ' ' . $chapter . ':' . $verse . '</span>' . ' ' . $content . '<p>';
                 
                // echo "<p><strong>$book $chapter:$verse</strong> - "$content"<p>";
             }
+        
+        foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
+           {
+            echo '<p><span>' . $row['book'] . $row['chapter'] . $row['verse'] . '</span>'  .$row['content'] . '</p>';
+            echo '<br/>';
+            }
+        
         ?>
     
     
