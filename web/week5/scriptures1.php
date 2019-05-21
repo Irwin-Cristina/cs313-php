@@ -37,14 +37,14 @@ $db = get_dbconnection();
         
             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
             {
-              $book = $row['book'];
-              $chapter = $row['chapter'];
-              $verse = $row['verse'];
-              $content = $row['content'];
+                $book = $row['book'];
+                $chapter = $row['chapter'];
+                $verse = $row['verse'];
+                $content = $row['content'];
                 
-              echo '<p><span>'. $book . $chapter . $verse . '</span>' . $content . '<p>';
+                echo '<p><span>'. $book . $chapter . $verse . '</span>' . $content . '<p>';
                 
-            echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
+                echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
             }
         ?>
     
