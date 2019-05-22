@@ -138,6 +138,12 @@ VALUES(DEFAULT, 'The Sin of Certainty', 240, 'Summary placeholder',14, 1, 1, NUL
 INSERT INTO book(book_id, book_title, book_page_count, book_summary, author_id, location_id, user_id, borrower_id, status_id) 
 VALUES(DEFAULT, 'Mormon Enigma: Emma Hale Smith', 423, 'Summary placeholder',12 ,4, 1,7, 2);	
 	
+INSERT INTO book(book_id, book_title, book_page_count, book_summary, author_id, location_id, user_id, borrower_id, status_id) 
+VALUES(DEFAULT, 'Harry Potter and the Sorcerer''s Stone', 309, 'Summary placeholder',1 ,1, 2, NULL, 1);	
+
+INSERT INTO book(book_id, book_title, book_page_count, book_summary, author_id, location_id, user_id, borrower_id, status_id) 
+VALUES(DEFAULT, 'The Missing Piece', 112, 'Summary placeholder',2 ,2, 5, NULL, 1);	
+	
 	
 CREATE TABLE book_genres (
 	book_id int NOT NULL references book(book_id),
@@ -149,6 +155,15 @@ INSERT INTO book_genres(book_id, genre_id) VALUES (1,4);
 INSERT INTO book_genres(book_id, genre_id) VALUES (1,15);
 INSERT INTO book_genres(book_id, genre_id) VALUES (2,2);
 INSERT INTO book_genres(book_id, genre_id) VALUES (2,3);
+INSERT INTO book_genres(book_id, genre_id) VALUES (3,3);
+INSERT INTO book_genres(book_id, genre_id) VALUES (3,7);
+INSERT INTO book_genres(book_id, genre_id) VALUES (3,10);
+INSERT INTO book_genres(book_id, genre_id) VALUES (4,10);
+INSERT INTO book_genres(book_id, genre_id) VALUES (4,12);
+
+
+
+
 
 	
 
