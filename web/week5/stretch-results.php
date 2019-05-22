@@ -40,7 +40,7 @@ require_once 'connection.php';
 		<?php
 			foreach ($db->query('SELECT * FROM scriptures WHERE book =\''. $_POST["book"] . '\'') as $row)
 			{
-			  echo '<br><a href="stretch_details.php?id=' . $row['id'] .'"><strong>' . $row['book'] . ' ' . $row['chapter'] 
+			  echo '<br><a href="stretch-details.php?id=' . $row['id'] .'"><strong>' . $row['book'] . ' ' . $row['chapter'] 
 			  . ':' . $row['verse'] . '</strong></a>';
 			}
 		?>
