@@ -19,7 +19,7 @@
 				<option value="Harry Potter and the Sorcerers Stone">Harry Potter and the Sorcerer's Stone</option>
 			  </select>
             
-            <h3>Author:</h3> 
+            <!--<h3>Author:</h3> 
 			  <select name="author">
 				<option value="" disabled selected>Select Author's Name</option>
 				<option value="JK Rowling">JK Rowling</option>
@@ -36,7 +36,7 @@
 				<option value="Linda King Newell">Linda King Newell</option>
                 <option value="Marcus J Borg">Marcus J Borg</option>
 				<option value="Peter Enns">Peter Enns</option> 
-			  </select>
+			  </select>-->
               <br>
 			<input type="submit" value="submit"/>
 		</form>
