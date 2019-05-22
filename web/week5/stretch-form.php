@@ -9,7 +9,7 @@
 	</head>
 	<body>
 	  <h1> Scripture Resources Search </h1>
-		<form action="stretch_results.php" method="post">
+		<form action="stretch-results.php" method="post">
 			<h1>Book:</h1> 
 			  <select name="book">
 				<option value="" disabled selected>Select your Book</option>
