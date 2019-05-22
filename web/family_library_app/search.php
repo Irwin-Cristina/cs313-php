@@ -12,7 +12,7 @@
         <h2>Search</h2>
 		<form action="search-results.php" method="post">
 			<h3>Book:</h3> 
-			  <select name="book">
+			  <select name="book_title">
 				<option value="" disabled selected>Select your Book</option>
 				<option value="The Sin of Certainty">The Sin of Certainty</option>
 				<option value="Mormon Enigma: Emma Hale Smith">Mormon Enigma: Emma Hale Smith</option>
@@ -36,8 +36,8 @@
 				<option value="Linda King Newell">Linda King Newell</option>
                 <option value="Marcus J Borg">Marcus J Borg</option>
 				<option value="Peter Enns">Peter Enns</option> 
-                  
 			  </select>
+              <br>
 			<input type="submit" value="submit"/>
 		</form>
 	</body>
