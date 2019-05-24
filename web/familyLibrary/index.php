@@ -1,5 +1,7 @@
 <?php
+require_once 'connection.php';
 
+/*
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -28,6 +30,7 @@ foreach ($db->query('SELECT username, password FROM note_user') as $row)
  echo ' password: ' . $row['password'];
  echo '<br/>';
 }
+*/
 
 ?>
 
