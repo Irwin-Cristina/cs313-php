@@ -41,23 +41,23 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <h1>Family Library</h1>
         <h2>Search</h2>
         <div class= "form">
-        <form action ="something.php">
+        <form action ="search-results.php">
             <div class ="text-input">
                 <label for="book_title">Book Title</label>
-                <input type="text" name="title" value="Please type the book title">
+                <input type="text" name="title" placeholder="Please type the book title">
             </div>
             
             <div class ="text-input">
                 <label for="author_name">Author</label>
-                <input type="text" name="author_name" value="Please type the author's name">
+                <input type="text" name="author_name" placeholder="Please type the author's name">
             </div>
            
-            <div class ="text-input">
+            <!--<div class ="text-input">
             <label for="genre_name">Genre</label>
             <input type="text" name="genre_name" value="What genre">
-            </div>
+            </div>-->
             
-            <div class ="dropdown">
+<!--            <div class ="dropdown">-->
                <!-- <button class="dropbtn">Dropdown</button>
                 <div class="dropdown-content">
                     <a href="#">Checked in</a>
@@ -65,7 +65,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
                     <a href="#">Missing</a>
                 </div>-->
                 
-             <div class="dropdown">
+             <!--<div class="dropdown">
                 <label for="status">Status</label>
                 <select name="status">
 				    <option value="" disabled selected>Select status</option>
@@ -74,7 +74,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
 				    <option value="Missing">Missing</option>
 			     </select>
                 </div>
-            </div> 
+            </div> -->
             
             <div class="submitbtn">
                 <input type="submit" value="Submit">
