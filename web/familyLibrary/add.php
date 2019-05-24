@@ -22,14 +22,16 @@ catch (PDOException $ex)
   die();
 }
 
-foreach ($db->query('SELECT username, password FROM note_user') as $row)
+foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book') as $row)
 {
- echo 'user: ' . $row['username'];
- echo ' password: ' . $row['password'];
+ echo 'Book: ' . $row['book_title'];
+ echo 'Page Count: ' . $row['book_page_count'];
+ echo 'Author: ' . $row['author_id'];
+
  echo '<br/>';
 }
 
-
+//form check
     $title = $author = $count = $location = $genre = $summary = '';
     $errors=array('title'=>'', 'author_name'=>'', 'book_page_count'=>'', 'location'=>'','genre_name'=>'', 'book_summary'=>'');
 
