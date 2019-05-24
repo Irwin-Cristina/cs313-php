@@ -42,9 +42,9 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <h2>Search Results</h2>
         <div>
             <?php foreach($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row){ ?>
-                <h6><?php echo htmlspecialchars($row['book_title']); ?></h6>
-                <div><?php echo htmlspecialchars($row['author_id']); ?></div>
-                <div><?php echo htmlspecialchars($row['book_page_count']); ?></div>
+                <h6><?php echo 'Book Title:' .  htmlspecialchars($row['book_title']); ?></h6>
+                <div><?php echo 'Author:' . htmlspecialchars($row['author_id']); ?></div>
+                <div><?php echo  'Page Count:' . htmlspecialchars($row['book_page_count']); ?></div>
             <div>
                 <a href="#">book detail</a>
             </div>
