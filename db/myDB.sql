@@ -35,29 +35,6 @@ INSERT INTO borrower(borrower_id, borrower_name) VALUES(DEFAULT, 'Derrick Mannin
 INSERT INTO borrower(borrower_id, borrower_name) VALUES(DEFAULT, 'Jessica Berrio');
 	
 --lookup-table--
-CREATE TABLE genre (
-	genre_id SERIAL NOT NULL primary key,
-	genre_name varchar NOT NULL
- );
-	
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'History');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Biography');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Fiction');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Non-Fiction');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Romance');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Mystery');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Fantasy');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Historical Fiction');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Self-Help');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Children');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Dystopia');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Poetry');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Informational');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Young Adult');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Spiritual');
-INSERT INTO genre(genre_id, genre_name) VALUES(DEFAULT, 'Music');
-
-
 
 
 CREATE TABLE author (
@@ -87,7 +64,7 @@ CREATE TABLE status (
 
 INSERT INTO status(status_id, status) VALUES(DEFAULT, 'Checked in');
 INSERT INTO status(status_id, status) VALUES(DEFAULT, 'Checked out');
-INSERT INTO status(status_id, status) VALUES(DEFAULT, 'Missing');
+INSERT INTO status(status_id, status) VALUES(DEFAULT, 'c);
 
 --
 --CREATE TABLE cover_art (
@@ -123,7 +100,7 @@ CREATE TABLE book (
 	book_title varchar NOT NULL,
 	book_page_count int NOT NULL,
 	book_summary text NOT NULL,
-	author_id varchar NOT NULL,
+	author_id int NOT NULL references author(author_id),
 	--cover_id int NOT NULL references cover_art(cover_id),
 	location_id int NOT NULL references location(location_id),
 	user_id int NOT NULL references user_person(user_id),
@@ -164,14 +141,24 @@ INSERT INTO book_genres(book_id, genre_id) VALUES (4,12);
 
 
 
-
+SELECT
+	a.book_id book_id,
+	a.author_id author_id,
+	b.author_id author_id,
+	b.author_name
+	FROM book a 
+	INNER JOIN a.author_id = b.author_id;
 	
+SELECT
+ *
+FROM
+ book
+INNER JOIN author USING (author_id);	
 
-
-
-
+ALTER TABLE borrower ADD COLUMN phone varchar(30);
+INSERT INTO borrower(phone) VALUES('801-766-0642') WHERE borrower_id = 1;
 
 \pset format wrapped
-
+\d+ table
 
 	

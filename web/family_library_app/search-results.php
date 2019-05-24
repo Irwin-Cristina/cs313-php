@@ -39,8 +39,9 @@ require_once 'connection.php';
 	  <h1> Search Results </h1>
 		<?php
 			foreach ($db->query('SELECT * FROM book WHERE book_title =\''. $_POST["book_title"] . '\'') as $row)
+        
 			{
-			  echo '<br><a href="search-details.php?book_id=' . $row['book_id'] .'"><strong>' . $row['book_title'] . ' ' . $row['author_id'] . '</strong></a>';
+			  echo '<br><a href="search-details.php?book_id=' . $row['book_id'] .'"><strong>' . $row['book_title'] . ' ' . $row['author_name'] . '</strong></a>';
 			}
 		?>
 	</body>

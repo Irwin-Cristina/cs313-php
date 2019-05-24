@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600|Sorts+Mill+Goudy:400,400i');
+
+
+main {
+    font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	/*background-color: aquamarine;*/
+    margin-top:40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+/*    background-color: blueviolet;*/
+    line-height: 5px;
+    margin-bottom: 0;
+    margin-top: 0;
+
+}
+
+h2 {
+    font-size: 7em;
+    /*background-color: aquamarine;*/
+    margin-bottom: 40px;
+    margin-top: 0;
+    line-height: 170px;
+
+}
+
+h3 {
+    font-size: 3em;
+    text-align: left;
+    padding:0;
+    margin: 30px 0 30px 0px;
+}
+
+nav {
+    background-color: bisque;
+    font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	height: 75px;
+    margin: auto;
+	text-align: center;
+	width: 650px;	
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 25px 0 0 0;
+    padding-top: 25px;
+    width: 100%;
+	}
+	
+li {
+	display: inline;
+	}
+
+a {
+    color: #0d2c3c; /* Cyprus*/
+	font-size: .8em;
+    margin: 0 0 0px 10px;
+	text-decoration: none;
+    padding: 5px;
+	text-transform: uppercase;
+}
+
+a:visited {
+	color: #0d2c3c; /* Cyprus*/
+	padding: 5px 5px 5px 5px;
+	}
+a:hover {
+    border-bottom: 2px solid #499faf;
+	color: #499faf; /* SeaFloor*/
+	}
+
+a:active {
+    border-bottom: 2px solid #e55052;
+    color: #e55052; /* Crush*/
+	}
+
+footer {
+    padding-top: 20px;
+    text-align: center;
+}
+/******FORM*****/
+
+.form {
+    width: 650px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 1em;
+    }
+            
+.form label {
+    display: block;
+    text-align: left;
+    color: #e55052; /* Crush*/
+    font-size: .875em;
+    font-weight: 600;
+    }
+            
+            
+.form form .text-input {
+    overflow: hidden;
+    margin-bottom: .875em;
+    }
+                
+.form form input[type="text"]{
+    width: 100%;
+    padding: 1em 0 12px;
+    padding-left: 0;
+    background: none;
+    color: grey;
+    font-size: 1.2em;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid #999;
+    }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.checkbox, .summary {
+    margin-top: 30px;
+}
+
+select {
+    font-size: 1em;
+    display: inline-block;
+    height: 30px;
+    width: 500px;
+    outline: none;
+    color: #e55052; /* Crush*/
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+    background: #fff;
+}
+
+.submitbtn {
+    margin-top: 30px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color:#e55052; /* Crush*/
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.red-text {
+    color: red;
+    font-size: .5em;
+}
+
+/*******Homepage********/
+p {
+    text-transform: uppercase;
+}
+.wrapper {
+  
+    position:relative;
+    width: 550px;
+    height: 500px;
+    padding: 40px;
+    margin: auto;
+    /*background-color: blue;*/
+}
+
+.wrapper h1{
+    margin-bottom:40px;
+}
+
+.wrapper p {
+    font-size: 2em;
+    padding: 0;
+    margin:0;
+}
+
+.wrapper a {
+    border-bottom: 0;
+}
+.search {
+    position: absolute;
+    left: 0;
+    height:50px;
+    width: 630px;
+    background-color: aqua;
+}
+
+
+.search:hover {
+    border: 2px solid #347f8f;
+    background-color:#55c6de;
+}
+ #checkin, #checkout {
+     line-height: 400px
+}
+
+#add, #update {
+    line-height: 200px;
+}
+
+.add { 
+    position: absolute;
+    height:200px;
+    width: 200px;
+    left: 215px;
+    top: 145px;
+    background-color: indianred;
+}
+
+.add:hover {
+    border: 2px solid #8f4a48;
+    background-color:#ee7b77;
+}
+
+.update {
+    position: absolute;
+    height:200px;
+    width: 200px;
+    left: 215px;
+    top: 360px;
+    background-color: gold;
+}
+
+.update:hover {
+    border: 2px solid #9f8b3c;
+    background-color:#f4e197;
+}
+
+.checkout {
+    position: absolute;
+    height:418px;
+    width: 200px;
+    top: 145px;
+    left: 0px;
+    background-color: darkgrey;
+}
+
+.checkout:hover {
+    border: 2px solid #d0d0d0;
+    background-color:#545353;
+}
+
+.checkin {
+    position: absolute;
+    height:418px;
+    width: 200px;
+    top: 145px;
+    right: 0;
+    background-color: orangered;
+}
+
+.checkin:hover {
+    border: 2px solid #ef7957;
+    background-color:#be4624;
+}

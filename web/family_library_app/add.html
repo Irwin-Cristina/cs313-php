@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Library Add a Book</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+</head>
+<style>
+    
+</style>
+<body>
+    <header>
+        <nav>
+            <ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="checkout.html">Check out</a></li>
+				<li><a href="checkin.html">Check in</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="add.html">Add</a></li>
+				<li><a href="update.html">Update</a></li>
+            </ul>
+        
+        </nav>
+    </header>
+    <main>
+        <h1>Family Library</h1>
+        <h2>Add</h2>
+        <div class= "form">
+        <form action ="something.php">
+            <div class ="text-input">
+                <label for="book_title">Book Title</label>
+                <input type="text" name="title" value="Please type the book title">
+            </div>
+            
+            <div class ="text-input">
+                <label for="author_name">Author</label>
+                <input type="text" name="author_name" value="Please type the author's name">
+            </div>
+            
+            <div class ="text-input">
+                <label for="author_name">Page Count</label>
+                <input type="text" name="book_page_count" value="Please type book's page count">
+            </div>
+           
+            <div class ="text-input">
+            <label for="genre_name">Genre</label>
+            <input type="text" name="genre_name" value="What genre">
+            </div>
+            
+            
+                
+             <div class="dropdown">
+                <label for="location">Location</label>
+                <select name="location">
+				    <option value="" disabled selected>Select location</option>
+				    <option value="Piano Room">Piano Room</option>
+				    <option value="Homework Room">Homework Room</option>
+				    <option value="Family Room">Family Room</option>
+                    <option value="Piano Room">Parent's Room</option>
+				    <option value="Homework Room">Isabella's Room</option>
+				    <option value="Family Room">Isaac's Room</option>
+                    <option value="Family Room">Simon's Room</option>
+			     </select>
+                </div>
+            
+            <div class="checkbox">
+                <label for="genre">Genre</label>
+                <input type="checkbox" name="History" value="History"> History<br>
+                <input type="checkbox" name="Biography" value="Biography"> Biography<br>
+                <input type="checkbox" name="Fiction" value="Fiction" checked> Fiction<br>
+                <input type="checkbox" name="Non-Fiction" value="Non-Fiction"> Non-Fiction<br>
+                <input type="checkbox" name="Romance" value="Romance"> Romance<br>
+                <input type="checkbox" name="Mystery" value="Mystery" checked> Mystery<br><input type="checkbox" name="Fantasy" value="Fantasy"> Fantasy<br>
+                <input type="checkbox" name="Historical Fiction" value="Historical Fiction"> Historical Fiction<br>
+                <input type="checkbox" name="Self-Help" value="Self-Help" checked> Self-Help<br>
+                <input type="checkbox" name="Children" value="Children"> Children<br>
+                <input type="checkbox" name="Dystopia" value="Dystopia"> Dystopia<br>
+                <input type="checkbox" name="Poetry" value="Poetry" checked> Poetry<br>
+                <input type="checkbox" name="Informational" value="Informational" checked> Informational<br>
+                <input type="checkbox" name="Young Adult" value="Young Adult"> Young Adult<br>
+                <input type="checkbox" name="Spiritual" value="Spiritual"> Spiritual<br>
+                <input type="checkbox" name="Music" value="Music" checked> Music<br>
+                </div>
+
+            <div class="summary">
+                <label for="summary">Summary</label>
+                <textarea rows="4" cols="50" name="comment" form="??" value="">Enter book summary here...</textarea>
+
+            
+            </div>
+            
+            <div class="submitbtn">
+                <input type="submit" value="Submit">
+             </div>   
+                
+        </form>
+        </div>
+        
+    
+    </main>
+  
+    
+    
+    
+    
+
+</body>
+</html>
