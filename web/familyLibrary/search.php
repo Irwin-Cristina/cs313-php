@@ -26,7 +26,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
 {
  echo 'Book: ' . $row['book_title'];
  echo 'Page Count: ' . $row['book_page_count'];
- echo 'Author: ' . $row['author.author_name'];
+ echo 'Author: ' . $row['author_id'];
 
  echo '<br/>';
 }
