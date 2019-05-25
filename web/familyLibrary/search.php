@@ -89,7 +89,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
             
             <?php
                 foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
-                    {   echo "div class='box'>";
+                    {   echo 'div class="box">';
                         echo '<p> Book: ' . $row['book_title'] . '</p>';
                         echo '<p> Page Count: ' . $row['book_page_count'] . '</p>';
                         echo '<p> Author: ' . $row['author_id'] . '</p>';
@@ -106,7 +106,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
             
                 if ($queryResults > 0) {
                     while ($row = pg_fetch_assoc($result)) {
-                        echo "<div class='box'>
+                        echo "<div class='box'> 
                             <p> ".$row['book_title']." </p>
                             <p> ".$row['author_id']." </p>
                             <p> ".$row['book_page_count']." </p>
