@@ -88,8 +88,9 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <h5>All books returned from Search</h5>
             
             <?php
-                $sql ="SELECT * FROM book";
-                $result = ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)'));
+                $sql ="SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id";
+                $db->$sql=$result;
+                //$result = ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)'));
                 $queryResults = pg_num_rows($result);
             
                 if($queryResults > 0) {
