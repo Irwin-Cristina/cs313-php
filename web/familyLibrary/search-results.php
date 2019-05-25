@@ -73,6 +73,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <div class ="searchcontainer">
         <?php
             if(isset($_POST['submit-search'])) {
+                $db = get_dbconnection();
                 $search = pg_escape_string($db, $_POST['search']);
                 $sql="SELECT * FROM book WHERE book_title LIKE '%$search%' OR author_id LIKE '%$search%'";
                 $result = pg_query($db, $sql);
