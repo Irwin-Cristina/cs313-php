@@ -50,15 +50,15 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }*/
+$db = get_dbconnection();
+foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
+    {
+        echo 'Book: ' . $row['book_title'];
+        echo 'Page Count: ' . $row['book_page_count'];
+        echo 'Author: ' . $row['author_id'];
 
-//foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
-    //{
-        //echo 'Book: ' . $row['book_title'];
-        //echo 'Page Count: ' . $row['book_page_count'];
-        //echo 'Author: ' . $row['author_id'];
-
-        //echo '<br/>';
-    //}
+        echo '<br/>';
+    }
 
 ?>
 <!DOCTYPE html>
