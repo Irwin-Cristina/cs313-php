@@ -88,27 +88,21 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <h5>All books returned from Search</h5>
             
             <?php
-                $sql ="SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)";
-                //$db->$sql=$result;
-                $result =query($db, $sql);
-                //$result = ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)'));
+                $sql ="SELECT * FROM book";
+                $result = pg_query($db, $sql);
                 $queryResults = pg_num_rows($result);
             
-                if($queryResults > 0) {
+                if ($queryResults > 0) {
                     while ($row = pg_fetch_assoc($result)) {
                         echo "<div class='box'>
-                        <p> ".$row['book_title']." </p>
-                        <p> ".$row['author_id']." </p>
-                        <p> ".$row['book_page_count']." </p>
-                        </div";
-                        
+                            <p> ".$row['book_title']." </p>
+                            <p> ".$row['author_id']." </p>
+                            <p> ".$row['book_page_count']." </p>
+                        </div>";
                     }
                 }
-                    
-                    
-                    
-                    
-            ?>        
+                
+            ?>      
         
         
         
