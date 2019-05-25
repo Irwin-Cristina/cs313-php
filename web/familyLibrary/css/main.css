@@ -278,3 +278,32 @@ p {
     border: 2px solid #ef7957;
     background-color:#be4624;
 }
+
+/*******Search*******/
+.searchcontainer {
+	display: inline-block;
+    width:600px;
+    background-color:#f3f3f3;
+    padding: 30px;
+}
+
+.box {
+	background-color: #cec8d2;
+    width: 100%;
+}
+
+.box p {
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
+.searchcontainer h4 {
+	font-size: 1.5em;
+	padding: 0;
+	margin: 0;
+}
+
+.searchcontainer h5 {
+	padding: 0;
+	margin: 0;
+}

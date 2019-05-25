@@ -41,16 +41,16 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <h1>Family Library</h1>
         <h2>Search</h2>
         <div class= "form">
-        <form action ="search-results.php">
+        <form action ="search-results.php" method="POST">
             <div class ="text-input">
-                <label for="book_title">Book Title</label>
-                <input type="text" name="title" placeholder="Please type the book title">
+                <label>Book Information</label>
+                <input type="text" name="search" value= "" placeholder="Please type the book title or author">
             </div>
             
-            <div class ="text-input">
-                <label for="author_name">Author</label>
-                <input type="text" name="author_name" placeholder="Please type the author's name">
-            </div>
+            <!--<div class ="text-input">
+                <label>Author</label>
+                <input type="text" name="author" value="" placeholder="Please type the author's name">
+            </div>-->
            
             <!--<div class ="text-input">
             <label for="genre_name">Genre</label>
@@ -77,11 +77,58 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
             </div> -->
             
             <div class="submitbtn">
-                <input type="submit" value="Submit">
+                <input type="submit" value="search" name="submit-search">
              </div>   
                 
         </form>
         </div>
+        
+        <div class="searchcontainer">
+        <h4>Books</h4>
+        <h5>All books returned from Search;</h5>
+            
+            <?php
+                $sql ="SELECT * FROM book";
+                $result = pg_query($db, $sql);
+                $queryResults = pg_num_rows($result);
+            
+                if($queryResults > 0) {
+                    while ($row = pg_fetch_assoc($result)) {
+                        echo "<div class='box'>
+                        <p> ".$row['book_title']." </p>
+                        <p> ".$row['author_id']." </p>
+                        <p> ".$row['book_page_count']." </p>
+                        </div";
+                        
+                    }
+                }
+                    
+                    
+                    
+                    
+            ?>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        
+        
         
     
     </main>
@@ -92,4 +139,4 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
     
 
 
-</html>
+</html
