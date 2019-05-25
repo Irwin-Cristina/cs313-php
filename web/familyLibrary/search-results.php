@@ -72,13 +72,14 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         
         <div class ="searchcontainer">
         <?php
-            if(isset($_POST['submit-search'])) {
+            if(isset($_GET['submit-search'])) {
                 
                 //$db = new //PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", //$dbUser, $dbPassword);
                 $db = get_dbconnection();
                 $search = pg_escape_string($db, $_GET['search']);
-                $sql="SELECT * FROM book WHERE book_title LIKE '%$search%' OR author_id LIKE '%$search%'";
-                $result = pg_query($db, $sql);
+                //$sql="SELECT * FROM book WHERE book_title LIKE '%$search%' OR author_id LIKE '%$search%'";
+                //$result = pg_query($db, $sql);
+                $result = $db->query (query "SELECT * FROM book WHERE book_title LIKE '%$search%' OR author_id LIKE '%$search%'");
                 $queryResult = pg_num_rows($result);
                 
                 if($queryResult > 0) {
