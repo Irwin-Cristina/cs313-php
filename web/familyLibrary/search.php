@@ -94,7 +94,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
                         echo '<p> Page Count: ' . $row['book_page_count'] . '</p>';
                         echo '<p> Author: ' . $row['author_id'] . '</p>';
 
-                        echo '<br/>';
+                        echo '</div>';
 }
             
             
