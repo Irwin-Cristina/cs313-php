@@ -41,7 +41,7 @@ catch (PDOException $ex)
         <h1>Family Library</h1>
         <h2>Search</h2>
         <div class= "form">
-        <form action ="search-results.php" method="POST">
+        <form action ="search-results.php" method="GET">
             <div class ="text-input">
                 <label>Book Information</label>
                 <input type="text" name="search" value= "" placeholder="Please type the book title or author">
