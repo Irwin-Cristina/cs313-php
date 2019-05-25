@@ -116,29 +116,8 @@ catch (PDOException $ex)
                 
             ?>      
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-    
+      
     </main>
   
     <?php include('templates/footer.php');?>
