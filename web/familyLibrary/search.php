@@ -89,7 +89,8 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
             
             <?php
                 $sql ="SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id";
-                $db->$sql=$result;
+                //$db->$sql=$result;
+                $result =query($db, $sql);
                 //$result = ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)'));
                 $queryResults = pg_num_rows($result);
             
