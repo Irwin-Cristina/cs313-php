@@ -85,7 +85,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         
         <div class="searchcontainer">
         <h4>Books</h4>
-        <h5>All books returned from Search;</h5>
+        <h5>All books returned from Search</h5>
             
             <?php
                 $sql ="SELECT * FROM book";

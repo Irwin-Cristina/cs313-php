@@ -40,6 +40,37 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
     <main>
         <h1>Family Libray</h1>
         <h2>Search Results</h2>
+        
+        <div class ="searchcontainer">
+        <?php
+            if(isset($_POST['submit-search'])) {
+                $search = pg_escape_string($db, $_POST['search']);
+                $sql="SELECT * FROM book WHERE book_title LIKE '%$search%' OR author_id LIKE '%$search%'";
+                $result = pg_query($db, $sql);
+                $queryResult = pg_num_rows($result);
+                
+                if($queryResult > 0) {
+                    while ($row = pg_fetch_assoc($result)) {
+                        echo "<div class='box'>
+                        <p> ".$row['book_title']." </p>
+                        <p> ".$row['author_id']." </p>
+                        <p> ".$row['book_page_count']." </p>
+                        </div";
+                        
+                    }
+                }else{
+                    echo"There are no results matching your search!";
+                }
+                    }
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        
         <div>
             <?php foreach($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row){ ?>
                 <h6><?php echo 'Book Title:' .  htmlspecialchars($row['book_title']); ?></h6>
