@@ -22,14 +22,14 @@ catch (PDOException $ex)
   die();
 }
 
-foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
-{
- echo 'Book: ' . $row['book_title'];
- echo 'Page Count: ' . $row['book_page_count'];
- echo 'Author: ' . $row['author_id'];
+//foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
+//{
+// echo 'Book: ' . $row['book_title'];
+ //echo 'Page Count: ' . $row['book_page_count'];
+ //echo 'Author: ' . $row['author_id'];
 
- echo '<br/>';
-}
+ //echo '<br/>';
+//}
 
 ?>
 <!DOCTYPE html>
@@ -44,9 +44,9 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <div class ="searchcontainer">
         <?php
             if(isset($_POST['submit-search'])) {
-                $search = pg_escape_string($db, $_POST['search']);
+                $search = pg_escape_string($conn, $_POST['search']);
                 $sql="SELECT * FROM book WHERE book_title LIKE '%$search%' OR author_id LIKE '%$search%'";
-                $result = pg_query($db, $sql);
+                $result = pg_query($conn, $sql);
                 $queryResult = pg_num_rows($result);
                 
                 if($queryResult > 0) {
