@@ -73,26 +73,25 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <div class ="searchcontainer">
         <?php
             if(isset($_POST['submit-search'])) {
-                $db = get_dbconnection();
                 $search = pg_escape_string($db, $_POST['search']);
                 $sql="SELECT * FROM book WHERE book_title LIKE '%$search%' OR author_id LIKE '%$search%'";
                 $result = pg_query($db, $sql);
                 $queryResult = pg_num_rows($result);
                 
                 if($queryResult > 0) {
-                    while ($row = pg_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='box'>
-                        <p> ".$row['book_title']." </p>
-                        <p> ".$row['author_id']." </p>
-                        <p> ".$row['book_page_count']." </p>
+                            <p> ".$row['book_title'] ." </p>
+                            <p> ".$row['author_id'] ." </p>
+                            <p> ".$row['book_page_count'] ." </p>
                         </div>";
-                        
                     }
-                }else{
-                    echo"There are no results matching your search!";
+                }else {
+                    echo "There are no results matching your search!";
                 }
-                    }
-        
+            }
+            
+            
         ?>
         </div>
             
