@@ -88,6 +88,16 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INN
         <h5>All books returned from Search</h5>
             
             <?php
+                $dbUrl = getenv('DATABASE_URL');
+
+                $dbOpts = parse_url($dbUrl);
+
+                $dbHost = $dbOpts["host"];
+                $dbPort = $dbOpts["port"];
+                $dbUser = $dbOpts["user"];
+                $dbPassword = $dbOpts["pass"];
+                $dbName = ltrim($dbOpts["path"],'/');
+                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 $sql ="SELECT * FROM book";
                 $result = pg_query($db, $sql);
                 $queryResults = pg_num_rows($result);
