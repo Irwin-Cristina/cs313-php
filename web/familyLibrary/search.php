@@ -72,7 +72,7 @@ if(isset($_GET['submit-search'])) { //name from button
         <h1>Family Library</h1>
         <h2>Search</h2>
         <div class= "form">
-        <form action ="search-results.php" method="GET">
+        <form action ="" method="GET">
             <div class ="text-input">
                 <label>Id</label>
                 <input type="text" name="id" value= "<?php echo $id; ?>" placeholder="Please type the book title or author">
