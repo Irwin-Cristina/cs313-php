@@ -169,7 +169,7 @@ if(isset($_GET['submit-search'])) { //name from button
         
         if($pdoQuery_run) {
             
-            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5"
+            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5">
                 <tr style ="color:blue;">
                     <td> ID </td>
                     <td> Book Title </td>
