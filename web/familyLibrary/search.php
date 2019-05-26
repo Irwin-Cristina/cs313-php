@@ -51,6 +51,46 @@ if(isset($_GET['submit-search'])) { //name from button
     
     
 }
+
+
+
+//display
+
+if(isset($_GET['submit-display'])) {
+        $pdoQuery = "SELECT * FROM book";
+        $pdoQuery_run = $db->query($pdoQuery);
+        
+        if($pdoQuery_run) {
+            
+            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5">
+                <tr style ="color:blue;">
+                    <td> ID </td>
+                    <td> Book Title </td>
+                    <td> Author Id </td>
+
+                </tr>
+            
+            
+            ';
+            while($row = $pdoQuery_run->fetch(PDO::FETCH_OBJ)){
+            //foreach($pdoQuery_run as $row)   
+                
+            echo ' <tr>
+                        <th> ' .$row->book_id. '</th>
+                        <th> ' .$row->book_title. '</th>
+                        <th> ' .$row->author_id. '</th>
+                    </tr>
+                    
+            ';
+            
+            }
+            echo '</table>';
+            
+            
+        }else{
+            echo'<script> alert("No record/data found")</script>';
+        }
+    }
     
 
 //foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
@@ -72,7 +112,7 @@ if(isset($_GET['submit-search'])) { //name from button
         <h1>Family Library</h1>
         <h2>Search</h2>
         <div class= "form">
-        <form action ="" method="GET">
+        <form action ="search.php" method="GET">
             <div class ="text-input">
                 <label>Id</label>
                 <input type="text" name="id" value= "<?php echo $id; ?>" placeholder="Please type the book title or author">
@@ -163,39 +203,7 @@ if(isset($_GET['submit-search'])) { //name from button
 </html
     
  <?php
-    if(isset($_GET['submit-display'])) {
-        $pdoQuery = "SELECT * FROM book";
-        $pdoQuery_run = $db->query($pdoQuery);
-        
-        if($pdoQuery_run) {
-            
-            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5">
-                <tr style ="color:blue;">
-                    <td> ID </td>
-                    <td> Book Title </td>
-                    <td> Author Id </td>
-
-                </tr>
-            
-            
-            ';
-            while($row = $pdoQuery_run->fetch(PDO::FETCH_OBJ)){
-            //foreach($pdoQuery_run as $row)   
-                
-            echo ' <tr>
-                        <th> ' .$row->book_id. '</th>
-                        <th> ' .$row->book_title. '</th>
-                        <th> ' .$row->author_id. '</th>
-                    </tr>
-                    
-            ';
-            
-            }
-            echo '</table>';
-        }else{
-            echo'<script> alert("No record/data found")</script>';
-        }
-    }
+    
         
         
         
