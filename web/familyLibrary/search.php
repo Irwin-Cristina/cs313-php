@@ -22,6 +22,37 @@ catch (PDOException $ex)
   die();
 }
 
+$id = "";
+$title = "";
+$author = "";
+
+
+
+
+if(isset($_GET['submit-search'])) { //name from button
+    $id=$_GET['id'];   //id from from input
+        
+    $pdoQuery = "SELECT * FROM book WHERE book_id =:id";
+    $pdoQuery_run = $db->prepare($pdoQuery);
+    $pdoQuery_exec = $pdoQuery_run->execute(array(":id=>$1d"));
+    
+    if($pdoQuery_exec) {
+        if($pdoQuery_run->rowcount()>0) {
+            foreach($pdoQuery_run as $row) {
+                $id = $row->id;
+                $title = $row->title;
+                $author = $row->author;
+            }
+        } else {
+            
+        } echo '<script> alert("No Data Found")</script';
+    }
+        
+    
+    
+}
+    
+
 //foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
 //{
  //echo 'Book: ' . $row['book_title'];
@@ -43,14 +74,19 @@ catch (PDOException $ex)
         <div class= "form">
         <form action ="search-results.php" method="GET">
             <div class ="text-input">
-                <label>Book Information</label>
-                <input type="text" name="search" value= "" placeholder="Please type the book title or author">
+                <label>Id</label>
+                <input type="text" name="id" value= "<?php echo $id; ?>" placeholder="Please type the book title or author">
             </div>
             
-            <!--<div class ="text-input">
+            <div class ="text-input">
+                <label>Book Title</label>
+                <input type="text" name="title" value= "<?php echo $title; ?>" placeholder="Please type the book title or author">
+            </div>
+            
+            -<div class ="text-input">
                 <label>Author</label>
-                <input type="text" name="author" value="" placeholder="Please type the author's name">
-            </div>-->
+                <input type="text" name="author" value="<?php echo $author; ?>" placeholder="Please type the author's name">
+            </div>
            
             <!--<div class ="text-input">
             <label for="genre_name">Genre</label>
@@ -78,6 +114,7 @@ catch (PDOException $ex)
             
             <div class="submitbtn">
                 <input type="submit" value="search" name="submit-search">
+                <input type="submit" value="display" name="submit-display">
              </div>   
                 
         </form>
@@ -122,8 +159,47 @@ catch (PDOException $ex)
   
     <?php include('templates/footer.php');?>
     
-    
-    
-
 
 </html
+    
+ <?php
+    if(isset($_GET['submit-display'])) {
+        $pdoQuery = "SELECT * FROM book";
+        $pdoQuery_run = $db->query($pdoQuery);
+        
+        if($pdoQuery_run) {
+            
+            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5"
+                <tr style ="color:blue;">
+                    <td> ID </td>
+                    <td> Book Title </td>
+                    <td> Author Id </td>
+
+                </tr>
+            
+            
+            ';
+            while($row = $pdoQuery_run->fetch(PDO::FETCH_OBJ)){
+            //foreach($pdoQuery_run as $row)   
+                
+            echo ' <tr>
+                        <th> ' .$row->book_id. '</th>
+                        <th> ' .$row->book_title. '</th>
+                        <th> ' .$row->author_id. '</th>
+                    </tr>
+                    
+            ';
+            
+            }
+            echo '</table>';
+        }else{
+            echo'<script> alert("No record/data found")</script>';
+        }
+    }
+        
+        
+        
+        
+        
+    
+  ?>  
