@@ -39,8 +39,12 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $authorid = $book['author_id'];
         $author = $book['author_name'];
         
+        echo "<li><p>book id: $id</p></li>";
+        echo "<li><p>book title: $title</p></li>";
+        echo "<li><p>book page count: $count</p></li>";
         echo "<li><p>author_id: $authorid</p></li>";
-        echo "<li><p>author_id: $author</p></li>";
+        echo "<li><p>author: $author</p></li>";
+        
 
         
     }    
