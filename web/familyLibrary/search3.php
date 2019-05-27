@@ -1,10 +1,10 @@
 <?php
 
-if (!isset($_GET['author_id'])) 
+if (!isset($_GET['book_id'])) 
 {
     die("Error, course id not specified...");
 }
-$author_id = htmlspecialchars($_GET['author_id']);
+$author_id = htmlspecialchars($_GET['book_id']);
 
 require('dbConnect.php');
 $db = get_db();
