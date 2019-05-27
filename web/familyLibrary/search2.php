@@ -6,7 +6,7 @@ $db = get_db();
 $query = 'SELECT book_id, book_title, book_page_count FROM book';
 $stmt = $db->prepare($query);
 $stmt->execute();
-$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
