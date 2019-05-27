@@ -22,7 +22,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach($books as $book){
         var_dump($book);
         
-        $id = $book['book.book_id'];
+        $id = $book['book']['book_id'];
         $title = $book['book.book_title'];
         $count = $book['book.book_page_count'];
         $author = $book['author.author_id'];
