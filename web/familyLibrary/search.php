@@ -34,7 +34,7 @@ if(isset($_GET['submit-search'])) { //name from button
         
     $pdoQuery = "SELECT * FROM book WHERE book_id =:id";
     $pdoQuery_run = $db->prepare($pdoQuery);
-    $pdoQuery_exec = $pdoQuery_run->execute(array(":id=>$1d"));
+    $pdoQuery_exec = $pdoQuery_run->execute(array(":id=>$id"));
     
     if($pdoQuery_exec) {
         if($pdoQuery_run->rowcount()>0) {
