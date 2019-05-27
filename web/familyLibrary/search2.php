@@ -19,10 +19,10 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php
     foreach($books as $book){
         $id = $book['book_id'];
-        $code = $book['book_title'];
-        $name = $book['book_page_count'];
+        $title = $book['book_title'];
+        $count = $book['book_page_count'];
         
-        echo "<li><p>$code - $name</p></li>";
+        echo "<li><p>$title- $count</p></li>";
         
     }    
         ?>
