@@ -9,13 +9,12 @@ $book_id = htmlspecialchars($_GET['book_id']);
 require('dbConnect.php');
 $db = get_db();
 
-$query = 'SELECT * FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_id=:id;
-';
+$query = 'SELECT * FROM author a JOIN book b ON a.author_id = b.author_id';
 
 //$query = 'SELECT a.author_name, a.author_id FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_id=:id;
 //';
 $stmt = $db->prepare($query);
-$stmt->bindValue(':id', $author_id, PDO::PARAM_INT);
+//$stmt->bindValue(':id', $author_id, PDO::PARAM_INT);
 $stmt->execute();
 $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -31,7 +30,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     //var_dump($books);
         
     foreach($books as $book){
-        //var_dump($book);
+       var_dump($book);
         
         $id = $book['book_id'];
         $title = $book['book_title'];
