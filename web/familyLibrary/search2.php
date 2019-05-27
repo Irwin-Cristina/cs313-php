@@ -3,7 +3,7 @@
 require('dbConnect.php');
 $db = get_db();
 
-$query = 'SELECT book_id, book_title, book_page_count FROM book';
+$query = 'SELECT * FROM author a JOIN book b ON a.author_id = b.author_id;';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -18,11 +18,12 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <ul>
 <?php
     foreach($books as $book){
-        $id = $book['book_id'];
-        $title = $book['book_title'];
-        $count = $book['book_page_count'];
+        $id = $book['b.book_id'];
+        $title = $book['b.book_title'];
+        $count = $book['b.book_page_count'];
+        $author = $book['a.author_name']
         
-        echo "<li><p>$title- $count</p></li>";
+        echo "<li><p> title: $title - author $author</p></li>";
         
     }    
         ?>
