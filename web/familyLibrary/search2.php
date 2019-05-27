@@ -1,38 +1,41 @@
 <?php
+
+require('dbConnect.php');
+$db = get_db();
 //connection
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
-
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
-$id = "";
-$title = "";
-$author = "";
+//try
+//{
+//  $dbUrl = getenv('DATABASE_URL');
+//
+//  $dbOpts = parse_url($dbUrl);
+//
+//  $dbHost = $dbOpts["host"];
+//  $dbPort = $dbOpts["port"];
+//  $dbUser = $dbOpts["user"];
+//  $dbPassword = $dbOpts["pass"];
+//  $dbName = ltrim($dbOpts["path"],'/');
+//
+//  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+//
+//  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//}
+//catch (PDOException $ex)
+//{
+//  echo 'Error!: ' . $ex->getMessage();
+//  die();
+//}
+//
+//$id = "";
+//$title = "";
+//$author = "";
 
 
 
 //
-if(isset($_GET['submit-search'])) { //name from button
-    $title=$_GET['book_title'];   //id from from input
+//if(isset($_GET['submit-search'])) { //name from button
+    //$title=$_GET['book_title'];   //id from from input
         
-    $query = 'SELECT book_id, book_title, author_id FROM book WHERE book_title =:title';
+    $query = 'SELECT book_id, book_title, author_id FROM book';
     $stmt = $db->prepare($query);
     $stmt->execute();
     $books = stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -51,47 +54,47 @@ if(isset($_GET['submit-search'])) { //name from button
         
     */
     
-}
+//}
 
 
 
 //display
 
-if(isset($_GET['submit-display'])) {
-        $pdoQuery = "SELECT * FROM book";
-        $pdoQuery_run = $db->query($pdoQuery);
-        
-        if($pdoQuery_run) {
-            
-            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5">
-                <tr style ="color:blue;">
-                    <td> ID </td>
-                    <td> Book Title </td>
-                    <td> Author Id </td>
-
-                </tr>
-            
-            
-            ';
-            while($row = $pdoQuery_run->fetch(PDO::FETCH_OBJ)){
-            //foreach($pdoQuery_run as $row)   
-                
-            echo ' <tr>
-                        <th> ' .$row->book_id. '</th>
-                        <th> ' .$row->book_title. '</th>
-                        <th> ' .$row->author_id. '</th>
-                    </tr>
-                    
-            ';
-            
-            }
-            echo '</table>';
-            
-            
-        }else{
-            echo'<script> alert("No record/data found")</script>';
-        }
-    }
+//if(isset($_GET['submit-display'])) {
+//        $pdoQuery = "SELECT * FROM book";
+//        $pdoQuery_run = $db->query($pdoQuery);
+//        
+//        if($pdoQuery_run) {
+//            
+//            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5">
+//                <tr style ="color:blue;">
+//                    <td> ID </td>
+//                    <td> Book Title </td>
+//                    <td> Author Id </td>
+//
+//                </tr>
+//            
+//            
+//            ';
+//            while($row = $pdoQuery_run->fetch(PDO::FETCH_OBJ)){
+//            //foreach($pdoQuery_run as $row)   
+//                
+//            echo ' <tr>
+//                        <th> ' .$row->book_id. '</th>
+//                        <th> ' .$row->book_title. '</th>
+//                        <th> ' .$row->author_id. '</th>
+//                    </tr>
+//                    
+//            ';
+//            
+//            }
+//            echo '</table>';
+//            
+//            
+//        }else{
+//            echo'<script> alert("No record/data found")</script>';
+//        }
+  //  }
     
 
 //foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
@@ -109,6 +112,7 @@ if(isset($_GET['submit-display'])) {
     <?php include('templates/header.php');?>
     
 
+<!--
     <main>
         <h1>Family Library</h1>
         <h2>Search</h2>
@@ -116,13 +120,14 @@ if(isset($_GET['submit-display'])) {
         <form action ="search2.php" method="GET">
             <div class ="text-input">
                 <label>Id</label>
-                <input type="text" name="id" value= "<?php echo $id; ?>" placeholder="Please type the book title or author">
+                <input type="text" name="id" value= "" placeholder="Please type the book title or author">
             </div>
             
             <div class ="text-input">
                 <label>Book Title</label>
-                <input type="text" name="title" value= "<?php echo $title; ?>" placeholder="Please type the book title or author">
+                <input type="text" name="title" value= "" placeholder="Please type the book title or author">
             </div>
+-->
             
             <!--<div class ="text-input">
                 <label>Author</label>
@@ -158,8 +163,10 @@ if(isset($_GET['submit-display'])) {
                 <input type="submit" value="display" name="submit-display">
              </div>   
                 
+<!--
         </form>
         </div>
+-->
             <h1>Books</h1>
                 <ul>
                     <?php
@@ -180,54 +187,9 @@ if(isset($_GET['submit-display'])) {
         
         </div>
         
-        <div class="searchcontainer">
-        <h4>Books</h4>
-        <h5>All books in database</h5>
-            
-            <?php
-                foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
-                    {   echo '<div class="box">';
-                        echo '<p> Book: ' . $row['book_title'] . '</p>';
-                        echo '<p> Page Count: ' . $row['book_page_count'] . '</p>';
-                        echo '<p> Author: ' . $row['author_id'] . '</p>';
-
-                        echo '</div>';
-}
-            
-            
-            
-            
-                $sql ="SELECT * FROM book";
-                $result = pg_query($db, $sql);
-                $queryResults = pg_num_rows($result);
-            
-                if ($queryResults > 0) {
-                    while ($row = pg_fetch_assoc($result)) {
-                        echo "<div class='box'> 
-                            <p> ".$row['book_title']." </p>
-                            <p> ".$row['author_id']." </p>
-                            <p> ".$row['book_page_count']." </p>
-                        </div>";
-                    }
-                }
-                
-            ?>      
         
-        </div>
-      
-    </main>
   
     <?php include('templates/footer.php');?>
     
 
 </html
-    
- <?php
-    
-        
-        
-        
-        
-        
-    
-  ?>  
