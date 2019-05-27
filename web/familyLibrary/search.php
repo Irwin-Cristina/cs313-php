@@ -28,13 +28,13 @@ $author = "";
 
 
 
-
+//
 if(isset($_GET['submit-search'])) { //name from button
     $id=$_GET['id'];   //id from from input
         
-    $pdoQuery = "SELECT * FROM book WHERE book_id =:id";
+    $pdoQuery = "SELECT * FROM book WHERE book_title =:title";
     $pdoQuery_run = $db->prepare($pdoQuery);
-    $pdoQuery_exec = $pdoQuery_run->execute(array(":id=>$id"));
+    $pdoQuery_exec = $pdoQuery_run->execute(array(":title=>$title"));
     
     if($pdoQuery_exec) {
         if($pdoQuery_run->rowcount()>0) {
@@ -123,10 +123,10 @@ if(isset($_GET['submit-display'])) {
                 <input type="text" name="title" value= "<?php echo $title; ?>" placeholder="Please type the book title or author">
             </div>
             
-            -<div class ="text-input">
+            <!--<div class ="text-input">
                 <label>Author</label>
-                <input type="text" name="author" value="<?php echo $author; ?>" placeholder="Please type the author's name">
-            </div>
+                <input type="text" name="author" value="" placeholder="Please type the author's name">
+            </div>-->
            
             <!--<div class ="text-input">
             <label for="genre_name">Genre</label>
