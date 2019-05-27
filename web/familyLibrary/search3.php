@@ -17,10 +17,9 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Books</h1>
     <ul>
 <?php
-    var_dump($books);
+    
         
     foreach($books as $book){
-        var_dump($book);
         
         $id = $book['book']['book_id'];
         $title = $book['book.book_title'];
