@@ -39,10 +39,13 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $content = $note_row['content'];
         echo "<p>$content</p";
         echo "</br>";
-        
     }
-    
-    
     ?>
+    
+    <form mehtod="post" action="insert_note.php">
+        <input type="hidden" name="course_id" value="<?php echo $course_id; ?>">
+        <textarea name="note_content"></textarea>
+        <input type="submit" value="Create note">
+    </form>
 </body>
 </html>
