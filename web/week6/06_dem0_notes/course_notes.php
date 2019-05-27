@@ -9,9 +9,9 @@ $course_id = htmlspecialchars($_GET['course_id']);
 require('dbconnect.php');
 $db = get_db();
 //SELECT c.code ,c.name, n.content FROM note n JOIN course c ON n.course_id = c.id WHERE c.id = 1;
-
-$stmt = $db->prepare('SELECT c.code, c.name, n.content FROM note n JOIN course c ON n.course_id = c.id WHERE c.id=:id
-');
+$query = 'SELECT c.code, c.name, n.content FROM note n JOIN course c ON n.course_id = c.id WHERE c.id=:id
+';
+$stmt = $db->prepare($query);
 $stmt->bindValue(':id', $course_id, PDO::PARAM_INT);
 //$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();

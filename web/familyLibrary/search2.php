@@ -25,7 +25,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $title = $book['book_title'];
         $count = $book['book_page_count'];
         
-        echo "<li><p>$title- $count</p></li>";
+        echo "<li><p><a href='search3.php?course_id=$id'>$title-$count</p></li>";
         
     }    
         ?>
