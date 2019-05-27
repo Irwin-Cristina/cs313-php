@@ -15,14 +15,16 @@ $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $course_id, PDO::PARAM_INT);
 //$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
+
+
 $note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+//
 $course_code = $notes_rows[0]['code'];
-
-$query = 'SELECT id, code, name FROM course';
-$stmt = $db->prepare($query);
-$stmt->execute();
-$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//
+//$query = 'SELECT id, code, name FROM course';
+//$stmt = $db->prepare($query);
+//$stmt->execute();
+//$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
