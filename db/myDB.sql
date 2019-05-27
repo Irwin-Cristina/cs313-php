@@ -120,6 +120,10 @@ VALUES(DEFAULT, 'Harry Potter and the Sorcerer''s Stone', 309, 'Summary placehol
 
 INSERT INTO book(book_id, book_title, book_page_count, book_summary, author_id, location_id, user_id, borrower_id, status_id) 
 VALUES(DEFAULT, 'The Missing Piece', 112, 'Summary placeholder',2 ,2, 5, NULL, 1);	
+
+INSERT INTO book(book_id, book_title, book_page_count, book_summary, author_id, location_id, user_id, borrower_id, status_id) 
+VALUES(DEFAULT, 'Harry Potter and the Deathly Hallows', 711, 'Summary placeholder',1 ,1, 2, NULL, 1);	
+
 	
 	
 CREATE TABLE book_genres (
@@ -148,7 +152,11 @@ INNER JOIN author USING (author_id);
 
 SELECT * FROM author a JOIN book b ON  a.author_id = b.author_id;
 SELECT author_name FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_name ='JK Rowling';
-SELECT author_name FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_id= 1;
+SELECT author_name FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_id=1;
+
+SELECT DISTINCT a.author_name, a.author_id FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_id=1;
+SELECT a.author_name, a.author_id FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_id=1;
+
 
 
 ALTER TABLE borrower ADD COLUMN phone varchar(30);

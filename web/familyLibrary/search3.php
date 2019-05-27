@@ -22,10 +22,10 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Books</title>
+    <title>Book Deatails</title>
 </head>
 <body>
-    <h1>Books</h1>
+    <h1>Book Details</h1>
     <ul>
 <?php
     //var_dump($books);
