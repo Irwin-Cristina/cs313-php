@@ -38,6 +38,7 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
     {
         $content = $note_row['content'];
         echo "<p>$content</p";
+        echo "</br>";
         
     }
     
