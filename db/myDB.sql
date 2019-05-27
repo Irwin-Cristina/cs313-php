@@ -138,22 +138,18 @@ INSERT INTO book_genres(book_id, genre_id) VALUES (3,10);
 INSERT INTO book_genres(book_id, genre_id) VALUES (4,10);
 INSERT INTO book_genres(book_id, genre_id) VALUES (4,12);
 
-
-
-
-SELECT
-	a.book_id book_id,
-	a.author_id author_id,
-	b.author_id author_id,
-	b.author_name
-	FROM book a 
-	INNER JOIN a.author_id = b.author_id;
+--SELECT for Search
 	
 SELECT
  *
 FROM
  book
 INNER JOIN author USING (author_id);	
+
+SELECT * FROM author a JOIN book b ON  a.author_id = b.author_id;
+SELECT author_name FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_name ='JK Rowling';
+SELECT author_name FROM author a JOIN book b ON a.author_id = b.author_id WHERE a.author_id= 1;
+
 
 ALTER TABLE borrower ADD COLUMN phone varchar(30);
 INSERT INTO borrower(phone) VALUES('801-766-0642') WHERE borrower_id = 1;
