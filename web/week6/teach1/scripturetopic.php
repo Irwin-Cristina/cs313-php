@@ -51,12 +51,16 @@ try
                 //$stmtTopics = $db->prepare('SELECT name FROM topic t'
                  //   . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
                   //  . ' WHERE st.scripture_id = :scriptureId');
+                
                 $stmtTopics->bindValue(':scriptureId', $scripture['id']);
                 $stmtTopics->execute();
+                $topics=$stmtTopics->fetch(PDO::FETCH_ASSOC);
                 // Go through each topic in the result
-                while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+                
+                //while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+                foreach($topics as $topic)
                 {
-                    echo $topicRow['name'] . ' ';
+                    echo $topic['name'] . ' ';
                 }
                 echo '</p>';
 	}
