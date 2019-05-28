@@ -13,6 +13,7 @@ $verse = htmlspecialchars($_POST['txtVerse']);
 $content = htmlspecialchars($_POST['txtContent']);
 $topicIds = htmlspecialchars($_POST['chkTopics']);
 
+ 
  echo "book=$book\n";
  echo "chapter=$chapter\n";
  echo "verse=$verse\n";
