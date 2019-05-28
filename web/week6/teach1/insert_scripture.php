@@ -56,20 +56,6 @@ $db = get_dbconnection();
 		      // put a newline out there just to make our "view source" experience better
 		      echo "\n";
             
-            
-        //$query = 'SELECT id, name FROM topic'; 
-        //$stmt = $db->($query); 
-        //$stmt->execute();
-        //$topics = $stmt->fetch(PDO::FETCH_ASSOC);    
-        
-            //foreach($topics as $topic)  {
-                //$id = $topic['id'];
-                //$name = $topic['name'];
-
-                //echo "<input type='checkbox' name='checkTopics[]' id='checkTopics$id' value='$id'>";
-
-                //echo "<label='checkTopics$id'>$name</label><br>";
-                //echo"<div></div>"
                 }  
         }
         catch (PDOException $ex)
