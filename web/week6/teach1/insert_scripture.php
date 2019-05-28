@@ -38,8 +38,10 @@ $db = get_dbconnection();
             $statement = $db->prepare($query);
             //$statement = $db->prepare('SELECT id, name FROM topic');
             $statement->execute();
+            $topics = $statement->fetchAll(PDO::FETCH_ASSOC);
             
-            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+            //while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+            foreach($topics as $row)
 	       {
 		      $id = $row['id'];
 		      $name = $row['name'];
