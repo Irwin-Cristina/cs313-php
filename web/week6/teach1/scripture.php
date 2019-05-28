@@ -38,7 +38,7 @@ $db = get_dbconnection();
 //$db = get_dbconnection();
 //SELECT id, chapter, verse, content from scriptures
 
-$query='SELECT * FROM scriptures';
+$query='id, chapter, verse, content from scriptures';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);

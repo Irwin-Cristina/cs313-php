@@ -10,7 +10,7 @@ $book_id=htmlspecialchars($_GET['id']);
 require_once ('connection1.php');
 $db = get_dbconnection();
 
-
+//query
 
 
 ?>
