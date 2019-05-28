@@ -38,9 +38,9 @@ $db = get_dbconnection();
 //$db = get_dbconnection();
 //SELECT id, chapter, verse, content from scriptures
 
-$query='SELECT * FROM scriptures WHERE id =:id';
-$stmt->bindValue(':id', $book_id, PDO::PARAM_INT);
-//$query='SELECT id, book, chapter, verse, content FROM scriptures';
+//$query='SELECT * FROM scriptures WHERE id =:id';
+//$stmt->bindValue(':id', $book_id, PDO::PARAM_INT);
+$query='SELECT id, book, chapter, verse, content FROM scriptures';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
