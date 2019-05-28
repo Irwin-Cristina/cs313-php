@@ -29,14 +29,14 @@ try
             //$query = 'SELECT id, book, chapter, verse, content FROM scriptures';
             //$stmt = $db->prepare($query);
     
-            $statement = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
-            $statement->execute();
+            $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
+            $stmt->execute();
             //$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             
             //while ($row = $scriptures)
             //foreach($scriptures as $scripture)
-            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
                 echo '<p>';
                 echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
