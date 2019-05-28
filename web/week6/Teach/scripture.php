@@ -35,7 +35,7 @@ foreach ($db->query('SELECT username, password FROM note_user') as $row)
 //$db = get_dbconnection();
 //SELECT id, chapter, verse, content from scriptures
 
-$query='SELECT id, book, chapter, verse, content FROM scriptures';
+$query='SELECT * FROM scriptures';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -59,7 +59,7 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Scriptures</h1>
     <ul>
         <?php
-        var_dump($sriptures);
+        var_dump($scriptures);
         foreach($sriptures as $scripture)
         {
             var_dump($sripture);
