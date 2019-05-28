@@ -34,7 +34,7 @@ try
             
             //while ($row = $scriptures)
             //foreach($scriptures as $scripture)
-            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
                 {
                 
                 echo '<p>';
