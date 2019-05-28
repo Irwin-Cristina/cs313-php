@@ -86,12 +86,16 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         <label>Book</label>
         <input type="text" name="book" value="">
+        <br>
         <label>Chapter</label>
         <input type="text" name="chapter" value="">
+        <br>
         <label>Verse</label>
         <input type="text" name="verse" value="">
+        <br>
         <label>Content</label>
         <textarea name="content"></textarea>
+        <br>
         <input type="submit" value="Insert scripture">
     </form>
 </body>
