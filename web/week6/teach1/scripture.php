@@ -64,13 +64,13 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
         {
             //var_dump($scripture);
             
-            $id = scripture['id'];
-            $book = scripture['book'];
-            $chapter = scripture['chapter'];
-            $verse = scripture['verse'];
-            $content = scripture['content'];
+            $id = $scripture['id'];
+            $book = $scripture['book'];
+            $chapter = $scripture['chapter'];
+            $verse = $scripture['verse'];
+            $content = $scripture['content'];
 
-            echo "<li><p><a href=scripture_notes.php?scripture_id=$id'><span>$book</span>-$chapter-$verse</p></li>";
+            echo "<li><p><span>$book</span>-$chapter-$verse</p></li>";
         }
 
 
