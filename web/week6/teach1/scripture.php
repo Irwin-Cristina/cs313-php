@@ -73,7 +73,7 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $verse = $scripture['verse'];
             $content = $scripture['content'];
 
-            echo "<li><p><span>$book</span>-$chapter-$verse</p></li>";
+            echo "<li><p><a href='scripture_notes.php?scripture_id=$id'><span>$book</span>-$chapter-$verse</p></li>";
         }
 
 
