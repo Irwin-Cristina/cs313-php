@@ -5,12 +5,12 @@ require_once ('connection.php');
 $db = get_dbconnection();
 
 
-if (!isset($_GET['id'])) 
+/*if (!isset($_GET['id'])) 
 {
     die("Error, book id not specified. . .");
 }
 
-$book_id=htmlspecialchars($_GET['id']);
+$book_id=htmlspecialchars($_GET['id']);*/
 
 //try
 //{
