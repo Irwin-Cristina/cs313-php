@@ -1,7 +1,7 @@
 <?php
 //connection
 //connection
-require_once 'connection.php';
+require_once ('connection.php');
 $db = get_dbconnection();
 
 //try
