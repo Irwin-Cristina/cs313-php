@@ -31,12 +31,12 @@ try
     
             //$stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
             $stmt->execute();
-            //$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             
-            //while ($row = $scriptures)
+            while ($row = $scriptures)
             //foreach($scriptures as $scripture)
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+            //while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
                 echo '<p>';
                 echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
