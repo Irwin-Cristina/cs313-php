@@ -42,10 +42,15 @@ try
                 echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
                 echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
                 echo 'Topics: ';
+                
+                $query = 'SELECT name FROM topic t INNER JOIN scripture_topic st ON st.scripture_id = t.id WHERE st.scripture_id = :scriptureId';
+                $stmtTopics = $db->prepare($query);
+                
                 // get the topics now for this scripture
-                $stmtTopics = $db->prepare('SELECT name FROM topic t'
-                    . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
-                    . ' WHERE st.scripture_id = :scriptureId');
+                
+                //$stmtTopics = $db->prepare('SELECT name FROM topic t'
+                 //   . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
+                  //  . ' WHERE st.scripture_id = :scriptureId');
                 $stmtTopics->bindValue(':scriptureId', $row['id']);
                 $stmtTopics->execute();
                 // Go through each topic in the result
