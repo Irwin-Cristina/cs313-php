@@ -59,8 +59,8 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Scriptures</h1>
     <ul>
         <?php
-        var_dump($scriptures);
-        foreach($sriptures as $scripture)
+        //var_dump($scriptures);
+        foreach($scriptures as $scripture)
         {
             //var_dump($scripture);
             
