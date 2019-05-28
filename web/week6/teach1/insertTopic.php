@@ -45,11 +45,11 @@ $scriptureId = $db->lastInsertId("scriptures_id_seq");
 foreach($topicIds as $topicId) {
     echo "scriptureId: $scriptureId, topicId: $topicId";
     //query
-    $query = 'INSERT INTO scripture_topic(scripture_id, topic_id) VALUES(:scriptureId, :topicId)';
+    $query = 'INSERT INTO scripture_topic(scripture_id, topic_id) VALUES(:scripture_id, :topic_id)';
     $stmt = $db->prepare($query);
     //bind values
-    $stmt->bindValue(':scriptureId', $scriptureId);
-    $stmt->bindValue(':topicId', $topicId);
+    $stmt->bindValue(':scripture_id,', $scriptureId);
+    $stmt->bindValue(':topic_id', $topicId);
     $stmt->execute();
     
     }
