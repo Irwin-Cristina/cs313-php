@@ -62,7 +62,7 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-header("Location: scripturetopic.phpp");
+header("Location: scripturetopic.php");
 die();
 
 ?>
