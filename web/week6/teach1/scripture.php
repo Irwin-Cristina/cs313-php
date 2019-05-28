@@ -38,8 +38,9 @@ $db = get_dbconnection();
 //$db = get_dbconnection();
 //SELECT id, chapter, verse, content from scriptures
 
-//$query='SELECT * FROM scriptures';
-$query='SELECT id, book, chapter, verse, content FROM scriptures';
+$query='SELECT * FROM scriptures WHERE id =:id';
+$stmt->bindValue(':id', $book_id, PDO::PARAM_INT);
+//$query='SELECT id, book, chapter, verse, content FROM scriptures';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -76,9 +77,19 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             echo "<li><p><a href='scripture_content.php?id=$id'><span>$book</span>-$chapter-$verse</p></li>";
         }
-
-
         ?>
     </ul>
+    
+    <form method="post" action="insert_scripture.php">
+        <input type="hidden" name="book_id" value="<?php echo $book_id; ?>">
+        
+        <input type="text" name="book" value="<?php echo $book; ?>">
+        <input type="text" name="chapter" value="<?php echo $chapter; ?>">
+        <input type="text" name="verse" value="<?php echo $verse; ?>">
+        <input type="text" name="content" value="<?php echo $content; ?>">
+
+        <textarea name="content"></textarea>
+        <input type="submit" value="Insert scripture">
+    </form>
 </body>
 </html>
