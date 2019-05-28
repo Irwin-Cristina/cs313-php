@@ -62,7 +62,7 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
         var_dump($scriptures);
         foreach($sriptures as $scripture)
         {
-            var_dump($scripture);
+            //var_dump($scripture);
             
             $id = scripture['id'];
             $book = scripture['book'];
