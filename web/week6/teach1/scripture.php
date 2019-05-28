@@ -81,13 +81,15 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </ul>
     
     <form method="post" action="insert_scripture.php">
-        <input type="hidden" name="book_id" value="<?php echo $book_id; ?>">
+        <input type="hidden" name="book_id" value="">
         
-        <input type="text" name="book" value="<?php echo $book; ?>">
-        <input type="text" name="chapter" value="<?php echo $chapter; ?>">
-        <input type="text" name="verse" value="<?php echo $verse; ?>">
-        <input type="text" name="content" value="<?php echo $content; ?>">
-
+        <label>Book</label>
+        <input type="text" name="book" value="">
+        <label>Chapter</label>
+        <input type="text" name="chapter" value="">
+        <label>Verse</label>
+        <input type="text" name="verse" value="">
+        <label>Content</label>
         <textarea name="content"></textarea>
         <input type="submit" value="Insert scripture">
     </form>
