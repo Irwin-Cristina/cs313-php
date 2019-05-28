@@ -34,8 +34,8 @@ try
             $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             
-            while ($row = $scriptures)
-            //foreach($scriptures as $scripture)
+           // while ($row = $scriptures)
+            foreach($scriptures as $row)
             //while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
                 echo '<p>';
