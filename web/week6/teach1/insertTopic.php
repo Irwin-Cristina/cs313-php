@@ -48,8 +48,8 @@ foreach($topicIds as $topicId) {
     $query = 'INSERT INTO scripture_topic(scripture_id, topic_id) VALUES(:scriptureId, :topicId)';
     $stmt = $db->prepare($query);
     //bind values
-    $stmt->bindValue(':scripture_id', $scriptureId);
-    $stmt->bindValue(':topic_id', $topicId);
+    $stmt->bindValue(':scriptureId', $scriptureId);
+    $stmt->bindValue(':topicId', $topicId);
     $stmt->execute();
     
     }

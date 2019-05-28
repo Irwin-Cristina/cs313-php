@@ -52,7 +52,7 @@ try
                  //   . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
                   //  . ' WHERE st.scripture_id = :scriptureId');
                 
-                $stmtTopics->bindValue(':scriptureId', $scripture['id']);
+                $stmtTopics->bindValue(':scriptureId', $scriptures['id']);
                 $stmtTopics->execute();
                 $topics=$stmtTopics->fetchAll(PDO::FETCH_ASSOC);
                 // Go through each topic in the result
