@@ -21,7 +21,6 @@ $db = get_dbconnection();
 
 <body>
     <h1>Scripture and Topic</h1>
-    <ul>
         <?php
         
       //call database to get scriptures
@@ -44,12 +43,12 @@ $db = get_dbconnection();
                 $verse = $scripture['verse'];
                 $content = $scripture['content'];
 
-                echo '<p>';
-                echo '<span>' . $book . ' ' . $chapter . ':';
-                echo $verse . '</span>' . '--' . $content;
-                echo '<br>';
-                echo 'Topics: ';
-       
+//                echo '<p>';
+//                echo '<span>' . $book . ' ' . $chapter . ':';
+//                echo $verse . '</span>' . '--' . $content;
+//                echo '<br>';
+//                echo 'Topics: ';
+                echo "<li><p><a href='scripture_content.php?id=$id'>$book-$chapter-$verse</a></p></li>";
                 }
             
             
@@ -69,9 +68,8 @@ $db = get_dbconnection();
 //        
 //        }
         ?>
-    </ul>
     
-    <form method="post" action="insert_scripture.php">
+    <!--<form method="post" action="insert_scripture.php">
         <input type="hidden" name="book_id" value="">
         
         <label>Book</label>
@@ -87,6 +85,6 @@ $db = get_dbconnection();
         <textarea name="content"></textarea>
         <br>
         <input type="submit" value="Insert scripture">
-    </form>
+    </form>-->
 </body>
 </html>
