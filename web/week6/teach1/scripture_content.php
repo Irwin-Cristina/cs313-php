@@ -36,7 +36,7 @@ $scriptures_id = $scriptures[0]['id'];
     <?php
         foreach($scriptures as $scripture)
         {
-            $content = "<span>" . $scripture['book'] . $scripture['chapter'] . $scripture['verse'] "</span>" . $scripture['content'];
+            $content = $scripture['book'] . $scripture['chapter'] . $scripture['verse'] . $scripture['content'];
 //            $id = $scripture['id'];
 //            $book = $scripture['book'];
 //            $chapter = $scripture['chapter'];
