@@ -26,10 +26,10 @@ $db = get_dbconnection();
 try
 {
             
-            //$query = 'SELECT id, book, chapter, verse, content FROM scriptures';
-            //$stmt = $db->prepare($query);
+            $query = 'SELECT id, book, chapter, verse, content FROM scriptures';
+            $stmt = $db->prepare($query);
     
-            $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
+            //$stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
             $stmt->execute();
             //$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
