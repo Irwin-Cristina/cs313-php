@@ -41,7 +41,7 @@ try
                 echo '<p>';
                 echo '<strong>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':';
                 echo $scripture['verse'] . '</strong>' . ' - ' . $scripture['content'];
-                echo 'Topics: ';
+                echo '<strong> Topics: </strong>';
                 
                 $query = 'SELECT name FROM topic t INNER JOIN scripture_topic st ON st.scripture_id = t.id WHERE st.scripture_id = :scriptureId';
                 $stmtTopics = $db->prepare($query);
@@ -60,7 +60,7 @@ try
                 //while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
                 foreach($topics as $topic)
                 {
-                    echo "<strong>" . $topic['name'] . ' ' . "</strong>";
+                    echo $topic['name'] . ' ';
                 }
                 echo '</p>';
 	}
