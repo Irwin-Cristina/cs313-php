@@ -26,8 +26,10 @@ $db = get_dbconnection();
 try
 {
             
-            $query = 'SELECT id, book, chapter, verse, content FROM scriptures';
-            $stmt = $db->prepare($query);
+            //$query = 'SELECT id, book, chapter, verse, content FROM scriptures';
+            //$stmt = $db->prepare($query);
+    
+            $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scripture');
             $stmt->execute();
             //$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -44,8 +46,8 @@ try
 		      // get the topics now for this scripture    
                 $stmtTopics = $db->prepare('SELECT name FROM topic t'
 			    . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
-                . '  WHERE st.scripture_id = :scriptureId');
-                $stmtTopics->bindValue(':scriptureId', $row['id']);
+                . '  WHERE st.scripture_id = :scripture_id');
+                $stmtTopics->bindValue(':scripture_id', $row['id']);
                 $stmtTopics->execute();
                 // Go through each topic in the result
                 
@@ -54,38 +56,17 @@ try
                         echo $topicRow['name'] . ' ';
                         
                     echo '</p>';
-               //assigns to variable
-//                $id = $scripture['id'];
-//                $book = $scripture['book'];
-//                $chapter = $scripture['chapter'];
-//                $verse = $scripture['verse'];
-//                $content = $scripture['content'];
-
-//                echo '<p>';
-//                echo '<span>' . $book . ' ' . $chapter . ':';
-//                echo $verse . '</span>' . '--' . $content;
-//                echo '<br>';
-//                echo 'Topics: ';
-                //echo "<li><p><a href='scripture_content.php?id=$id'>$book-$chapter-$verse</a></p></li>";
-                }
-            
-            
-        }
+               
+                    }
+            }
         
         
-//        foreach($scriptures as $scripture)
-//        {
-//            
-//            $id = $scripture['id'];
-//            $book = $scripture['book'];
-//            $chapter = $scripture['chapter'];
-//            $verse = $scripture['verse'];
-//            $content = $scripture['content'];
-//
-//            echo "<li><p><a href='scripture_content.php?id=$id'>$book-$chapter-$verse</a></p></li>";
-//        
+        catch (PDOException $ex)
+        {
+	       echo "Error with DB. Details: $ex";
+	       die();
         }
-        ?>
+?>
     </div>
     
     <!--<form method="post" action="insert_scripture.php">
