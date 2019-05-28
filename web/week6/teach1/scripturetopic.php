@@ -1,60 +1,30 @@
 <?php
 //connection
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
-
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
-foreach ($db->query('SELECT username, password FROM note_user') as $row)
-{
- echo 'user: ' . $row['username'];
- echo ' password: ' . $row['password'];
- echo '<br/>';
-}
-//connection
-//require_once ('connection.php');
-//$db = get_dbconnection();
-
-
-
+require_once ('connection.php');
+$db = get_dbconnection();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Scriptures and topics</title>
 </head>
+<!--
 <style>
     span {
             font-weight: bold;
         }
     
 </style>
+-->
 
 <body>
-    <div>
-    <h1>Scripture and Topic</h1>
-        <?php
+<div>
+<h1>Scripture and Topic</h1>
+<?php
         
       //call database to get scriptures
-        try
-        {
+try
+{
             
             $query = 'SELECT id, book, chapter, verse, content FROM scriptures';
             $stmt = $db->prepare($query);
@@ -114,7 +84,7 @@ foreach ($db->query('SELECT username, password FROM note_user') as $row)
 //
 //            echo "<li><p><a href='scripture_content.php?id=$id'>$book-$chapter-$verse</a></p></li>";
 //        
-//        }
+        }
         ?>
     </div>
     
