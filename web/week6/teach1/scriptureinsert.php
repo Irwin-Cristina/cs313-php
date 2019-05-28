@@ -1,6 +1,6 @@
 <?php
 //connection
-require_once 'connection1.php';
+require_once 'connection.php';
 $db = get_dbconnection();
 
 
