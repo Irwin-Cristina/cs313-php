@@ -25,12 +25,18 @@ $scriptures_id = $scriptures[0]['id'];
 <head>
     <title>Scripture detail</title>
 </head>
+<style>
+    span {
+            font-weight: bold;
+        }
+    
+</style>
 <body>
     <h1>Scripture and verse for <?php echo $scriptures_id?></h1>
     <?php
         foreach($scriptures as $scripture)
         {
-            $content = $scripture['book'] . $scripture['chapter'] . $scripture['verse'] . $scripture['content'];
+            $content = "<span>$scripture['book'] . $scripture['chapter'] . $scripture['verse'] . </span>" $scripture['content'];
 //            $id = $scripture['id'];
 //            $book = $scripture['book'];
 //            $chapter = $scripture['chapter'];
