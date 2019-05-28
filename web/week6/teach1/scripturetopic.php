@@ -60,7 +60,7 @@ try
                 //while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
                 foreach($topics as $topic)
                 {
-                    echo $topic['name'] . ' ';
+                    echo "<strong>" . $topic['name'] . ' ' . "</strong>";
                 }
                 echo '</p>';
 	}
