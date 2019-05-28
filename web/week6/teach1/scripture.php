@@ -75,7 +75,8 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $verse = $scripture['verse'];
             $content = $scripture['content'];
 
-            echo "<li><p><a href='scripture_content.php?id=$id'><span>$book</span>-$chapter-$verse></p></li>";
+            echo "<li><p><a href='scripture_content.php?id=$id'>";
+            //echo "<li><p><a href='course_notes.php?course_id=$id'>$code-$name</p></li>";
         }
         ?>
     </ul>
