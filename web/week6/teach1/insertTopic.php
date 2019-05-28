@@ -28,7 +28,7 @@ $db = get_dbconnection();
 
 try {
 //query
-$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
+$query = 'INSERT INTO scriptures(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
 $statement = $db->prepare($query);
 
 //bind variables to values
