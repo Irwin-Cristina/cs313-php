@@ -54,7 +54,7 @@ try
                 
                 $stmtTopics->bindValue(':scriptureId', $scripture['id']);
                 $stmtTopics->execute();
-                $topics=$stmtTopics->fetch(PDO::FETCH_ASSOC);
+                $topics=$stmtTopics->fetchAll(PDO::FETCH_ASSOC);
                 // Go through each topic in the result
                 
                 //while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))

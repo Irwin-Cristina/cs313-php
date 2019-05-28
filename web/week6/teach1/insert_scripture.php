@@ -15,7 +15,7 @@ $db = get_dbconnection();
     <form id="mainForm" method="POST" action="insertTopic.php">
         
         <label for="txtBooK">Book</label>
-        <input type="text" name="book" id="book">
+        <input type="text" name="book" id="txtBook">
         <br>
         <input type="text" id="txtChapter" name="txtChapter">
 	   <label for="txtChapter">Chapter</label>
