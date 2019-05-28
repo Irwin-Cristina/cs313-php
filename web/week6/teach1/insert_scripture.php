@@ -15,7 +15,7 @@ $db = get_dbconnection();
     <form id="mainForm" method="POST" action="insertTopic.php">
         
         <label for="txtBooK">Book</label>
-        <input type="text" name="book" id="book" value="book">
+        <input type="text" name="book" id="book">
         <br>
         <input type="text" id="txtChapter" name="txtChapter">
 	   <label for="txtChapter">Chapter</label>
@@ -34,7 +34,9 @@ $db = get_dbconnection();
         <?php
         //generate checkboxes
         try {
-            $statement = $db->prepare('SELECT id, name FROM topic');
+            $query = 'SELECT id, name FROM topic';
+            $statement = $db->($query);
+            //$statement = $db->prepare('SELECT id, name FROM topic');
             $statement->execute();
             
             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
