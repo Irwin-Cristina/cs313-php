@@ -29,38 +29,33 @@ try
             //$query = 'SELECT id, book, chapter, verse, content FROM scriptures';
             //$stmt = $db->prepare($query);
     
-            $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scripture');
-            $stmt->execute();
+            $statement = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
+            $statement->execute();
             //$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             
             //while ($row = $scriptures)
             //foreach($scriptures as $scripture)
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-                {
-                
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+            {
                 echo '<p>';
                 echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
                 echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
                 echo 'Topics: ';
-		      // get the topics now for this scripture    
+                // get the topics now for this scripture
                 $stmtTopics = $db->prepare('SELECT name FROM topic t'
-			    . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
-                . '  WHERE st.scripture_id = :scripture_id');
-                $stmtTopics->bindValue(':scripture_id', $row['id']);
+                    . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
+                    . ' WHERE st.scripture_id = :scriptureId');
+                $stmtTopics->bindValue(':scriptureId', $row['id']);
                 $stmtTopics->execute();
                 // Go through each topic in the result
-                
-                    while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
-                    {
-                        echo $topicRow['name'] . ' ';
-                        
-                    echo '</p>';
-               
-                    }
-            }
-        
-        
+                while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+                {
+                    echo $topicRow['name'] . ' ';
+                }
+                echo '</p>';
+	}
+}
         catch (PDOException $ex)
         {
 	       echo "Error with DB. Details: $ex";
