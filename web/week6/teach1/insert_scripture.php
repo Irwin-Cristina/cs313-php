@@ -35,16 +35,16 @@ $db = get_dbconnection();
         //generate checkboxes
         try {
             $query = 'SELECT id, name FROM topic';
-            $statement = $db->prepare($query);
+            $stmt = $db->prepare($query);
             //$statement = $db->prepare('SELECT id, name FROM topic');
-            $statement->execute();
-            $topics = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             //while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-            foreach($topics as $row)
+            foreach($topics as $topic)
 	       {
-		      $id = $row['id'];
-		      $name = $row['name'];
+		      $id = $topic['id'];
+		      $name = $topic['name'];
 		      // Notice that we want the value of the checkbox to be the id of the label
 		      echo "<input type='checkbox' name='chkTopics[]' id='chkTopics$id' value='$id'>";
 		      // Also, so they can click on the label, and have it select the checkbox,
