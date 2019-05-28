@@ -11,10 +11,12 @@ require_once ('connection.php');
 $db = get_dbconnection();
 
 //query
-$query = 'SELECT id, book, chapter, verse, content FROM scriptures';
+$query = 'SELECT * FROM scriptures WHERE id =:id';
 $stmt = $db->prepare($query);
+$stmt->bindValue(':id', $book_id, PDO::PARAM_INT);
 $stmt->execute();
 $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$scriptures_id = $scriptures[0]['id'];
 
 
 ?>
@@ -24,19 +26,21 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Scripture detail</title>
 </head>
 <body>
-    <h1>Scripture and verse</h1>
+    <h1>Scripture and verse for <?php echo $scriptures_id?></h1>
     <?php
         foreach($scriptures as $scripture)
         {
-            $id = $scripture['id'];
-            $book = $scripture['book'];
-            $chapter = $scripture['chapter'];
-            $verse = $scripture['verse'];
-            $content = $scripture['content'];
-            
-            
-        echo '<br><strong>' . $book . ' ' . $chapter 
-			  . ':' . $verse . '</strong> - ' . $content;
+            $content = $scripture['book'] . $scripture['chapter'] . $scripture['verse'] . $scripture['content'];
+//            $id = $scripture['id'];
+//            $book = $scripture['book'];
+//            $chapter = $scripture['chapter'];
+//            $verse = $scripture['verse'];
+//            $content = $scripture['content'];
+//            
+           echo "<p>$content</p";
+           echo "</br>";  
+       // echo '<br><strong>' . $book . ' ' . $chapter 
+			  //. ':' . $verse . '</strong> - ' . $content;
         
         }
     ?>
