@@ -29,15 +29,15 @@ $db = get_dbconnection();
 try {
 //query
 $query = 'INSERT INTO scriptures(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
-$statement = $db->prepare($query);
+$stmt = $db->prepare($query);
 
 //bind variables to values
-$statement->bindValue(':book', $book);
-$statement->bindValue(':chapter', $chapter);
-$statement->bindValue(':verse', $verse);
-$statement->bindValue(':content', $content);
+$stmt->bindValue(':book', $book);
+$stmt->bindValue(':chapter', $chapter);
+$stmt->bindValue(':verse', $verse);
+$stmt->bindValue(':content', $content);
 
-$statement->execute();
+$stmt->execute();
 
 $scriptureId = $db->lastInsertId("scriptures_id_seq");
 
@@ -45,11 +45,11 @@ foreach($topicIds as $topicId) {
     echo "scriptureId: $scriptureId, topicId: $topicId";
     //query
     $query = 'INSERT INTO scripture_topic(scripture_id, topic_id) VALUES(:scriptureId, :topicId)';
-    $statement = $db->prepare($query);
+    $stmt = $db->prepare($query);
     //bind values
-    $statement->bindValue(':scripture_id', $scriptureId);
-    $statement->bindValue(':topic_id', $topicId);
-    $statement->execute();
+    $stmt->bindValue(':scripture_id', $scriptureId);
+    $stmt->bindValue(':topic_id', $topicId);
+    $stmt->execute();
     
     }
     
