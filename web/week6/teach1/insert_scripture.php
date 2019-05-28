@@ -34,8 +34,8 @@ $db = get_dbconnection();
         <?php
         //generate checkboxes
         try {
-            $query = 'SELECT id, name FROM topic';
-            $statement = $db->($query);
+            //$query = 'SELECT id, name FROM topic';
+            //$statement = $db->($query);
             //$statement = $db->prepare('SELECT id, name FROM topic');
             $statement->execute();
             
