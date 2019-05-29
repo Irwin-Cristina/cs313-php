@@ -17,7 +17,7 @@ $book = htmlspecialchars($_POST['txtBook']);
 $chapter = htmlspecialchars($_POST['txtChapter']);
 $verse = htmlspecialchars($_POST['txtVerse']);
 $content = htmlspecialchars($_POST['txtContent']);
-$topic_ids = htmlspecialchars($_POST['chkTopics[]']);
+$topic_ids = htmlspecialchars($_POST['chkTopics']);
 //$topic_ids = htmlspecialchars($_POST['chkTopics']);
 
  
@@ -25,7 +25,7 @@ $topic_ids = htmlspecialchars($_POST['chkTopics[]']);
  echo "chapter=$chapter\n";
  echo "verse=$verse\n";
  echo "content=$content\n";
- echo "topic=$topic_ids\n";
+ //echo "topic=$topic_ids\n";
 
 //connection
 require_once ('connection.php');
@@ -56,6 +56,7 @@ foreach($topic_ids as $topic_id) {
     echo "scripture_id: $scripture_id, topic_id: $topic_id";
     //query
     $query = 'INSERT INTO scripture_topic(scripture_id, topic_id) VALUES(:scripture_id, :topic_id)';
+    //prepare first statement
     $stmt = $db->prepare($query);
     //bind values
     $stmt->bindValue(':scripture_id,', $scripture_id);
@@ -73,8 +74,8 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-//header("Location: scripture_topic.php");
-//die();
+header("Location: scripture_topic.php");
+die();
 
 ?>
 <!DOCTYPE html>
