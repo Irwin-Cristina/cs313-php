@@ -19,6 +19,7 @@ $topic_ids = htmlspecialchars($_POST['chkTopics']);
  echo "chapter=$chapter\n";
  echo "verse=$verse\n";
  echo "content=$content\n";
+ echo "topic=$topic_ids\n";
 
 //connection
 require_once ('connection.php');
