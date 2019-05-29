@@ -13,18 +13,18 @@
     
 
 //variables from POST
-$book = htmlspecialchars($_POST['txtBook']);
-$chapter = htmlspecialchars($_POST['txtChapter']);
-$verse = htmlspecialchars($_POST['txtVerse']);
-$content = htmlspecialchars($_POST['txtContent']);
-$topic_ids = htmlspecialchars($_POST['chkTopics']);
+$book = $_POST['txtBook'];
+$chapter = $_POST['txtChapter'];
+$verse = $_POST['txtVerse'];
+$content = $_POST['txtContent'];
+$topic_ids = $_POST['chkTopics'];
 //$topic_ids = htmlspecialchars($_POST['chkTopics']);
 
  
- echo "book=$book\n";
- echo "chapter=$chapter\n";
- echo "verse=$verse\n";
- echo "content=$content\n";
+ //echo "book=$book\n";
+ //echo "chapter=$chapter\n";
+ //echo "verse=$verse\n";
+ //echo "content=$content\n";
  //echo "topic=$topic_ids\n";
 
 //connection
