@@ -2,14 +2,14 @@
 
 
 
-    if(isset($_POST['submit'])) {
+    /*if(isset($_POST['submit'])) {
         if(!empty($_POST['chkTopics[]'])){
             foreach($_POST['chkTopics'] as $selected){
                 echo $selected."<br>";
             }
  
         }
-    }
+    }*/
     
 
 //variables from POST
