@@ -11,8 +11,8 @@ $book = htmlspecialchars($_POST['txtBook']);
 $chapter = htmlspecialchars($_POST['txtChapter']);
 $verse = htmlspecialchars($_POST['txtVerse']);
 $content = htmlspecialchars($_POST['txtContent']);
-//$topic_ids = htmlspecialchars($_POST['chkTopics[]']);
-$topic_ids = htmlspecialchars($_POST['chkTopics']);
+$topic_ids = htmlspecialchars($_POST['chkTopics[]']);
+//$topic_ids = htmlspecialchars($_POST['chkTopics']);
 
  
  echo "book=$book\n";
