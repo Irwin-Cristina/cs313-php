@@ -1,10 +1,16 @@
 <?php
 
 
-//if (!isset($_POST['txtBook']) && ($_POST['txtChapter']) && ($_POST['txtVerse']) && ($_POST['txtContent']) && ($_POST['chkTopics'])) 
-//{
-//    die("Error, missing information");
-//}
+
+    if(isset($_POST['submit'])) {
+        if(!empty($_POST['chkTopics[]'])){
+            foreach($_POST['chkTopics'] as $selected){
+                echo $selected."<br>";
+            }
+ 
+        }
+    }
+    
 
 //variables from POST
 $book = htmlspecialchars($_POST['txtBook']);
