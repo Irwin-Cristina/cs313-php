@@ -12,7 +12,7 @@ $db = get_dbconnection();
     
     <h1>Enter New Scripture and topics</h1>
     
-    <form id="mainForm" method="POST" action="insertTopic.php">
+    <form id="mainForm" method="POST" action="insert_topic.php">
         
         
         <input type="text" name="txtBook" id="txtBook">

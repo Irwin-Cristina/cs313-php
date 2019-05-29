@@ -50,7 +50,7 @@ try
                 
                 //$stmtTopics = $db->prepare('SELECT name FROM topic t'
                  //   . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
-                  //  . ' WHERE st.scripture_id = :scriptureId');
+                  //  . ' WHERE st.scripture_id = :scripture_id');
                 
                 $stmtTopics->bindValue(':scripture_id', $scriptures['id']);
                 $stmtTopics->execute();
