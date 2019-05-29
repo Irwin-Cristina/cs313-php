@@ -3,37 +3,52 @@
 require('dbConnect.php');
 $db = get_db();
 
-
 $id = "";
 $title = "";
 $author = "";
 
-
-
 //
 if(isset($_GET['submit-search'])) { //name from button
     $id=$_GET['id'];   //id from from input
+    
+    $query="SELECT * FROM book WHERE book_title =:title";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    print_r($results);
+    
+    
+//    if($stmt) {
+//        if($stmt->rowcount()>0) {
+//            foreach($results as $row) {
+//                $id = $row->id;
+//                $title = $row->title;
+//                $author = $row->author;
+//            }
+//        } else {
+//            
+//        } echo '<script> alert("No Data Found")</script';
+//    }
         
-    $pdoQuery = "SELECT * FROM book WHERE book_title =:title";
-    $pdoQuery_run = $db->prepare($pdoQuery);
-    $pdoQuery_exec = $pdoQuery_run->execute(array(":title=>$title"));
+//    $pdoQuery = "SELECT * FROM book WHERE book_title =:title";
+//    $pdoQuery_run = $db->prepare($pdoQuery);
+//    $pdoQuery_exec = $pdoQuery_run->execute(array(":title=>$title"));
     
-    if($pdoQuery_exec) {
-        if($pdoQuery_run->rowcount()>0) {
-            foreach($pdoQuery_run as $row) {
-                $id = $row->id;
-                $title = $row->title;
-                $author = $row->author;
-            }
-        } else {
-            
-        } echo '<script> alert("No Data Found")</script';
-    }
+//    if($pdoQuery_exec) {
+//        if($pdoQuery_run->rowcount()>0) {
+//            foreach($pdoQuery_run as $row) {
+//                $id = $row->id;
+//                $title = $row->title;
+//                $author = $row->author;
+//            }
+//        } else {
+//            
+//        } echo '<script> alert("No Data Found")</script';
+//    }
         
-    
-    
 }
-
 
 
 //display
@@ -75,15 +90,6 @@ if(isset($_GET['submit-display'])) {
     }
     
 
-//foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
-//{
- //echo 'Book: ' . $row['book_title'];
- //echo 'Page Count: ' . $row['book_page_count'];
-// echo 'Author: ' . $row['author_id'];
-
- //echo '<br/>';
-//}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -96,14 +102,14 @@ if(isset($_GET['submit-display'])) {
         <div class= "form">
         <form action ="search.php" method="GET">
             <div class ="text-input">
-                <label>Id</label>
-                <input type="text" name="id" value= "<?php echo $id; ?>" placeholder="Please type the book title or author">
+                <label>Book Information</label>
+                <input type="text" name="search"placeholder="Please type the book title">
             </div>
             
-            <div class ="text-input">
+             <!--<div class ="text-input">
                 <label>Book Title</label>
-                <input type="text" name="title" value= "<?php echo $title; ?>" placeholder="Please type the book title or author">
-            </div>
+                <input type="text" name="title" value= "" placeholder="Please type the book title or author">
+            </div>-->
             
             <!--<div class ="text-input">
                 <label>Author</label>
@@ -147,11 +153,17 @@ if(isset($_GET['submit-display'])) {
         <h5>All books in database</h5>
             
             <?php
-                foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book INNER JOIN author USING(author_id)') as $row)
+            
+                $query = 'SELECT book_title, book_page_count, b.author_id FROM book b INNER JOIN author a ON a.author_id =b.author_id WHERE b.author_id = :author_id';
+                $stmt = $db->prepare($query); 
+                //Do I need to bind?
+                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+                foreach ($results as $row)
                     {   echo '<div class="box">';
                         echo '<p> Book: ' . $row['book_title'] . '</p>';
                         echo '<p> Page Count: ' . $row['book_page_count'] . '</p>';
-                        echo '<p> Author: ' . $row['author_id'] . '</p>';
+                        echo '<p> Author: ' . $row['a.author_id'] . '</p>';
 
                         echo '</div>';
 }
