@@ -18,17 +18,14 @@ $db = get_dbconnection();
         <input type="text" name="txtBook" id="txtBook">
         <label for="txtBook">Book</label>
         <br>
-        <input type="text" id="txtChapter" name="txtChapter">
-	   <label for="txtChapter">Chapter</label>
-	   <br /><br />
-
-	   <input type="text" id="txtVerse" name="txtVerse">
-	   <label for="txtVerse">Verse</label>
-	   <br /><br />
-
-	   <label for="txtContent">Content:</label><br />
-	   <textarea id="txtContent" name="txtContent" rows="4" cols="50"></textarea>
-	   <br /><br />
+        <input type="text" id="txtChapter" name="txtChapter"><label for="txtChapter">Chapter</label>
+        <br>
+        <input type="text" id="txtVerse" name="txtVerse">
+        <label for="txtVerse">Verse</label>
+        <br>
+        <label for="txtContent">Content:</label><br>
+        <textarea id="txtContent" name="txtContent" rows="4" cols="50"></textarea>
+        <br>
 
 	   <label>Topics:</label><br />
         
@@ -37,7 +34,7 @@ $db = get_dbconnection();
         try {
             $query = 'SELECT id, name FROM topic';
             $stmt = $db->prepare($query);
-            //$statement = $db->prepare('SELECT id, name FROM topic');
+            //$stmt = $db->prepare('SELECT id, name FROM topic');
             $stmt->execute();
             //$topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
             

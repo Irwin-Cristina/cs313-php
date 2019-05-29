@@ -11,7 +11,8 @@ $book = htmlspecialchars($_POST['txtBook']);
 $chapter = htmlspecialchars($_POST['txtChapter']);
 $verse = htmlspecialchars($_POST['txtVerse']);
 $content = htmlspecialchars($_POST['txtContent']);
-$topic_ids = htmlspecialchars($_POST['chkTopics[]']);
+//$topic_ids = htmlspecialchars($_POST['chkTopics[]']);
+$topic_ids = htmlspecialchars($_POST['chkTopics']);
 
  
  echo "book=$book\n";
@@ -41,7 +42,9 @@ $stmt->bindValue(':content', $content);
 $stmt->execute();
 
 $scripture_id = $db->lastInsertId("scriptures_id_seq");
+//$topic_ids = $db->lastInsertId("scriptures_id_seq");
 
+//foreach($scripture_ids as $scripture_id) {
 foreach($topic_ids as $topic_id) {
     echo "scripture_id: $scripture_id, topic_id: $topic_id";
     //query
@@ -63,8 +66,8 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-header("Location: scripture_topic.php");
-die();
+//header("Location: scripture_topic.php");
+//die();
 
 ?>
 <!DOCTYPE html>
