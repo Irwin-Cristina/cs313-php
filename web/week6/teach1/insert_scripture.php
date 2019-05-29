@@ -69,6 +69,16 @@ $db = get_dbconnection();
 
         <input type="submit" value="Insert scripture">
     </form>
+    <?php
+    if(isset($_POST['submit'])) {
+        if(!empty($_POST['chkTopics[]'])){
+            foreach($_POST['chkTopics'] as $selected){
+                echo $selected."<br>";
+            }
+ 
+        }
+    }
+    ?>
 
 </body>
 </html>
