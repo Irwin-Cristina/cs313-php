@@ -59,7 +59,7 @@ foreach($topic_ids as $topic_id) {
     //prepare first statement
     $stmt = $db->prepare($query);
     //bind values
-    $stmt->bindValue(':scripture_id,', $scripture_id);
+    $stmt->bindValue(':scripture_id', $scripture_id);
     $stmt->bindValue(':topic_id', $topic_id);
     $stmt->execute();
     
