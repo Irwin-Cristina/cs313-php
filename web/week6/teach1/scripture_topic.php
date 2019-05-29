@@ -31,16 +31,16 @@ try
     
             //$stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
             $stmt->execute();
-            $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             
-           // while ($row = $scriptures)
-            foreach($scriptures as $scripture)
-            //while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+           //while ($row = $scriptures)
+            //foreach($scriptures as $scripture)
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
                 echo '<p>';
-                echo '<strong>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':';
-                echo $scripture['verse'] . '</strong>' . ' - ' . $scripture['content'];
+                echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
+                echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
                 echo '<strong> Topics: </strong>';
                 
                 $query = 'SELECT name FROM topic t INNER JOIN scripture_topic st ON st.topic_id = t.id WHERE st.scripture_id = :scripture_id';
@@ -52,15 +52,15 @@ try
                  //   . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
                   //  . ' WHERE st.scripture_id = :scripture_id');
                 
-                $stmtTopics->bindValue(':scripture_id', $scriptures['id']);
+                $stmtTopics->bindValue(':scripture_id', $row['id']);
                 $stmtTopics->execute();
-                $topics=$stmtTopics->fetchAll(PDO::FETCH_ASSOC);
+                //$topics=$stmtTopics->fetchAll(PDO::FETCH_ASSOC);
                 // Go through each topic in the result
                 
-                //while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
-                foreach($topics as $topic)
+                while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+                //foreach($topics as $topic)
                 {
-                    echo $topic['name'] . ' ';
+                    echo $topicRow['name'] . ' ';
                 }
                 echo '</p>';
 	}
