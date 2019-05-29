@@ -44,7 +44,7 @@ $db = get_dbconnection();
 		      $id = $row['id'];
 		      $name = $row['name'];
 		      // Notice that we want the value of the checkbox to be the id of the label
-		      echo "<input type='checkbox' name='chkTopics$id' id='chkTopics$id' value='$id'>";
+		      echo "<input type='checkbox' name='chkTopics[]' id='chkTopics$id' value='$id'>";
 		      // Also, so they can click on the label, and have it select the checkbox,
 		      // we need to use a label tag, and have it point to the id of the input element.
 		      // The trick here is that we need a unique id for each one. In this case,
