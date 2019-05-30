@@ -7,7 +7,7 @@ $db = get_db();
 
 //form check
     $title = $author = $count = $location = $genre = $summary = '';
-    $errors=array('title'=>'', 'author_name'=>'', 'book_page_count'=>'', 'location'=>'','genre_name'=>'', 'book_summary'=>'');
+    $errors=array('book_title'=>'', 'author_name'=>'', 'book_page_count'=>'', 'location'=>'','genre_name'=>'', 'book_summary'=>'');
 
     if(isset($_GET['submit'])) {
         //check title
@@ -117,37 +117,37 @@ $db = get_db();
             <div class="checkbox">
                 <label>Genre (choose two)</label>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name1" value="1"><label for="genre_name1">History</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name1" value="1"><label for="genre_name1">History</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name2" value="2"><label for="genre_name2">Biography</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name2" value="2"><label for="genre_name2">Biography</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name3" value="3"><label for="genre_name3">Fiction</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name3" value="3"><label for="genre_name3">Fiction</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name4" value="4"><label for="genre_name4">Non-Fiction</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name4" value="4"><label for="genre_name4">Non-Fiction</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name5" value="5"><label for="genre_name5">Romance</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name5" value="5"><label for="genre_name5">Romance</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name6" value="6"><label for="genre_name6">Mystery</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name6" value="6"><label for="genre_name6">Mystery</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name7" value="7"><label for="genre_name7">Fantasy</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name7" value="7"><label for="genre_name7">Fantasy</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name8" value="8"><label for="genre_name8">Historical Fiction</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name8" value="8"><label for="genre_name8">Historical Fiction</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name9" value="9"><label for="genre_name9">Self-Help</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name9" value="9"><label for="genre_name9">Self-Help</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name10" value="10"><label for="genre_name1">Children</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name10" value="10"><label for="genre_name1">Children</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name11" value="11"><label for="genre_name11">Dystopia</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name11" value="11"><label for="genre_name11">Dystopia</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name12" value="12"><label for="genre_name12">Poetry</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name12" value="12"><label for="genre_name12">Poetry</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name13" value="13"><label for="genre_name13">Informational</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name13" value="13"><label for="genre_name13">Informational</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name14" value="14"><label for="genre_name14">Young Adult</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name14" value="14"><label for="genre_name14">Young Adult</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name15" value="15"><label for="genre_name15">Spiritual</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name15" value="15"><label for="genre_name15">Spiritual</label><br>
                 
-                <input type="checkbox" name="genre_name[]" id="genre_name16" value="16"><label for="genre_name16">Music</label><br>
+                <input type="checkbox" name="genre_name" id="genre_name16" value="16"><label for="genre_name16">Music</label><br>
                 </div>
 
             <div class="summary">

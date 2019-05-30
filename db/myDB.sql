@@ -109,6 +109,9 @@ CREATE TABLE book (
 	status_id int NOT NULL references status(status_id)
 	);
 	
+
+	
+	
 INSERT INTO book(book_id, book_title, book_page_count, book_summary, author_id, location_id, user_id, borrower_id, status_id) 
 VALUES(DEFAULT, 'The Sin of Certainty', 240, 'Summary placeholder',14, 1, 1, NULL, 1);
 
@@ -123,6 +126,21 @@ VALUES(DEFAULT, 'The Missing Piece', 112, 'Summary placeholder',2 ,2, 5, NULL, 1
 
 INSERT INTO book(book_id, book_title, book_page_count, book_summary, author_id, location_id, user_id, borrower_id, status_id) 
 VALUES(DEFAULT, 'Harry Potter and the Deathly Hallows', 711, 'Summary placeholder',1 ,1, 2, NULL, 1);	
+
+
+CREATE TABLE booktemp (
+	book_id SERIAL NOT NULL primary key,
+	book_title varchar NOT NULL,
+	book_page_count int NOT NULL,
+	book_summary text NOT NULL,
+	author varchar NOT NULL, 
+	location varchar NOT NULL,
+	genre varchar NOT NULL
+	);
+		
+INSERT INTO book(book_id, book_title, book_page_count, book_summary, author, location, genre) 
+VALUES(DEFAULT, 'The Sin of Certainty', 240, 'Summary placeholder','Peter Enns', 'Homework Room', 'Spiritual');
+
 
 	
 	

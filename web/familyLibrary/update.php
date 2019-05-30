@@ -14,15 +14,15 @@ $db = get_db();
         <h1>Family Library</h1>
         <h2>Update</h2>
         <div class= "form">
-        <form action ="something.php">
+        <form id="findbookform" action ="findbook.php">
             <div class ="text-input">
                 <label for="book_title">Book Title</label>
-                <input type="text" name="title" value="Please type the book title">
+                <input type="text" name="book_title" id="book_title" value="Please type the book title">
             </div>
             
             <div class ="text-input">
                 <label for="author_name">Author</label>
-                <input type="text" name="author_name" value="Please type the author's name">
+                <input type="text" name="author_name" id="author_name" value="Please type the author's name">
             </div>
             
             
