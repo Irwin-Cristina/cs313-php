@@ -138,7 +138,7 @@ CREATE TABLE booktemp (
 	genre varchar NOT NULL
 	);
 		
-INSERT INTO book(book_id, book_title, book_page_count, book_summary, author, location, genre) 
+INSERT INTO booktemp(book_id, book_title, book_page_count, book_summary, author, location, genre) 
 VALUES(DEFAULT, 'The Sin of Certainty', 240, 'Summary placeholder','Peter Enns', 'Homework Room', 'Spiritual');
 
 
@@ -179,6 +179,33 @@ SELECT a.author_name, a.author_id FROM author a JOIN book b ON a.author_id = b.a
 
 ALTER TABLE borrower ADD COLUMN phone varchar(30);
 INSERT INTO borrower(phone) VALUES('801-766-0642') WHERE borrower_id = 1;
+
+
+--TEMP TABLES
+CREATE TABLE booktemp (
+	book_id SERIAL NOT NULL primary key,
+	book_title varchar NOT NULL,
+	book_page_count int NOT NULL,
+	book_summary text NOT NULL,
+	author varchar NOT NULL, 
+	location varchar NOT NULL
+	);
+		
+INSERT INTO booktemp(book_id, book_title, book_page_count, book_summary, author, location) 
+VALUES(DEFAULT, 'The Sin of Certainty', 240, 'Summary placeholder','Peter Enns', 'Homework Room');
+
+
+	
+CREATE TABLE booktemp_genres (
+	book_id int NOT NULL references booktemp(book_id),
+	genre_id int NOT NUll references genre(genre_id)
+	--PRIMARY KEY (genre_id, book_id)
+	);
+
+CREATE TABLE booktemp_locations (
+	book_id int NOT NULL references booktemp(book_id),
+	genre_id int NOT NUll references location(location_id)
+	);
 
 \pset format wrapped
 \d+ table
