@@ -85,10 +85,10 @@ $db = get_db();
         <h2>Update</h2>
         <div class= "form">
             
-        <form  action ="update.php" method="GET">
+        <form id="updatebookform" action ="update_info.php" method="POST">
             <div class ="text-input">
                 <label>Book Title</label>
-                <input type="text" name="title" value="<?php echo htmlspecialchars($title)?>">
+                <input type="text" name="book_title" id="book_title" value="<?php echo htmlspecialchars($title)?>">
                 <div class="red-text"><?php echo $errors['title'];?></div>
           </div>
             

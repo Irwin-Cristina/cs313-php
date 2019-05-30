@@ -11,12 +11,12 @@ $db = get_db();
 
     if(isset($_GET['submit'])) {
         //check title
-        if(empty($_GET['title'])) {
-            $errors['title'] = 'A book title is required <br/>';
+        if(empty($_GET['book_title'])) {
+            $errors['book_title'] = 'A book title is required <br/>';
         } else {
-            $title=$_GET['title'];
+            $title=$_GET['book_title'];
             if(!preg_match('/^[a-zA-Z\s]+$/', $title)) {
-            $errors['title'] = 'Title must be letters and spaces only';
+            $errors['book_title'] = 'Title must be letters and spaces only';
         }
             //echo htmlspecialchars($_GET['title']);  
         }
@@ -78,22 +78,22 @@ $db = get_db();
         <h2>Add</h2>
         <div class= "form">
             
-        <form  action ="add.php" method="GET">
+        <form  id="addbookform" action ="addbook.php" method="POST">
             <div class ="text-input">
                 <label>Book Title</label>
-                <input type="text" name="title" value="<?php echo htmlspecialchars($title)?>">
-                <div class="red-text"><?php echo $errors['title'];?></div>
+                <input type="text" name="book_title" id="book_title" value="<?php echo htmlspecialchars($title)?>">
+                <div class="red-text"><?php echo $errors['book_title'];?></div>
           </div>
             
             <div class ="text-input">
                 <label>Author</label>
-                <input type="text" name="author_name" value="<?php echo htmlspecialchars($author)?>">
+                <input type="text" name="author_name" id="author_name" value="<?php echo htmlspecialchars($author)?>">
                 <div class="red-text"><?php echo $errors['author_name'];?></div>
             </div>
             
             <div class ="text-input">
                 <label>Page Count</label>
-                <input type="text" name="book_page_count" value="<?php echo htmlspecialchars($count)?>">
+                <input type="text" name="book_page_count" id="book_page_count" value="<?php echo htmlspecialchars($count)?>">
                 <div class="red-text"><?php echo $errors['book_page_count'];?></div>
                 
             </div>
@@ -116,31 +116,47 @@ $db = get_db();
             
             <div class="checkbox">
                 <label>Genre (choose two)</label>
-                <input type="checkbox" name="genre_name" value="History"> History<br>
-                <input type="checkbox" name="genre_name" value="Biography"> Biography<br>
-                <input type="checkbox" name="genre_name" value="Fiction" > Fiction<br>
-                <input type="checkbox" name="genre_name" value="Non-Fiction"> Non-Fiction<br>
-                <input type="checkbox" name="genre_name" value="Romance"> Romance<br>
-                <input type="checkbox" name="genre_name" value="Mystery"> Mystery<br>
-                <input type="checkbox" name="genre_name" value="Fantasy"> Fantasy<br>
-                <input type="checkbox" name="genre_name" value="Historical Fiction"> Historical Fiction<br>
-                <input type="checkbox" name="genre_name" value="Self-Help"> Self-Help<br>
-                <input type="checkbox" name="genre_name" value="Children"> Children<br>
-                <input type="checkbox" name="genre_name" value="Dystopia"> Dystopia<br>
-                <input type="checkbox" name="genre_name" value="Poetry"> Poetry<br>
-                <input type="checkbox" name="genre_name" value="Informational"> Informational<br>
-                <input type="checkbox" name="genre_name" value="Young Adult"> Young Adult<br>
-                <input type="checkbox" name="genre_name" value="Spiritual"> Spiritual<br>
-                <input type="checkbox" name="genre_name" value="Music"> Music<br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name1" value="1"><label for="genre_name1">History</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name2" value="2"><label for="genre_name2">Biography</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name3" value="3"><label for="genre_name3">Fiction</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name4" value="4"><label for="genre_name4">Non-Fiction</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name5" value="5"><label for="genre_name5">Romance</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name6" value="6"><label for="genre_name6">Mystery</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name7" value="7"><label for="genre_name7">Fantasy</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name8" value="8"><label for="genre_name8">Historical Fiction</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name9" value="9"><label for="genre_name9">Self-Help</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name10" value="10"><label for="genre_name1">Children</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name11" value="11"><label for="genre_name11">Dystopia</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name12" value="12"><label for="genre_name12">Poetry</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name13" value="13"><label for="genre_name13">Informational</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name14" value="14"><label for="genre_name14">Young Adult</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name15" value="15"><label for="genre_name15">Spiritual</label><br>
+                
+                <input type="checkbox" name="genre_name[]" id="genre_name16" value="16"><label for="genre_name16">Music</label><br>
                 </div>
 
             <div class="summary">
-                <label>Summary</label>
-                <textarea rows="4" name="book_summary" cols="50" value="<?php echo htmlspecialchars($summary)?>">Enter book summary here...</textarea>
+                <label for="book_summary">Summary</label><br>
+                <textarea id="book_summary" name="book_summary" cols="50" rows="4"  value="<?php echo htmlspecialchars($summary)?>">Enter book summary here...</textarea>
             </div>
             
             <div class="submitbtn">
-                <input type="submit" name="submit" value="submit">
+                <input type="submit" name="submit" value="Submit Update">
              </div>   
                 
         </form>
