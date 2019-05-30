@@ -124,32 +124,19 @@ $db = get_db();
                   echo "\n";
 
                     }  
-        }
-        catch (PDOException $ex)
-        {
-	       // Please be aware that you don't want to output the Exception message in
-	       // a production environment
-	   echo "Error connecting to DB. Details: $ex";
-	   die();
-       }
-?>
-            
+            }
+            catch (PDOException $ex)
+            {
+               // Please be aware that you don't want to output the Exception message in
+               // a production environment
+           echo "Error connecting to DB. Details: $ex";
+           die();
+           }
+        ?>
+            </div>     
                  
                  
                  
-         <!--<label>Location</label>
-                <select name="location">
-				    <option value="" disabled selected>Select location</option>
-				    <option value="Piano Room">Piano Room</option>
-				    <option value="Homework Room">Homework Room</option>
-				    <option value="Family Room">Family Room</option>
-                    <option value="Piano Room">Parent's Room</option>
-				    <option value="Homework Room">Isabella's Room</option>
-				    <option value="Family Room">Isaac's Room</option>
-                    <option value="Family Room">Simon's Room</option>
-			     </select>
-                </div>
--->
             
             <div class="checkbox">
                 <label>Location:</label>
@@ -179,15 +166,16 @@ $db = get_db();
                   echo "\n";
 
                     }  
-        }
-        catch (PDOException $ex)
-        {
-	       // Please be aware that you don't want to output the Exception message in
-	       // a production environment
-	   echo "Error connecting to DB. Details: $ex";
-	   die();
-       }
-
+            }
+            catch (PDOException $ex)
+            {
+               // Please be aware that you don't want to output the Exception message in
+               // a production environment
+           echo "Error connecting to DB. Details: $ex";
+           die();
+           }
+         ?>
+            </div>        
             <div class="submitbtn">
                 <input type="submit" name="submit" value="Submit Update">
              </div>   
