@@ -143,7 +143,7 @@ $db = get_db();
             <?php
             //generate checkboxes
             try {
-                $query = 'SELECT location_id, loction_name FROM location';
+                $query = 'SELECT location_id, location_name FROM location';
                 $stmt = $db->prepare($query);
                 //$stmt = $db->prepare('SELECT id, name FROM topic');
                 $stmt->execute();
