@@ -5,67 +5,6 @@ $db = get_db();
 
 
 
-//form check
-//    $title = $author = $count = $location = $genre = $summary = '';
-//    $errors=array('book_title'=>'', 'author'=>'', 'book_page_count'=>'', 'location'=>'','genre_name'=>'', 'book_summary'=>'');
-//
-//    if(isset($_GET['submit'])) {
-//        //check title
-//        if(empty($_GET['book_title'])) {
-//            $errors['book_title'] = 'A book title is required <br/>';
-//        } else {
-//            $title=$_GET['book_title'];
-//            if(!preg_match('/^[a-zA-Z\s]+$/', $title)) {
-//            $errors['book_title'] = 'Title must be letters and spaces only';
-//        }
-//            //echo htmlspecialchars($_GET['title']);  
-//        }
-//        
-//        //check author
-//        if(empty($_GET['author'])) {
-//            $errors['author'] = 'An author is required <br/>';
-//        } else {
-//            $author=$_GET['author'];
-//        if(!preg_match('/^[a-zA-Z\s]+$/', $author)) {
-//            $errors['author'] = 'Author must be letters and spaces only';
-//        }
-//          //echo htmlspecialchars($_GET['author_namer']);  
-//        }
-//        
-//        //check page count
-//        if(empty($_GET['book_page_count'])) {
-//            $errors['book_page_count'] = 'Please enter in page count <br/>';
-//        } else {
-//            $count =$_GET['book_page_count'];
-//            if(!filter_var($count, FILTER_VALIDATE_INT)){
-//            $errors['book_page_count'] = 'Page count must be a number';  
-//        }
-//          //echo htmlspecialchars($_GET['book_page_count']);  
-//        }
-//        
-//        //check location
-//        if(empty($_GET['location'])) {
-//            $errors['location'] = 'Where is the book located? <br/>';
-//        } else {
-//          $location = ($_GET['location']);  
-//        }
-//        
-//        //check genre
-//        if(empty($_GET['genre_name'])) {
-//            $errors['genre_name'] = 'Please choose a genre for the book <br/>';
-//        } else {
-//          $genre = ($_GET['genre_name']);  
-//        }
-//        
-//        //check book summary
-//        if(empty($_GET['book_summary'])) {
-//            $errors['book_summary'] = 'Please write a summary <br/>';
-//        } else {
-//          $summary = htmlspecialchars($_GET['book_summary']);  
-//        }
-//    }
-
-//end of GET check
 
 ?>
 <!DOCTYPE html>

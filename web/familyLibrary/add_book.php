@@ -1,9 +1,9 @@
 <?php
 $title=$_POST['txtTitle'];
-$count=$_POST['txtAuthor'];
+$count=$_POST['txtCount'];
 $summary=$_POST['txtContent'];
 $author=$_POST['txtAuthor'];
-$locations_ids=$_POST['chkLocations'];
+$location_ids=$_POST['chkLocations'];
 $genre_ids=$_POST['chkGenres'];
 
 
@@ -30,7 +30,7 @@ $book_id = $db->lastInsertId("booktemp_book_id_seq");
     
 //location
     
- foreach($locations_ids as $locations_id) {
+    foreach($location_ids as $location_id) {
     echo "book_id: $book_id, location_id: $location_id";
     //query
     $query = 'INSERT INTO booktemp_locations(book_id, location_id) VALUES(:book_id, :location_id)';
@@ -68,7 +68,7 @@ catch (Exception $ex)
 }
 
 
-header("Location addconfirmation.php");
+header("Location: addconfirmation.php");
 die();
 
 ?>

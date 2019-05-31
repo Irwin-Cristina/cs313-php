@@ -19,7 +19,8 @@ $db = get_db();
         <div class="searchcontainer">
             <?php
             //call database to get books
-            try {
+            try 
+            {
             $query = 'SELECT book_id, book_title, book_page_count, book_summary, author FROM booktemp';
             $stmt = $db->prepare($query);
             $stmt->execute();
@@ -45,15 +46,15 @@ $db = get_db();
                     
                     //Genre
                     echo '<strong> Genre: </strong>';
-                    $query = 'SELECT genre_name FROM genre g INNER JOIN booktemp_genres gl ON gl.genre_id = l.genre_id WHERE gl.book_id = :book_id';
-                    $stmtTopics = $db->prepare($query);
+                    $query = 'SELECT genre_name FROM genre g INNER JOIN booktemp_genres gl ON gl.genre_id = g.genre_id WHERE gl.book_id = :book_id';
+                    $stmtGenres = $db->prepare($query);
                     
                     $stmtGenres->bindValue(':book_id', $row['genre_id']);
                     $stmtGenres->execute();
                     
-                    while ($genresRow = $stmtGenres->fetch(PDO::FETCH_ASSOC)) 
+                    while ($genreRow = $stmtGenres->fetch(PDO::FETCH_ASSOC)) 
                     {
-                        echo $genresRow['genre_name'] . ' ';
+                        echo $genreRow['genre_name'] . ' ';
                     }
                     
                     
@@ -63,6 +64,12 @@ $db = get_db();
                     
                 }
             
+            }
+            
+            catch (PDOException $ex)
+            {
+                echo "Error with DB. Details: $ex";
+	           die();
             }
             
             
