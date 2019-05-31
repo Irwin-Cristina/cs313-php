@@ -4,7 +4,7 @@ $count=$_POST['txtCount'];
 $summary=$_POST['txtContent'];
 $author=$_POST['txtAuthor'];
 $location_ids=$_POST['chkLocations'];
-$genre_ids=$_POST['chkGenres'];
+//$genre_ids=$_POST['chkGenres'];
 
 
 //connection
@@ -45,18 +45,18 @@ $book_id = $db->lastInsertId("booktemp_book_id_seq");
 
     //genres
     
-    foreach($genre_ids as $genre_id) {
-    echo "book_id: $book_id, genre_id: $genre_id";
+    //foreach($genre_ids as $genre_id) {
+    //echo "book_id: $book_id, genre_id: $genre_id";
     //query
-    $query = 'INSERT INTO booktemp_genres(book_id, genre_id) VALUES(:book_id, :genre_id)';
+    //$query = 'INSERT INTO booktemp_genres(book_id, genre_id) VALUES(:book_id, :genre_id)';
     //prepare first statement
-    $stmt = $db->prepare($query);
+    //$stmt = $db->prepare($query);
     //bind values
-    $stmt->bindValue(':book_id', $book_id);
-    $stmt->bindValue(':genre_id', $genre_id);
-    $stmt->execute();
+    //$stmt->bindValue(':book_id', $book_id);
+    //$stmt->bindValue(':genre_id', $genre_id);
+    //$stmt->execute();
     
-    }  
+    //}  
 }
 
 catch (Exception $ex)

@@ -45,7 +45,7 @@ $db = get_db();
                     }
                     
                     //Genre
-                    echo '<strong> Genre: </strong>';
+                   /* echo '<strong> Genre: </strong>';
                     $query = 'SELECT genre_name FROM genre g INNER JOIN booktemp_genres gl ON gl.genre_id = g.genre_id WHERE gl.book_id = :book_id';
                     $stmtGenres = $db->prepare($query);
                     
@@ -55,7 +55,7 @@ $db = get_db();
                     while ($genreRow = $stmtGenres->fetch(PDO::FETCH_ASSOC)) 
                     {
                         echo $genreRow['genre_name'] . ' ';
-                    }
+                    }*/
                     
                     
                     echo'</p>';
