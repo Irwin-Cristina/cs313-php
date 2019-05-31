@@ -1,13 +1,5 @@
 <?php
 
-$title=$_POST['book_title'];
-$count=$_POST['book_page_count'];
-$summary=$_POST['book_summary'];
-$author=$_POST['author_name'];
-$location=$_POST['location']; //$location=$_POST['genre_name[]'];
-$genre=$_POST['genre'];
-
-
 //connection
 require('dbConnect.php');
 $db = get_db();
@@ -22,29 +14,60 @@ $db = get_db();
         <h2>Confirmation</h2>
         <div class= "results">
             
-            <p>Thank you for adding <?php echo $title; ?> to your library.</p>
+            <p>Thank you for adding the book to your library.</p>
         </div>
         <div class="searchcontainer">
-            <h4>Books</h4>
-            <h5>All books currently in database:</h5>
             <?php
             //call database to get books
-            $query ='SELECT book_title, book_page_count, author, location, genre FROM booktemp';
+            try {
+            $query = 'SELECT book_id, book_title, book_page_count, book_summary, author FROM booktemp';
             $stmt = $db->prepare($query);
             $stmt->execute();
             
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-            {
-            echo echo "<div class='box'>
-                            <p> ".$row['book_title']." </p>
-                            <p> ".$row['author']." </p>
-                            <p> ".$row['book_page_count']." </p>
-                        </div>";
-            
+                while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo '<p>';
+                    echo '<strong>' . $row['book_title'] . ' ' . $row['book_page_count'] . ':';
+                    echo $row['author'] . '</strong>' . ' - ' . $row['book_summary'];
+
+                    //Location
+                    echo '<strong> Location: </strong>';
+
+                    $query = 'SELECT location_name FROM location l INNER JOIN booktemp_locations bl ON bl.location_id = l.location_id WHERE bl.book_id = :book_id';
+                    $stmtTopics = $db->prepare($query);
+
+                    $stmtLocations->bindValue(':book_id', $row['location_id']);
+                    $stmtLocations->execute();
+
+                    while ($locationRow = $stmtLocations->fetch(PDO::FETCH_ASSOC)) 
+                    {
+                        echo $locationRow['location_name'] . ' ';
+                    }
+                    
+                    //Genre
+                    echo '<strong> Genre: </strong>';
+                    $query = 'SELECT genre_name FROM genre g INNER JOIN booktemp_genres gl ON gl.genre_id = l.genre_id WHERE gl.book_id = :book_id';
+                    $stmtTopics = $db->prepare($query);
+                    
+                    $stmtGenres->bindValue(':book_id', $row['genre_id']);
+                    $stmtGenres->execute();
+                    
+                    while ($genresRow = $stmtGenres->fetch(PDO::FETCH_ASSOC)) 
+                    {
+                        echo $genresRow['genre_name'] . ' ';
+                    }
+                    
+                    
+                    echo'</p>';
+                    
+                    
+                    
+                }
             
             }
             
+            
             ?>
+            
         </div>
     
     </main>

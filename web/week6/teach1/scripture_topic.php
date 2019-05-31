@@ -23,8 +23,8 @@ $db = get_dbconnection();
 <?php
         
       //call database to get scriptures
-try
-{
+    try
+    {
             
             $query = 'SELECT id, book, chapter, verse, content FROM scriptures';
             $stmt = $db->prepare($query);
@@ -52,7 +52,7 @@ try
                  //   . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
                   //  . ' WHERE st.scripture_id = :scripture_id');
                 
-                $stmtTopics->bindValue(':scripture_id', $row['id']);
+                $stmtTopics->bindValue(':scripture_id', $row['id']); //id on topics
                 $stmtTopics->execute();
                 //$topics=$stmtTopics->fetchAll(PDO::FETCH_ASSOC);
                 // Go through each topic in the result
@@ -63,8 +63,8 @@ try
                     echo $topicRow['name'] . ' ';
                 }
                 echo '</p>';
-	}
-}
+	       }
+    }
         catch (PDOException $ex)
         {
 	       echo "Error with DB. Details: $ex";

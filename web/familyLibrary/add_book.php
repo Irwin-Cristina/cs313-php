@@ -1,13 +1,10 @@
 <?php
-$title=$_POST['book_title'];
-$count=$_POST['book_page_count'];
-$summary=$_POST['book_summary'];
-$author=$_POST['author_name'];
-$location=$_POST['location']; //$location=$_POST['genre_name[]'];
-$genre=$_POST['genre'];
-
-
-
+$title=$_POST['txtTitle'];
+$count=$_POST['txtAuthor'];
+$summary=$_POST['txtContent'];
+$author=$_POST['txtAuthor'];
+$locations_ids=$_POST['chkLocations'];
+$genre_ids=$_POST['chkGenres'];
 
 
 //connection
@@ -15,11 +12,9 @@ require_once ('connection.php');
 $db = get_dbconnection();
 
 
-
 try {
     
-$query = 'INSERT INTO booktemp( book_title, book_page_count, book_summary,
-author, location, genre) VALUES(:book_title, :book_page_count, :book_summary, :author, :location, :genre)';
+$query = 'INSERT INTO booktemp( book_title, book_page_count, book_summary, author) VALUES(:book_title, :book_page_count, :book_summary, :author)';
 $stmt = $db->prepare($query);
 
 
@@ -28,14 +23,42 @@ $stmt->bindValue(':book_title', $title);
 $stmt->bindValue(':book_page_count', $count);
 $stmt->bindValue(':book_summary', $summary);
 $stmt->bindValue(':author', $author);
-$stmt->bindValue(':location', $location);
-$stmt->bindValue(':genre', $genre);
-    
+
 $stmt->execute();
 
 $book_id = $db->lastInsertId("booktemp_book_id_seq");
     
+//location
+    
+ foreach($locations_ids as $locations_id) {
+    echo "book_id: $book_id, location_id: $location_id";
+    //query
+    $query = 'INSERT INTO booktemp_locations(book_id, location_id) VALUES(:book_id, :location_id)';
+    //prepare first statement
+    $stmt = $db->prepare($query);
+    //bind values
+    $stmt->bindValue(':book_id', $book_id);
+    $stmt->bindValue(':location_id', $location_id);
+    $stmt->execute();
+    
+    }  
+
+    //genres
+    
+    foreach($genre_ids as $genre_id) {
+    echo "book_id: $book_id, genre_id: $genre_id";
+    //query
+    $query = 'INSERT INTO booktemp_genres(book_id, genre_id) VALUES(:book_id, :genre_id)';
+    //prepare first statement
+    $stmt = $db->prepare($query);
+    //bind values
+    $stmt->bindValue(':book_id', $book_id);
+    $stmt->bindValue(':genre_id', $genre_id);
+    $stmt->execute();
+    
+    }  
 }
+
 catch (Exception $ex)
     
 {
@@ -43,6 +66,8 @@ catch (Exception $ex)
     die();
     
 }
+
+
 header("Location addconfirmation.php");
 die();
 

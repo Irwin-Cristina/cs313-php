@@ -187,8 +187,7 @@ CREATE TABLE booktemp (
 	book_title varchar NOT NULL,
 	book_page_count int NOT NULL,
 	book_summary text NOT NULL,
-	author varchar NOT NULL, 
-	location varchar NOT NULL
+	author varchar NOT NULL
 	);
 		
 INSERT INTO booktemp(book_id, book_title, book_page_count, book_summary, author, location) 
@@ -204,7 +203,7 @@ CREATE TABLE booktemp_genres (
 
 CREATE TABLE booktemp_locations (
 	book_id int NOT NULL references booktemp(book_id),
-	genre_id int NOT NUll references location(location_id)
+	location_id int NOT NUll references location(location_id)
 	);
 
 \pset format wrapped

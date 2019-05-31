@@ -177,7 +177,7 @@ $db = get_db();
          ?>
             </div>        
             <div class="submitbtn">
-                <input type="submit" name="submit" value="Submit Update">
+                <input type="submit" name="submit" value="Submit Book">
              </div>   
                 
         </form>
