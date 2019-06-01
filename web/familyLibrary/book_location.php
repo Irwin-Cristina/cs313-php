@@ -89,7 +89,7 @@ $db = get_db();
                 while ($genreRow =  $stmtGenres->fetch(PDO::FETCH_ASSOC))
                 //foreach($topics as $topic)
                 {
-                    echo $genreRow[' genre_name'] . ' ';
+                    echo $genreRow['genre_name'] . ' ';
                 }
                 
                 
