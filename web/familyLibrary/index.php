@@ -9,7 +9,7 @@ $db = get_db();
 // echo 'Author: ' . $row['author_id'];
 //
 // echo '<br/>';
-}
+//}
 
 ?>
 
