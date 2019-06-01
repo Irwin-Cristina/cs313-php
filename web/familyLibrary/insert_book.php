@@ -5,11 +5,14 @@ $db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
+    <?php include('templates/header.php');?>
+<!--
 <head>
     <title></title>
 </head>
 <body>
-    
+-->
+  <main>
     <h1>Enter New Book and location</h1>
     
     <form id="mainForm" method="POST" action="insert_location.php">
@@ -71,7 +74,9 @@ $db = get_db();
 
         <input type="submit" value="Insert scripture">
     </form>
-    
+</main>  
 
-</body>
+<?php include('templates/footer.php');?>
+    
 </html>
+
