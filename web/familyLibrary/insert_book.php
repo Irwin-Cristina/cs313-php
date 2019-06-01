@@ -31,10 +31,8 @@ $db = get_db();
         <input type="text" id="txtAuthor" name="txtAuthor">
         <label for="txtAuthor">Author</label><br>
         
-        
-        
-
-	   <label>Location:</label><br />
+        <div class="checkbox">
+        <label>Location:</label><br />
         
         <?php
         //generate checkboxes
@@ -69,10 +67,10 @@ $db = get_db();
 	       // a production environment
 	   echo "Error connecting to DB. Details: $ex";
 	   die();
-}
-?>
+        }
+        ?>
         
-        <br>
+        </div>
 
         <input type="submit" value="Insert scripture">
     </form>
