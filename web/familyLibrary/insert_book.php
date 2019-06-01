@@ -119,7 +119,7 @@ $db = get_db();
         
         </div>
 
-        <input type="submit" value="Insert scripture">
+        <input type="submit" value="Insert Book">
     </form>
     </div>
 </main>  
