@@ -15,13 +15,13 @@ $db = get_db();
 <main>
     <h1>Family Library</h1>
     <h2>Confirmation</h2>
-<!--
+
     <div class= "results">
-         <p>Thank you for adding the book to your library.</p>
+         <p>Thank you for adding <?php echo $book; ?> to your library.</p>
      </div>
     
     <div class="searchcontainer">
--->
+
     <?php
         
       //call database to get scriptures
@@ -40,9 +40,6 @@ $db = get_db();
                 //foreach($scriptures as $scripture)
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
                 {   
-                    echo '<div class="searchcontainer">';
-                    echo '<p>Thank you for adding' . ' ' . $row['book_title'] . ' to your library.</p>';
-                    echo '</div>';
                     //results
                     echo '<div class= "results">';
                     echo '<p>';
