@@ -54,25 +54,25 @@ foreach($location_ids as $location_id) {
     
     }
     
-}
+//}
 
 //genre
 
-try {
+//try {
 //query
-$query = 'INSERT INTO booktemp(book_title, book_page_count, book_summary, author) VALUES(:book_title, :book_page_count, :book_summary, :author)';
-$stmt = $db->prepare($query);
+//$query = 'INSERT INTO booktemp(book_title, book_page_count, book_summary, author) VALUES(:book_title, :book_page_count, :book_summary, :author)';
+//$stmt = $db->prepare($query);
 
 //bind variables to values
-$stmt->bindValue(':book_title', $book);
-$stmt->bindValue(':book_page_count', $count);
-$stmt->bindValue(':book_summary', $summary);
-$stmt->bindValue(':author', $author);
-
-$stmt->execute();
+//$stmt->bindValue(':book_title', $book);
+//$stmt->bindValue(':book_page_count', $count);
+//$stmt->bindValue(':book_summary', $summary);
+//$stmt->bindValue(':author', $author);
+//
+//$stmt->execute();
     
 //get booktemp id
-$book_id = $db->lastInsertId("booktemp_book_id_seq");
+//$book_id = $db->lastInsertId("booktemp_book_id_seq");
 
 foreach($genre_ids as $genre_id) {
     echo "book_id: $book_id, genre_id: $genre_id";
