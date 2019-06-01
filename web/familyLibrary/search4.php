@@ -1,3 +1,36 @@
+<?php
+//connection
+require('dbConnect.php');
+$db = get_db();
+
+$output ='';
+
+//collect
+
+if(isset($_POST['search'])) {
+    $searchq=$_POST['search'];
+    
+    $query="SELECT book_title, book_page_count, book_summary, author FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%'";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $count = $stmt->fetchColumn();
+    if ($count==0) {
+        $output = 'There are no search results!';
+    }else{
+       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+           $book= $row['book_title'];
+           $author=$row['author'];
+           $count=$row['book_page_count'];
+           
+           $output.='<div>'.$book.' ' .$author.' ' .$count.'</div>';
+       }
+    }
+    
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +43,7 @@
     
     
 </form>
-    
+<?php print("$output");?>
     
 </body>
 </html>
