@@ -31,7 +31,7 @@ $db = get_db();
             </div>
         
             <div class="update">
-                <p id="update"><a href="update.php">Update</a></p>
+                <p id="update"><a href="update_book.php">Update</a></p>
             </div>
         
             <div class="checkout">
