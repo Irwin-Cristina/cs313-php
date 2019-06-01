@@ -15,11 +15,13 @@ $db = get_db();
 <main>
     <h1>Family Library</h1>
     <h2>Confirmation</h2>
+<!--
     <div class= "results">
          <p>Thank you for adding the book to your library.</p>
      </div>
     
     <div class="searchcontainer">
+-->
     <?php
         
       //call database to get scriptures
