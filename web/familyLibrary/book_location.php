@@ -29,12 +29,17 @@ $db = get_db();
     <h2>Confirmation</h2>
 
     <div class= "results">
+        <?php
+        $query = 'SELECT book_id, book_title, book_page_count, book_summary, author FROM booktemp';
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        ?>
          <p>Thank you for adding your <?php echo $book; ?> to your library.</p>
      </div>
     
     <div class="searchcontainer">
         <h4>Books</h4>
-        <h5>All books currently in database:</h5>
+        <h5>All books currently in your library:</h5>
 
     <?php
         
