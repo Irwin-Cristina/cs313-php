@@ -14,7 +14,7 @@ if(isset($_POST['submit-search'])) { //name from button
     $searchq=$_POST['search'];
     $searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
-    $query="SELECT * FROM booktemp WHERE book_title LIKE '%*$searchq*%' OR author LIKE '%*$searchq*%' OR book_summary LIKE '%*$searchq*%'";
+    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
     $stmt = $db->prepare($query);
     $stmt->execute();
     $num_rows = $stmt->fetchColumn();
@@ -26,7 +26,7 @@ if(isset($_POST['submit-search'])) { //name from button
            $author=$row['author'];
            $count=$row['book_page_count'];
            
-           $output.='<div>'.$book.' ' .$author.' ' .$count.'</div>';
+           $output='<div>'.$book.' ' .$author.' ' .$count.'</div>';
        }
     }
     
