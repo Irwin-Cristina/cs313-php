@@ -114,17 +114,7 @@ $db = get_db();
     
     </main>
   
-    <?php include('templates/footer.php');
-    
-    
-//        echo htmlspecialchars($_GET['title']);
-//        echo htmlspecialchars($_GET['author_name']);
-//        echo htmlspecialchars($_GET['book_page_count']);
-//        echo htmlspecialchars($_GET['location']);
-//        echo htmlspecialchars($_GET['genre_name']);
-//        echo htmlspecialchars($_GET['book_summary']);
-        
-        ?>
+    <?php include('templates/footer.php');?>
     
 
 

@@ -13,8 +13,10 @@ $db = get_db();
 <body>
 -->
   <main>
-    <h1>Enter New Book and location</h1>
-    
+    <h1>Family Library</h1>
+    <h2>Add</h2>
+    <div class="form">
+      
     <form id="mainForm" method="POST" action="insert_location.php">
         
         
@@ -27,7 +29,7 @@ $db = get_db();
         <textarea id="txtSummary" name="txtSummary" rows="4" cols="50"></textarea>
         <br>
         <input type="text" id="txtAuthor" name="txtAuthor">
-        <label for="txtAuthor">Summary</label><br>
+        <label for="txtAuthor">Author</label><br>
         
         
         
@@ -74,6 +76,7 @@ $db = get_db();
 
         <input type="submit" value="Insert scripture">
     </form>
+    </div>
 </main>  
 
 <?php include('templates/footer.php');?>
