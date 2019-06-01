@@ -171,6 +171,7 @@ if(isset($_GET['submit-display'])) {
              </div>   
                 
         </form>
+        <?php print("$output");?>
         </div>
         
         <div class="searchcontainer">
@@ -219,14 +220,4 @@ if(isset($_GET['submit-display'])) {
     <?php include('templates/footer.php');?>
     
 
-</html
-    
- <?php
-    
-        
-        
-        
-        
-        
-    
-  ?>  
+</html  
