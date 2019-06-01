@@ -10,9 +10,9 @@ $output='';
 //$author = "";
 
 //
-if(isset($_GET['submit-search'])) { //name from button
-    $searchq=$_GET['submit-search'];
-    $searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
+if(isset($_GET['search'])) { //name from button
+    $searchq=$_GET['search'];
+    //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
     $stmt = $db->prepare($query);
@@ -128,7 +128,7 @@ if(isset($_GET['submit-search'])) { //name from button
         <form action ="search.php" method="GET">
             <div class ="text-input">
                 <label>Book Information</label>
-                <input type="text" name="submit-search" placeholder="Please type the book's title or author's name">
+                <input type="text" name="search" placeholder="Please type the book's title or author's name">
             </div>
             
              <!--<div class ="text-input">
