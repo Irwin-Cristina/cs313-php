@@ -37,7 +37,7 @@ $db = get_db();
                 $stmt->execute();
                 //$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
+                    echo '<p> books currently in database</p>'
                //while ($row = $scriptures)
                 //foreach($scriptures as $scripture)
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
