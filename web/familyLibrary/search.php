@@ -166,7 +166,7 @@ if(isset($_GET['search'])) { //name from button
             </div> -->
             
             <div class="submitbtn">
-                <input type="submit" value="search" name="submit-search">
+                <input type="submit" value="search">
 <!--                <input type="submit" value="display" name="submit-display">-->
              </div>   
                 
