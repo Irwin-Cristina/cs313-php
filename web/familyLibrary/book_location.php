@@ -13,6 +13,7 @@ $db = get_db();
 
 <body>
 -->
+<?php include('templates/header.php');?>
 <main>
     <h1>Family Library</h1>
     <h2>Confirmation</h2>
