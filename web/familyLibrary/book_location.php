@@ -61,8 +61,8 @@ $db = get_db();
                     //results
                     echo '<div class= "results">';
                     echo '<p>';
-                    echo '<strong>' . $row['book_title'] . ' ' . $row['book_page_count'] . ':';
-                    echo $row['book_summary'] . '</strong>' . ' - ' . $row['author'];
+                    echo '<strong>' . $row['book_title'] . ' ' .' author: '. $row['author'] . ',';
+                    echo $row['book_summary'] . '</strong>' . ' - ' . ' page count:'. $row['book_page_count'];
 
                     //location
                     echo '<strong> Location: </strong>';
