@@ -38,7 +38,11 @@ $db = get_db();
                 //foreach($scriptures as $scripture)
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
                 {   
+                    echo '<div class="searchcontainer">';
                     echo '<p>Thank you for adding' . ' ' . $row['book_title'] . ' to your library.</p>';
+                    echo '</div>';
+                    //results
+                    echo '<div class= "results">';
                     echo '<p>';
                     echo '<strong>' . $row['book_title'] . ' ' . $row['book_page_count'] . ':';
                     echo $row['book_summary'] . '</strong>' . ' - ' . $row['author'];
@@ -95,6 +99,7 @@ $db = get_db();
 
 
                     echo '</p>';
+                    echo '</div>';
                }
         }
             catch (PDOException $ex)
