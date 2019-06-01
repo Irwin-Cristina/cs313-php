@@ -128,7 +128,7 @@ if(isset($_GET['submit-search'])) { //name from button
         <form action ="search.php" method="GET">
             <div class ="text-input">
                 <label>Book Information</label>
-                <input type="text" name="search" placeholder="Please type the book's title or author's name">
+                <input type="text" name="submit-search" placeholder="Please type the book's title or author's name">
             </div>
             
              <!--<div class ="text-input">
