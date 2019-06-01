@@ -1,7 +1,7 @@
 <?php
 //connection
-require_once ('connection.php');
-$db = get_dbconnection();
+require('dbConnect.php');
+$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>

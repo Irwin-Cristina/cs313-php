@@ -17,9 +17,8 @@ $location_ids = $_POST['chkLocations'];
  //echo "topic=$topic_ids\n";
 
 //connection
-require_once ('connection.php');
-$db = get_dbconnection();
-
+require('dbConnect.php');
+$db = get_db();
 
     
 
