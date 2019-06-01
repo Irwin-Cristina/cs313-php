@@ -78,41 +78,41 @@ if(isset($_POST['submit-search'])) { //name from button
 
 //display
 
-if(isset($_GET['submit-display'])) {
-        $pdoQuery = "SELECT * FROM book";
-        $pdoQuery_run = $db->query($pdoQuery);
-        
-        if($pdoQuery_run) {
-            
-            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5">
-                <tr style ="color:blue;">
-                    <td> ID </td>
-                    <td> Book Title </td>
-                    <td> Author Id </td>
-
-                </tr>
-            
-            
-            ';
-            while($row = $pdoQuery_run->fetch(PDO::FETCH_OBJ)){
-            //foreach($pdoQuery_run as $row)   
-                
-            echo ' <tr>
-                        <th> ' .$row->book_id. '</th>
-                        <th> ' .$row->book_title. '</th>
-                        <th> ' .$row->author_id. '</th>
-                    </tr>
-                    
-            ';
-            
-            }
-            echo '</table>';
-            
-            
-        }else{
-            echo'<script> alert("No record/data found")</script>';
-        }
-    }
+//if(isset($_GET['submit-display'])) {
+//        $pdoQuery = "SELECT * FROM book";
+//        $pdoQuery_run = $db->query($pdoQuery);
+//        
+//        if($pdoQuery_run) {
+//            
+//            echo '<table width="50%" border="1" cellpadding="5" cellspacing="5">
+//                <tr style ="color:blue;">
+//                    <td> ID </td>
+//                    <td> Book Title </td>
+//                    <td> Author Id </td>
+//
+//                </tr>
+//            
+//            
+//            ';
+//            while($row = $pdoQuery_run->fetch(PDO::FETCH_OBJ)){
+//            //foreach($pdoQuery_run as $row)   
+//                
+//            echo ' <tr>
+//                        <th> ' .$row->book_id. '</th>
+//                        <th> ' .$row->book_title. '</th>
+//                        <th> ' .$row->author_id. '</th>
+//                    </tr>
+//                    
+//            ';
+//            
+//            }
+//            echo '</table>';
+//            
+//            
+//        }else{
+//            echo'<script> alert("No record/data found")</script>';
+//        }
+//    }
     
 
 ?>
@@ -167,53 +167,55 @@ if(isset($_GET['submit-display'])) {
             
             <div class="submitbtn">
                 <input type="submit" value="search" name="submit-search">
-                <input type="submit" value="display" name="submit-display">
+<!--                <input type="submit" value="display" name="submit-display">-->
              </div>   
                 
         </form>
         <?php print("$output");?>
         </div>
         
+<!--
         <div class="searchcontainer">
         <h4>Books</h4>
         <h5>All books in database</h5>
+-->
             
             <?php
             
-                $query = 'SELECT book_title, book_page_count, b.author_id FROM book b INNER JOIN author a ON a.author_id =b.author_id WHERE b.author_id = :author_id';
-                $stmt = $db->prepare($query); 
-                //Do I need to bind?
-                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-                foreach ($results as $row)
-                    {   echo '<div class="box">';
-                        echo '<p> Book: ' . $row['book_title'] . '</p>';
-                        echo '<p> Page Count: ' . $row['book_page_count'] . '</p>';
-                        echo '<p> Author: ' . $row['a.author_id'] . '</p>';
-
-                        echo '</div>';
-}
-            
-            
-            
-            
-                $sql ="SELECT * FROM book";
-                $result = pg_query($db, $sql);
-                $queryResults = pg_num_rows($result);
-            
-                if ($queryResults > 0) {
-                    while ($row = pg_fetch_assoc($result)) {
-                        echo "<div class='box'> 
-                            <p> ".$row['book_title']." </p>
-                            <p> ".$row['author_id']." </p>
-                            <p> ".$row['book_page_count']." </p>
-                        </div>";
-                    }
-                }
+//                $query = 'SELECT book_title, book_page_count, b.author_id FROM book b INNER JOIN author a ON a.author_id =b.author_id WHERE b.author_id = :author_id';
+//                $stmt = $db->prepare($query); 
+//                //Do I need to bind?
+//                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//            
+//                foreach ($results as $row){
+//                       echo '<div class="box">';
+//                        echo '<p> Book: ' . $row['book_title'] . '</p>';
+//                        echo '<p> Page Count: ' . $row['book_page_count'] . '</p>';
+//                        echo '<p> Author: ' . $row['a.author_id'] . '</p>';
+//
+//                        echo '</div>';
+//                }
+//            
+//            
+//            
+//            
+//                $sql ="SELECT * FROM book";
+//                $result = pg_query($db, $sql);
+//                $queryResults = pg_num_rows($result);
+//            
+//                if ($queryResults > 0) {
+//                    while ($row = pg_fetch_assoc($result)) {
+//                        echo "<div class='box'> 
+//                            <p> ".$row['book_title']." </p>
+//                            <p> ".$row['author_id']." </p>
+//                            <p> ".$row['book_page_count']." </p>
+//                        </div>";
+//                    }
+//                }
                 
             ?>      
         
-        </div>
+<!--        </div>-->
       
     </main>
   
