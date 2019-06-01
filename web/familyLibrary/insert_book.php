@@ -35,7 +35,7 @@ $db = get_db();
         <label for="txtAuthor">Author</label><br>
         
         <div class="checkbox">
-        <label id="heading">Location:</label><br />
+        <label>Location:</label><br />
         
         <?php
         //generate checkboxes

@@ -129,10 +129,9 @@ a:active {
 .checkbox, .summary {
     margin-top: 30px;
 }
-
-#heading {
-    color: pink;
-    text-transform: uppercase;
+.checkbox>label {
+    text-transform: uppercase:
+}
 
 }
 
