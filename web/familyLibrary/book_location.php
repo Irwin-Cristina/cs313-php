@@ -30,11 +30,11 @@ $db = get_db();
 
     <div class= "results">
         <?php
-        $query = 'SELECT book_id, book_title, book_page_count, book_summary, author FROM booktemp';
-        $stmt = $db->prepare($query);
-        $stmt->execute();
+        //$query = 'SELECT book_id, book_title, book_page_count, book_summary, author FROM booktemp';
+        //$stmt = $db->prepare($query);
+        //$stmt->execute();
         ?>
-         <p>Thank you for adding your <?php echo $book; ?> to your library.</p>
+         <p>Thank you for adding your book<?php //echo $book; ?> to your library.</p>
      </div>
     
     <div class="searchcontainer">
