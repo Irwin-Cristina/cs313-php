@@ -131,6 +131,7 @@ a:active {
 }
 
 label.heading {
+    color: pink;
     text-transform: uppercase;
 
 }
