@@ -10,8 +10,8 @@ $output='';
 //$author = "";
 
 //
-if(isset($_POST['submit-search'])) { //name from button
-    $searchq=$_GET['search'];
+if(isset($_GET['submit-search'])) { //name from button
+    $searchq=$_GET['submit-search'];
     $searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
