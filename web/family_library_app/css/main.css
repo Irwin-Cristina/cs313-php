@@ -129,7 +129,7 @@ a:active {
 .checkbox, .summary {
     margin-top: 30px;
 }
-.checkbox>label {
+label {
     text-transform: uppercase:
 }
 
