@@ -2,13 +2,13 @@
 require('dbConnect.php');
 $db = get_db();
 
-foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book') as $row)
-{
- echo 'Book: ' . $row['book_title'];
- echo 'Page Count: ' . $row['book_page_count'];
- echo 'Author: ' . $row['author_id'];
-
- echo '<br/>';
+//foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book') as $row)
+//{
+// echo 'Book: ' . $row['book_title'];
+// echo 'Page Count: ' . $row['book_page_count'];
+// echo 'Author: ' . $row['author_id'];
+//
+// echo '<br/>';
 }
 
 ?>
@@ -27,7 +27,7 @@ foreach ($db->query('SELECT book_title, book_page_count, author_id FROM book') a
             </div>
         
             <div class="add">
-                <p id="add"><a href="add.php">Add</a></p>
+                <p id="add"><a href="insert_book.php">Add</a></p>
             </div>
         
             <div class="update">
