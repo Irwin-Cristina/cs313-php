@@ -3,21 +3,46 @@
 require('dbConnect.php');
 $db = get_db();
 
-$id = "";
-$title = "";
-$author = "";
+$output='';
+
+//$id = "";
+//$title = "";
+//$author = "";
 
 //
-if(isset($_GET['submit-search'])) { //name from button
-    $id=$_GET['id'];   //id from from input
+if(isset($_POST['submit-search'])) { //name from button
+    $searchq=$_POST['search'];
+    $searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
-    $query="SELECT * FROM book WHERE book_title =:title";
+    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%'";
     $stmt = $db->prepare($query);
     $stmt->execute();
+    $num_rows = $stmt->fetchColumn();
+    if ($num_rows==0) {
+        $output = 'There are no search results!';
+    }else{
+       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+           $book= $row['book_title'];
+           $author=$row['author'];
+           $count=$row['book_page_count'];
+           
+           $output.='<div>'.$book.' ' .$author.' ' .$count.'</div>';
+       }
+    }
     
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
     
-    print_r($results);
+    
+    
+    //$id=$_GET['id'];   //id from from input
+    
+    //$query="SELECT * FROM book WHERE book_title =:title";
+    //$stmt = $db->prepare($query);
+    //$stmt->execute();
+    
+    //$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    //print_r($results);
     
     
 //    if($stmt) {
@@ -48,7 +73,7 @@ if(isset($_GET['submit-search'])) { //name from button
 //        } echo '<script> alert("No Data Found")</script';
 //    }
         
-}
+
 
 
 //display
@@ -100,10 +125,10 @@ if(isset($_GET['submit-display'])) {
         <h1>Family Library</h1>
         <h2>Search</h2>
         <div class= "form">
-        <form action ="search.php" method="GET">
+        <form action ="search.php" method="POST">
             <div class ="text-input">
                 <label>Book Information</label>
-                <input type="text" name="search"placeholder="Please type the book title">
+                <input type="text" name="search"placeholder="Please type the book's title or author's name">
             </div>
             
              <!--<div class ="text-input">
