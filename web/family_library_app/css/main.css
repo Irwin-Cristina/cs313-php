@@ -130,7 +130,7 @@ a:active {
     margin-top: 30px;
 }
 
-.form label.heading {
+#heading {
     color: pink;
     text-transform: uppercase;
 
