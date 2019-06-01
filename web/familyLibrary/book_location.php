@@ -41,7 +41,9 @@ $db = get_db();
                 echo '<p>';
                 echo '<strong>' . $row['book_title'] . ' ' . $row['book_page_count'] . ':';
                 echo $row['book_summary'] . '</strong>' . ' - ' . $row['author'];
-                echo '<strong> Locations: </strong>';
+                
+                //location
+                echo '<strong> Location: </strong>';
                 
                 $query = 'SELECT location_name FROM location l INNER JOIN booktemp_locations bl ON bl.location_id = l.location_id WHERE bl.book_id = :book_id';
                 $stmtLocations = $db->prepare($query);
@@ -62,6 +64,35 @@ $db = get_db();
                 {
                     echo $locationRow['location_name'] . ' ';
                 }
+                
+                
+                
+                
+                
+                //gnere
+                echo '<strong> Genres: </strong>';
+                
+                $query = 'SELECT genre_name FROM genre g INNER JOIN booktemp_genres bg ON bg.genre_id = g.genre_id WHERE bg.book_id = :book_id';
+                $stmtGenres = $db->prepare($query);
+                
+                // get the topics now for this scripture
+                
+                //$stmtTopics = $db->prepare('SELECT name FROM topic t'
+                 //   . ' INNER JOIN scripture_topic st ON st.scripture_id = t.id'
+                  //  . ' WHERE st.scripture_id = :scripture_id');
+                
+                $stmtGenres->bindValue(':book_id', $row['book_id']); //id on topics
+                $stmtGenres->execute();
+                //$topics=$stmtTopics->fetchAll(PDO::FETCH_ASSOC);
+                // Go through each topic in the result
+                
+                while ($genreRow =  $stmtGenres->fetch(PDO::FETCH_ASSOC))
+                //foreach($topics as $topic)
+                {
+                    echo $genreRow[' genre_name'] . ' ';
+                }
+                
+                
                 echo '</p>';
 	       }
     }
