@@ -2,10 +2,6 @@
 //connection
 require('dbConnect.php');
 $db = get_db();
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +13,7 @@ $db = get_db();
         <h2>Add</h2>
         <div class= "form">
             
-        <form id="addbookform" action ="add_book.php" method="POST">
+        <form id="addbookform" method="POST" action="add_book.php">
             <input type="text" name="txtTitle" id="txtTitle">
             <label for="txtTitle">Title</label>
             <br>
