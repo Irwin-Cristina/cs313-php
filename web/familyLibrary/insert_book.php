@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 //connection
 require('dbConnect.php');
 $db = get_db();

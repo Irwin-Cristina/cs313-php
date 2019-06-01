@@ -37,6 +37,10 @@ h3 {
     margin: 30px 0 30px 0px;
 }
 
+h4 {
+    font-size: 2em;
+}
+
 nav {
     background-color: bisque;
     font-family: 'Open Sans', sans-serif;

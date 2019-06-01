@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+
+//variables from POST
+$book = $_POST['txtTitle'];
+$count = $_POST['txtCount'];
+$summary = $_POST['txtSummary'];
+$author = $_POST['txtAuthor'];
+$location_ids = $_POST['chkLocations'];
+$genre_ids = $_POST['chkGenres'];
+
 //connection
 require('dbConnect.php');
 $db = get_db();
@@ -19,10 +29,12 @@ $db = get_db();
     <h2>Confirmation</h2>
 
     <div class= "results">
-         <p>Thank you for adding <?php echo $book; ?> to your library.</p>
+         <p>Thank you for adding your <?php echo $book; ?> to your library.</p>
      </div>
     
     <div class="searchcontainer">
+        <h4>Books</h4>
+        <h5>All books currently in database:</h5>
 
     <?php
         
