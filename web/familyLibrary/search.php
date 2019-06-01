@@ -12,7 +12,7 @@ $output='';
 //
 if(isset($_POST['submit-search'])) { //name from button
     $searchq=$_POST['search'];
-    $searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
+   // $searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%'";
     $stmt = $db->prepare($query);
