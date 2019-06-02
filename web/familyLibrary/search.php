@@ -17,7 +17,7 @@ if(isset($_GET['search'])) { //name from button
     
     
     //$query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
-    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%'";
+    $query="SELECT book_title FROM booktemp WHERE book_title LIKE '%$searchq%'";
 
     $stmt = $db->prepare($query);
     $stmt->execute();
