@@ -17,7 +17,7 @@ if(isset($_POST['search'])) { //name from button
     
     
     //$query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
-    $query="SELECT book_title FROM booktemp WHERE book_title LIKE '%$searchq%'";
+    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%'";
 
     $stmt = $db->prepare($query) or die("could not search");
     $stmt->execute();
@@ -30,7 +30,7 @@ if(isset($_POST['search'])) { //name from button
            $author=$row['author'];
            $count=$row['book_page_count'];
            
-           $output='<div>'.$book.' ' .$author.' ' .$count.'</div>';
+           $output.='<div>'.$book.' ' .$author.' ' .$count.'</div>';
        }
     }
     
