@@ -14,7 +14,11 @@ if(isset($_GET['search'])) { //name from button
     $searchq=$_GET['search'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
-    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
+    
+    
+    //$query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
+    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%'";
+
     $stmt = $db->prepare($query);
     $stmt->execute();
     $num_rows = $stmt->fetchColumn();
@@ -128,42 +132,10 @@ if(isset($_GET['search'])) { //name from button
         <form action ="search.php" method="GET">
             <div class ="text-input">
                 <label>Book Information</label>
-                <input type="text" name="search" placeholder="Please type the book's title or author's name">
+                <input type="text" name="search" placeholder="Please type the book's title">
             </div>
             
-             <!--<div class ="text-input">
-                <label>Book Title</label>
-                <input type="text" name="title" value= "" placeholder="Please type the book title or author">
-            </div>-->
-            
-            <!--<div class ="text-input">
-                <label>Author</label>
-                <input type="text" name="author" value="" placeholder="Please type the author's name">
-            </div>-->
-           
-            <!--<div class ="text-input">
-            <label for="genre_name">Genre</label>
-            <input type="text" name="genre_name" value="What genre">
-            </div>-->
-            
-<!--            <div class ="dropdown">-->
-               <!-- <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                    <a href="#">Checked in</a>
-                    <a href="#">Checked out</a>
-                    <a href="#">Missing</a>
-                </div>-->
-                
-             <!--<div class="dropdown">
-                <label for="status">Status</label>
-                <select name="status">
-				    <option value="" disabled selected>Select status</option>
-				    <option value="Checked in">Checked in</option>
-				    <option value="Checked out">Checked out</option>
-				    <option value="Missing">Missing</option>
-			     </select>
-                </div>
-            </div> -->
+             
             
             <div class="submitbtn">
                 <input type="submit" value="search">
@@ -180,40 +152,7 @@ if(isset($_GET['search'])) { //name from button
         <h5>All books in database</h5>
 -->
             
-            <?php
             
-//                $query = 'SELECT book_title, book_page_count, b.author_id FROM book b INNER JOIN author a ON a.author_id =b.author_id WHERE b.author_id = :author_id';
-//                $stmt = $db->prepare($query); 
-//                //Do I need to bind?
-//                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//            
-//                foreach ($results as $row){
-//                       echo '<div class="box">';
-//                        echo '<p> Book: ' . $row['book_title'] . '</p>';
-//                        echo '<p> Page Count: ' . $row['book_page_count'] . '</p>';
-//                        echo '<p> Author: ' . $row['a.author_id'] . '</p>';
-//
-//                        echo '</div>';
-//                }
-//            
-//            
-//            
-//            
-//                $sql ="SELECT * FROM book";
-//                $result = pg_query($db, $sql);
-//                $queryResults = pg_num_rows($result);
-//            
-//                if ($queryResults > 0) {
-//                    while ($row = pg_fetch_assoc($result)) {
-//                        echo "<div class='box'> 
-//                            <p> ".$row['book_title']." </p>
-//                            <p> ".$row['author_id']." </p>
-//                            <p> ".$row['book_page_count']." </p>
-//                        </div>";
-//                    }
-//                }
-                
-            ?>      
         
 <!--        </div>-->
       
