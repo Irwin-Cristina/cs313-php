@@ -19,14 +19,13 @@ if(isset($_POST['search'])) { //name from button
     //$query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
     $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' ORDER BY rand() LIMIT 0,10";
 
-    $stmt = $db->prepare($query);
-    $stmt->bindValue(1,"%$searchq%", PDO::PARAM_STR);
+    $stmt = $db->prepare($query) or die("could not search");
     $stmt->execute();
-    $num_rows = $stmt->rowCount();
+    $num_rows = $stmt->fetchColumn();
     if ($num_rows==0) {
         $output = 'There are no search results!';
     }else{
-       while ($row = $stmt->fetch()) {
+       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
            $book= $row['book_title'];
            $author=$row['author'];
            $count=$row['book_page_count'];
