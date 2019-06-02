@@ -12,7 +12,7 @@ $output='';
 //
 if(isset($_GET['search'])) { //name from button
     $searchq=$_GET['search'];
-    //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
+    $searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     
     
