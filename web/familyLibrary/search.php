@@ -10,8 +10,8 @@ $output='';
 //$author = "";
 
 //
-if(isset($_GET['search'])) { //name from button
-    $searchq=$_GET['search'];
+if(isset($_POST['search'])) { //name from button
+    $searchq=$_POST['search'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     
@@ -129,16 +129,16 @@ if(isset($_GET['search'])) { //name from button
         <h1>Family Library</h1>
         <h2>Search</h2>
         <div class= "form">
-        <form action ="search.php" method="GET">
+        <form action ="search.php" method="POST">
             <div class ="text-input">
                 <label>Book Information</label>
-                <input type="text" name="search" placeholder="Please type the book's title">
+                <input type="text" name="search" placeholder="Please type the book's title"/>
             </div>
             
              
             
             <div class="submitbtn">
-                <input type="submit" value="search">
+                <input type="submit" value="search"/>
 <!--                <input type="submit" value="display" name="submit-display">-->
              </div>   
                 
