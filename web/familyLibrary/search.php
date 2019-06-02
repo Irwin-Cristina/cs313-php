@@ -14,14 +14,14 @@ if(isset($_POST['search'])) { //name from button
     $searchq = $_POST['search'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
-    
+    echo $searchq;
     
     //$query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
-    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%'";
+    $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' ORDER BY rand() LIMIT 0,10";
 
     $stmt = $db->prepare($query) or die("could not search");
     $stmt->execute();
-    $num_rows = $stmt->fetchColumn();
+    $num_rows = $stmt->rowCount();
     if ($num_rows==0) {
         $output = 'There are no search results!';
     }else{
