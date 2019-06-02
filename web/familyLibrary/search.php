@@ -9,9 +9,9 @@ $output='';
 //$title = "";
 //$author = "";
 
-//
+//collect datat
 if(isset($_POST['search'])) { //name from button
-    $searchq=$_POST['search'];
+    $searchq = $_POST['search'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     
@@ -19,7 +19,7 @@ if(isset($_POST['search'])) { //name from button
     //$query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%' OR author LIKE '%$searchq%' OR book_summary LIKE '%$searchq%'";
     $query="SELECT book_title FROM booktemp WHERE book_title LIKE '%$searchq%'";
 
-    $stmt = $db->prepare($query);
+    $stmt = $db->prepare($query) or die("could not search");
     $stmt->execute();
     $num_rows = $stmt->fetchColumn();
     if ($num_rows==0) {
