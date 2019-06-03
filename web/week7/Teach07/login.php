@@ -25,7 +25,7 @@ $db = get_dbconnection();
                      </div>
                 
                         <input type="submit" id="loginbutton" value="Login">
-                        <input type="hidden" name="submit" value="Login">
+                        <!--<input type="hidden" name="submit" value="Login">-->
                     
             </fieldset>
         </form>
