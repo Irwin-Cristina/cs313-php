@@ -11,7 +11,7 @@ $db = get_dbconnection();
 <body>
     <main class="login">
         <h1>Login</h1>
-        <form id="loginform" method="post" action="accounts.php">
+        <form id="loginform" method="post" action="add_registration.php">
             <fieldset>
                 <legend>User Account</legend>
                     <div>

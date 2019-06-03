@@ -34,3 +34,5 @@ catch (Exception $ex)
     die();
     
 }
+header("Location: registration_confirmation.php");
+die();
