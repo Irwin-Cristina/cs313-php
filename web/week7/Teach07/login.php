@@ -1,3 +1,8 @@
+<?php
+//connection
+require_once ('connection.php');
+$db = get_dbconnection();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,14 +16,17 @@
                 <legend>User Account</legend>
                     <div>
                         <label for="username">Name:</label>
-                        <input type="text" name="userpassword" id="username" required pattern="">
+                        <input type="text" name="userpassword" id="username" required>
+                        
+                        <br>
                         
                         <label for="userpassword">Password:</label>
-                        <input type="password" name="userpassword" id="userpassword" required pattern="">
-                        
+                        <input type="password" name="userpassword" id="userpassword" required>
+                     </div>
+                
                         <input type="submit" id="loginbutton" value="Login">
-                        <input type="hidden" name="action" value="Login">
-                    </div>
+                        <input type="hidden" name="submit" value="Login">
+                    
             </fieldset>
         </form>
     
