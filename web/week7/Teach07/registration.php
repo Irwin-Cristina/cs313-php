@@ -12,7 +12,7 @@ $db = get_dbconnection();
 <body>
     <main class="registration">
         <h1>Registration</h1>
-        <form id="register" method="post" action="add_registration.php">
+        <form id="register" method="POST" action="registration_confirmation.php">
             <fieldset>
                 <legend>User Information</legend>
                     <div>
