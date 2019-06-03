@@ -42,7 +42,7 @@ CREATE TABLE author (
 	author_name  varchar(80) NOT NULL
 	);
 INSERT INTO author(author_id, author_name) VALUES(DEFAULT, 'JK Rowling');
-INSERT INTO author(author_id, author_name) VALUES(DEFAULT, 'Shell Silverstein');
+INSERT INTO author(author_id, author_name) VALUES(DEFAULT, 'Shel Silverstein');
 INSERT INTO author(author_id, author_name) VALUES(DEFAULT, 'Mormon');
 INSERT INTO author(author_id, author_name) VALUES(DEFAULT, 'Julie Lythcott-Haims');
 INSERT INTO author(author_id, author_name) VALUES(DEFAULT, 'Daniel J. Siegel');
@@ -208,5 +208,6 @@ CREATE TABLE booktemp_locations (
 
 \pset format wrapped
 \d+ table
+heroku logs -t
 
 	
