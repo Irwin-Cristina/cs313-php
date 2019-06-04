@@ -22,7 +22,10 @@ $db = get_dbconnection();
                         <br>
                         
                         <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" placeholder="Choose a password please" required>
+                        <input type="password" name="password" id="password" placeholder="Choose a password please" pattern="^[a-zA-Z0-9]{7}$" required>
+                                                
+                    
+                        
                 
                     </div>
                         <input type="submit" name="submit" id="regbutton" value="Register">
