@@ -12,7 +12,7 @@ $db = get_dbconnection();
 <body>
     <main class="registration">
         <h1>Registration</h1>
-        <form id="register" method="POST" action="registration_confirmation.php">
+        <form id="register" method="POST" action="add_registration.php">
             <fieldset>
                 <legend>User Information</legend>
                     <div>
@@ -26,7 +26,7 @@ $db = get_dbconnection();
                 
                     </div>
                         <input type="submit" name="submit" id="regbutton" value="Register">
-                        <input type="hidden" name="action" value="register">
+<!--                        <input type="hidden" name="action" value="register">-->
             
             
             
