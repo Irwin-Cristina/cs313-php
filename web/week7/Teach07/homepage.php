@@ -17,7 +17,7 @@ else {
 <body>
     <div>
         <h1>Welcome to the site Homepage!</h1>
-        Your username is: <?=php $username ?> <br>
+        Your username is: <?= $username ?><br>
         <a href="sign_out.php">Sign Out</a>
                                                 
     
