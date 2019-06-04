@@ -2,11 +2,11 @@
 $username=$_POST['username'];
 $password=$_POST['password'];
 
-if (!isset($username|| $username) == "" || !isset($password) || $password == "") 
-    
+if (!isset($username) || $username == ""
+	|| !isset($password) || $password == "")
 {
-    header("Location: registration.php");
-    die();
+	header("Location: registration.php");
+	die(); // we always include a die after redirects.
 }
 
 
