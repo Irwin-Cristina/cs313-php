@@ -20,7 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     //$stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':username', $username);
     
-    $result = $stmt->exeute();
+    $result = $stmt->execute();
     
     if ($result){
         
