@@ -18,13 +18,11 @@ $db = get_dbconnection();
                     <div>
                         <label for="username">Username:</label>
                         <input type="text" name="username" id="username" placeholder="Choose a username please" required>
-                        
                         <br>
                         
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" placeholder="Choose a password please" pattern="^[a-zA-Z0-9]{7}$" required>
                                                 
-                    
                         
                 
                     </div>

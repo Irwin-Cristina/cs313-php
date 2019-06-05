@@ -25,7 +25,7 @@ if(isset($_POST['search'])) { //name from button
     if ($num_rows==0) {
         $output = 'There are no search results!';
     }else{
-       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+       while ($row = $stmt->fetch($query)) {
            $book= $row['book_title'];
            $author=$row['author'];
            $count=$row['book_page_count'];
