@@ -2,14 +2,14 @@
 
 session_start();
 
-$book= $_SESSION[''];
-$count= $_SESSION[''];
-$summary=$_SESSION[''];
-$author=$_SESSION[''];
-$location_ids=$_SESSION[''];
-$genre_ids=$_SESSION[''];
-    
 
+//$book = $_POST['txtTitle'];
+//$count = $_POST['txtCount'];
+//$summary = $_POST['txtSummary'];
+//$author = $_POST['txtAuthor'];
+//$location_ids = $_POST['chkLocations'];
+//$genre_ids = $_POST['chkGenres'];
+//    
 
 
 //connection
