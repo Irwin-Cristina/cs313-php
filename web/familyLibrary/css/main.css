@@ -226,8 +226,8 @@ p {
 .add { 
     position: absolute;
     height:200px;
-    width: 200px;
-    left: 215px;
+    width: 630px;
+    left: 0px;
     top: 145px;
     background-color: indianred;
 }
@@ -240,8 +240,8 @@ p {
 .update {
     position: absolute;
     height:200px;
-    width: 200px;
-    left: 215px;
+    width: 630px;
+    left: 0px;
     top: 360px;
     background-color: gold;
 }

@@ -34,13 +34,13 @@ $db = get_db();
                 <p id="update"><a href="update_book.php">Update</a></p>
             </div>
         
-            <div class="checkout">
+            <!--<div class="checkout">
                 <p id="checkout"><a href="checkout.php">Check out</a></p>
             </div>
         
             <div class="checkin">
                 <p id="checkin"><a href="checkin.php">Check in</a></p>
-            </div>
+            </div>-->
      </div>       
             
     </main>
