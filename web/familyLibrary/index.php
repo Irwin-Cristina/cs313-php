@@ -23,7 +23,7 @@ $db = get_db();
         <h1>Family Library</h1>
         
             <div class="search">
-                <p id="search"><a href="updatesearch.php">Search</a></p>
+                <p id="search"><a href="search.php">Search</a></p>
             </div>
         
             <div class="add">
@@ -31,7 +31,7 @@ $db = get_db();
             </div>
         
             <div class="update">
-                <p id="update"><a href="update_book.php">Update</a></p>
+                <p id="update"><a href="updatesearch.php">Update</a></p>
             </div>
         
             <!--<div class="checkout">

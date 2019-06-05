@@ -55,7 +55,7 @@ if(isset($_POST['search'])) { //name from button
     <main>
         <h1>Family Library</h1>
         <p class="extratitle">Search for book to</p>
-        <h2>Update</h2>
+        <h2 class="spacingfix">Update</h2>
         <div class= "form">
         <form action ="search.php" method="POST">
             <div class ="text-input">

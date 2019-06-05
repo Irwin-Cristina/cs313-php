@@ -314,4 +314,9 @@ p {
     text-transform: uppercase;
     color: #be4624;
     text-align: center;
+    padding-top: 10em;
+}
+
+.spacingfix {
+    margin-bottom: 10px;
 }
