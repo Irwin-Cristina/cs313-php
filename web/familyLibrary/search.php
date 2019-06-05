@@ -21,18 +21,23 @@ if(isset($_POST['search'])) { //name from button
 
     $stmt = $db->prepare($query) or die("could not search");
     $stmt->execute();
+    //$results=$stmt->fetch(PDO::FETCH_ASSOC);
+    
     $num_rows = $stmt->fetchColumn();
     if ($num_rows==0) {
         $output = 'There are no search results!';
     }else{
-       while ($row = $stmt->fetch($query)) {
+        
+        foreach ($db->$query as $row)
+       // while ($row = $stmt->fetch($query)) {
+      // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
            $book= $row['book_title'];
            $author=$row['author'];
            $count=$row['book_page_count'];
            
            $output.='<div>'.$book. ' Author: ' .$author.' page count: ' .$count.'</div>';
        }
-    }
+   // }
     
 }
     
