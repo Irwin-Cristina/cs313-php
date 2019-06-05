@@ -321,5 +321,9 @@ p {
 .spacingfix {
     margin-bottom: 10px;
     padding: 0;
-    line-height: 0;
+    line-height: 90px;
+}
+
+.fix {
+    margin-top: 3em;
 }
