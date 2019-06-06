@@ -6,11 +6,11 @@ $author = '';
 $count = '';
 $summary= '';
 
-if(isset($_POST['submit'])) {
+//if(isset($_POST['txtTitle'])) {
     
 
 
-$book = $_POST['search'];
+//$book = $_POST['txtTitle'];
 //$book = $_SESSION['book_title'];
 //$author = $_SESSION['author'];
 //$count = $_SESSION['book_page_count'];
@@ -19,18 +19,17 @@ $book = $_POST['search'];
 //$genre_ids = $_SESSION['??????'];
 //    
 
-echo "<b>MyVar:</b>".$_POST['search']."<br />";    
+echo "<b>TITLE:</b>".$_POST['txtTitle']."<br />";    
     
-}
+//}
 //connection
 require('dbConnect.php');
 $db = get_db();
 
-if(isset($_POST['txtTitle'])) { //name from form input
-    $searchq = $_POST['txtTitle'];
+
 ?>
-<b>Title:</b><?=$_POST['txtTitle'];?><br />
-<?php echo "<b>MyVar:</b>".$_POST['txtTitle']."<br />";  ?>
+<b>Title:</b><?=$_POST['search'];?><br />
+<?php echo "<b>MyVar:</b>".$_POST['search']."<br />";  ?>
 
 
 
