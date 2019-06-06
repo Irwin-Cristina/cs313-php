@@ -13,8 +13,8 @@ $output='';
 //$author = "";
 
 //collect datat
-if(isset($_POST['txtTitle'])) { //name from form input
-    $searchq = $_POST['txtTitle'];
+if(isset($_GET['txtTitle'])) { //name from form input
+    $searchq = $_GET['txtTitle'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     
@@ -64,7 +64,7 @@ if(isset($_POST['txtTitle'])) { //name from form input
         <p class="extratitle">Search for book to</p>
         <h2 class="spacingfix">Update</h2>
         <div class= "form fix">
-        <form action ="updatesearch.php" method="POST">
+        <form action ="updatesearch.php" method="GET">
             <div class ="text-input">
                 
                 <input type="text" name="txtTitle" placeholder="Please type the book's title"/>
