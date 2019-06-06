@@ -39,7 +39,11 @@ if(isset($_POST['txtTitle'])) { //name from form input
            $count=$row['book_page_count'];
            
            $output.='<div>'.$book. ' Author: ' .$author.' page count: ' .$count. '<a href="update_book.php"> Update</a' . '</div>';
-           $output2 ='<div>'.$book. ' Author: ' .$author.' page count: ' .$count. '<a href="update_book.php"> Update</a' . '</div>';
+        
+           $output2 ='<div>'. $book . ' Author: ' . $author . ' page count: ' . $count . '<a href="update_book.php"> Update</a' . '</div>';
+        
+            $output3 ="<div> $book  Author: $author  page count: $count";
+            $href="<a href='update_book.php'>Update</a> </div>";
        }
    // }
     
@@ -78,22 +82,13 @@ if(isset($_POST['txtTitle'])) { //name from form input
         </form>
         <?php print("$output");?>
         <?php echo $output2;?>
+        <?php echo $output3;?>
+        <?php echo $href;?>
+
 
         </div>
-        
-<!--
-        <div class="searchcontainer">
-        <h4>Books</h4>
-        <h5>All books in database</h5>
--->
-            
-            
-        
-<!--        </div>-->
       
     </main>
-  
-    <?php include('templates/footer.php');?>
-    
+        <?php include('templates/footer.php');?>
 
 </html>
