@@ -96,7 +96,7 @@ footer {
     }
             
 .form label {
-    display: block;
+    /*display: block;*/
     text-align: left;
     color: #e55052; /* Crush*/
     font-size: .875em;
@@ -120,6 +120,12 @@ footer {
     border: none;
     border-bottom: 1px solid #999;
     }
+
+#mainform:nth-child(3) {
+    margin-bottom: 20px;
+    
+}
+    
 
 .dropdown {
   position: relative;
