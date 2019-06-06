@@ -24,7 +24,7 @@ $book = $_POST['search'];
 require('dbConnect.php');
 $db = get_db();
 ?>
-<b>Title:</b><?=$_SESSION['search'];?><br />
+<b>Title:</b><?=$_POST['search'];?><br />
 
 
 <!DOCTYPE html>
