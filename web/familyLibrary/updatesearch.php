@@ -61,7 +61,7 @@ if(isset($_POST['search'])) { //name from button
             <div class ="text-input">
                 
                 <input type="text" name="txtTitle" placeholder="Please type the book's title"/>
-                <label for="txtTitle">Book Title</label>
+                <label for="search">Book Title</label>
 
             </div>
             
