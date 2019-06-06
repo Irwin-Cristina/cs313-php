@@ -59,7 +59,6 @@ $db = get_db();
         <label for="txtAuthor" value="<?php echo htmlspecialchars($author)?>">Author</label>
         <br>
         <br>
-        <br>
         <label for="txtSummary">Summary:</label><br>
         <textarea id="txtSummary" name="txtSummary" rows="4" cols="50" value="<?php echo htmlspecialchars($summary)?>"></textarea>
         <br>

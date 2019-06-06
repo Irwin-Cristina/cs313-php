@@ -30,8 +30,9 @@ $db = get_db();
         <br>
         
         <input type="text" id="txtAuthor" name="txtAuthor">
-        <label for="txtAuthor">Author</label><br>
-        
+        <label for="txtAuthor">Author</label>
+        <br>
+        <br>
         <label for="txtSummary">Summary:</label><br>
         <textarea id="txtSummary" name="txtSummary" rows="4" cols="50"></textarea>
         <br>
