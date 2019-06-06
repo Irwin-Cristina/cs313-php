@@ -12,7 +12,7 @@ $output='';
 
 //collect datat
 if(isset($_POST['search'])) { //name from button
-    $searchq = $_POST['search'];
+    $searchq = $_POST['txtTitle'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     
