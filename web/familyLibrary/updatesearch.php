@@ -60,8 +60,8 @@ if(isset($_POST['search'])) { //name from button
         <form action ="updatesearch.php" method="POST">
             <div class ="text-input">
                 
-                <input type="text" name="search" placeholder="Please type the book's title"/>
-                <label for="search">Book Title</label>
+                <input type="text" name="txtTitle" placeholder="Please type the book's title"/>
+                <label for="txtTitle">Book Title</label>
 
             </div>
             
