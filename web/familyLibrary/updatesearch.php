@@ -96,4 +96,4 @@ if(isset($_POST['txtTitle'])) { //name from form input
     <?php include('templates/footer.php');?>
     
 
-</html  
+</html>
