@@ -28,8 +28,10 @@ $db = get_db();
 
 
 ?>
-<b>Title:</b><?=$_POST['search'];?><br />
-<?php echo "<b>MyVar:</b>".$_POST['search']."<br />";  ?>
+<b>Title:</b><?=$_POST['txtTitle'];?><br />
+<?php echo "<b>MyVar:</b>".$_POST['txtTitle']."<br />";  ?>
+<b>Title:</b><?=$search?><br />
+
 
 
 

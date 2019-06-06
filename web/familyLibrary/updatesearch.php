@@ -38,9 +38,9 @@ if(isset($_POST['txtTitle'])) { //name from form input
            $author=$row['author'];
            $count=$row['book_page_count'];
            
-           $output.='<div>'.$book. ' Author: ' .$author.' page count: ' .$count. '<a href="update_book.php"> Update</a' . '</div>';
+           //$output.='<div>'.$book. ' Author: ' .$author.' page count: ' .$count. '<a href="update_book.php"> Update</a' . '</div>';
         
-           $output2 ='<div>'. $book . ' Author: ' . $author . ' page count: ' . $count . '<a href="update_book.php"> Update</a' . '</div>';
+           //$output2 ='<div>'. $book . ' Author: ' . $author . ' page count: ' . $count . '<a href="update_book.php"> Update</a' . '</div>';
         
             $output3 ="<div> $book  Author: $author  page count: $count";
             $href="<a href='update_book.php'>Update</a> </div>";
