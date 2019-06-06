@@ -19,12 +19,14 @@ $book = $_POST['search'];
 //$genre_ids = $_SESSION['??????'];
 //    
 
+echo "<b>MyVar:</b>".$_SESSION['search']."<br />";    
+    
 }
 //connection
 require('dbConnect.php');
 $db = get_db();
 ?>
-<b>Title:</b><?=$_POST['search'];?><br />
+<b>Title:</b><?=$_SESSION['search'];?><br />
 
 
 <!DOCTYPE html>
