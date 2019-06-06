@@ -1,10 +1,7 @@
 <?php
 
 session_start();
-$book='';
-$author = '';
-$count = '';
-$summary= '';
+
 
 //if(isset($_POST['txtTitle'])) {
     
