@@ -57,7 +57,7 @@ if(isset($_POST['search'])) { //name from button
         <p class="extratitle">Search for book to</p>
         <h2 class="spacingfix">Update</h2>
         <div class= "form fix">
-        <form action ="search.php" method="POST">
+        <form action ="updatesearch.php" method="POST">
             <div class ="text-input">
                 <label>Book Information</label>
                 <input type="text" name="search" placeholder="Please type the book's title"/>
