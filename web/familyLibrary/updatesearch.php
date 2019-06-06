@@ -11,7 +11,7 @@ $output='';
 //$author = "";
 
 //collect datat
-if(isset($_POST['search'])) { //name from button
+if(isset($_POST['txtTitle'])) { //name from button
     $searchq = $_POST['txtTitle'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
