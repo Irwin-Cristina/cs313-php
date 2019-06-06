@@ -80,8 +80,8 @@ if(isset($_POST['txtTitle'])) { //name from form input
              </div>   
                 
         </form>
-        <?php print("$output");?>
-        <?php echo $output2;?>
+        <?php //print("$output");?>
+        <?php //echo $output2;?>
         <?php echo $output3;?>
         <?php echo $href;?>
 
