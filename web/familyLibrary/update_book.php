@@ -2,8 +2,8 @@
 
 session_start();
 
-
-$book = $_SESSION['book_title'];
+$book = $_POST['search'];
+//$book = $_SESSION['book_title'];
 //$author = $_SESSION['author'];
 //$count = $_SESSION['book_page_count'];
 //$summary = $_SESSION['book_summary'];
