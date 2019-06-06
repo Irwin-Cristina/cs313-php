@@ -16,7 +16,7 @@ session_start();
 //$genre_ids = $_SESSION['??????'];
 //    
 
-echo "<b>TITLE:</b>".$_POST['txtTitle']."<br />";    
+echo "<b>TITLE:</b>".$_GET['txtTitle']."<br />";    
     
 //}
 //connection
@@ -25,8 +25,8 @@ $db = get_db();
 
 
 ?>
-<b>Title:</b><?=$_POST['txtTitle'];?><br />
-<?php echo "<b>MyVar:</b>".$_POST['txtTitle']."<br />";  ?>
+<b>Title:</b><?=$_GET['txtTitle'];?><br />
+<?php echo "<b>MyVar:</b>".$_GET['txtTitle']."<br />";  ?>
 <b>Title:</b><?=$search?><br />
 
 
@@ -49,7 +49,7 @@ $db = get_db();
     <form id="mainForm" method="POST" action="update_bookinformation.php">
         
         
-        <input type="text" name="txtTitle" id="txtTitle" value="<?php echo htmlspecialchars($book)?>">
+        <input type="text" name="txtTitle" id="txtTitle" value="<?php $_GET['txtTitle'])?>">
         <label for="txtTitle">Title</label>
         <br>
         <input type="text" id="txtCount" name="txtCount" value="<?php echo htmlspecialchars($count)?>"><label for="txtCount">Count</label>
