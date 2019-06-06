@@ -12,7 +12,7 @@ $output='';
 
 //collect datat
 if(isset($_POST['search'])) { //name from button
-    $searchq = $_POST['txtTitle'];
+    $searchq = $_POST['search'];
     //$searchq=preg_replace("#[^0-9a-z]#i","",$searchq);
     
     
@@ -60,7 +60,7 @@ if(isset($_POST['search'])) { //name from button
         <form action ="updatesearch.php" method="POST">
             <div class ="text-input">
                 
-                <input type="text" name="txtTitle" placeholder="Please type the book's title"/>
+                <input type="text" name="search" placeholder="Please type the book's title"/>
                 <label for="search">Book Title</label>
 
             </div>
