@@ -25,9 +25,14 @@ echo "<b>MyVar:</b>".$_POST['search']."<br />";
 //connection
 require('dbConnect.php');
 $db = get_db();
+
+if(isset($_POST['txtTitle'])) { //name from form input
+    $searchq = $_POST['txtTitle'];
 ?>
-<b>Title:</b><?=$_POST['search'];?><br />
-<?php echo "<b>MyVar:</b>".$_POST['search']."<br />";  ?>
+<b>Title:</b><?=$_POST['txtTitle'];?><br />
+<?php echo "<b>MyVar:</b>".$_POST['txtTitle']."<br />";  ?>
+
+
 
 <!DOCTYPE html>
 <html>
