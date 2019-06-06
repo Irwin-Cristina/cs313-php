@@ -9,12 +9,6 @@ $db = get_db();
 <!DOCTYPE html>
 <html>
     <?php include('templates/header.php');?>
-<!--
-<head>
-    <title></title>
-</head>
-<body>
--->
   <main>
     <h1>Family Library</h1>
     <h2>Add</h2>

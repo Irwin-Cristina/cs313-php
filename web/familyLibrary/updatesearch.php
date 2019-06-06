@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 //connection
 require('dbConnect.php');
 $db = get_db();
@@ -37,6 +39,7 @@ if(isset($_POST['txtTitle'])) { //name from form input
            $count=$row['book_page_count'];
            
            $output.='<div>'.$book. ' Author: ' .$author.' page count: ' .$count. '<a href="update_book.php"> Update</a' . '</div>';
+           $output2 ='<div>'.$book. ' Author: ' .$author.' page count: ' .$count. '<a href="update_book.php"> Update</a' . '</div>';
        }
    // }
     
@@ -74,7 +77,7 @@ if(isset($_POST['txtTitle'])) { //name from form input
                 
         </form>
         <?php print("$output");?>
-        <?php echo $output;?>
+        <?php echo $output2;?>
 
         </div>
         
