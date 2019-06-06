@@ -1,6 +1,14 @@
 <?php
 
 session_start();
+$book='';
+$author = '';
+$count = '';
+$summary= '';
+
+if(isset($_POST['submit'])) {
+    
+
 
 $book = $_POST['search'];
 //$book = $_SESSION['book_title'];
@@ -11,7 +19,7 @@ $book = $_POST['search'];
 //$genre_ids = $_SESSION['??????'];
 //    
 
-
+}
 //connection
 require('dbConnect.php');
 $db = get_db();
@@ -133,7 +141,7 @@ $db = get_db();
         
         
 
-        <input type="submit" value="Update Book">
+        <input type="submit" name="submit" value="Update Book">
     </form>
     </div>
 </main>  
