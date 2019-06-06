@@ -64,7 +64,7 @@ if(isset($_POST['txtTitle'])) { //name from form input
             <div class ="text-input">
                 
                 <input type="text" name="txtTitle" placeholder="Please type the book's title"/>
-                <label for="txtTitle">Book Title</label>
+                <label for="txtTitle" id="test">Book Title</label>
 
             </div>
             
