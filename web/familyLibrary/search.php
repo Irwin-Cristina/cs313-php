@@ -28,8 +28,8 @@ if(isset($_POST['search'])) { //name from button
     if ($num_rows==0) {
         $output = 'There are no search results!';
     }else{
-        foreach ($db->fetch($query) as $row)
-        //foreach ($db->query($query) as $row)
+        //foreach ($db->fetch($query) as $row)
+        foreach ($db->query($query) as $row)
     
         //foreach ($results as $result)
        // while ($row = $stmt->fetch($query)) {
