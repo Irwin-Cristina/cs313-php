@@ -28,7 +28,9 @@ if(isset($_POST['search'])) { //name from button
     if ($num_rows==0) {
         $output = 'There are no search results!';
     }else{
-        foreach ($db->query($query) as $row)
+        foreach ($db->fetch($query) as $row)
+        //foreach ($db->query($query) as $row)
+    
         //foreach ($results as $result)
        // while ($row = $stmt->fetch($query)) {
       // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
