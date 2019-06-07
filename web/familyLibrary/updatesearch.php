@@ -7,6 +7,7 @@ require('dbConnect.php');
 $db = get_db();
 
 $output='';
+$href='';
 
 //$id = "";
 //$title = "";
@@ -25,8 +26,8 @@ if(isset($_GET['txtTitle'])) { //name from form input
     $stmt = $db->prepare($query) or die("could not search");
    
     
-    $stmt->bindValue(':book_title', $book);
-    $stmt->bindValue(':book_id', $id);
+    //$stmt->bindValue(':book_title', $book);
+    //$stmt->bindValue(':book_id', $id);
     
     $stmt->execute();
     //$results=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -47,7 +48,7 @@ if(isset($_GET['txtTitle'])) { //name from form input
         
            //$output2 ='<div>'. $book . ' Author: ' . $author . ' page count: ' . $count . '<a href="update_book.php"> Update</a' . '</div>';
         
-            $output3 ="<div> $book  Author: $author  page count: $count";
+            $output ="<div> $book  Author: $author  page count: $count";
             //$href="<a href='update_book.php'>Update</a> </div>";
             $href="<a href='update_book.php?txtTitle=$searchq'>Update</a> </div>";
 
