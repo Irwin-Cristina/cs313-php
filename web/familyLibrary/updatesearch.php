@@ -7,6 +7,7 @@ require('dbConnect.php');
 $db = get_db();
 
 $output='';
+$output3='';
 $href='';
 
 //$id = "";
@@ -48,7 +49,7 @@ if(isset($_GET['txtTitle'])) { //name from form input
         
            //$output2 ='<div>'. $book . ' Author: ' . $author . ' page count: ' . $count . '<a href="update_book.php"> Update</a' . '</div>';
         
-            $output ="<div> $book  Author: $author  page count: $count";
+            $output3 ="<div> $book  Author: $author  page count: $count";
             //$href="<a href='update_book.php'>Update</a> </div>";
             $href="<a href='update_book.php?txtTitle=$searchq'>Update</a> </div>";
 
