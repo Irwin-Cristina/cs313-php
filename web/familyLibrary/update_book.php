@@ -66,87 +66,85 @@ $db = get_db();
         <br>
         
         
+<!--
         <div class="checkbox">
         <label>Location:</label><br />
+-->
         
           <?php
         //generate checkboxes
-        try {
-            $query = 'SELECT location_id, location_name FROM location';
-            $stmt = $db->prepare($query);
-            //$stmt = $db->prepare('SELECT id, name FROM topic');
-            $stmt->execute();
-            //$topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //try {
+            //$query = 'SELECT location_id, location_name FROM location';
+            //$stmt = $db->prepare($query);
+            //$stmt->execute();
             
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-            //foreach($topics as $topic)
-	       {
-		      $id = $row['location_id'];
-		      $name = $row['location_name'];
+            //while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+	       //{
+		      //$id = $row['location_id'];
+		      //$name = $row['location_name'];
 		      // Notice that we want the value of the checkbox to be the id of the label
-		      echo "<input type='checkbox' name='chkLocations[]' id='chkLocations$id' value='$id'>";
+		      //echo "<input type='checkbox' name='chkLocations[]' id='chkLocations$id' value='$id'>";
 		      // Also, so they can click on the label, and have it select the checkbox,
 		      // we need to use a label tag, and have it point to the id of the input element.
 		      // The trick here is that we need a unique id for each one. In this case,
 		      // we use "chkTopics" followed by the id, so that it becomes something like
 		      // "chkTopics1" and "chkTopics2", etc.
-		      echo "<label for='chkLocations$id'>$name</label><br />";
+		      // "<label for='chkLocations$id'>$name</label><br />";
 		      // put a newline out there just to make our "view source" experience better
-		      echo "\n";
+		      //echo "\n";
             
-                }  
-        }
-        catch (PDOException $ex)
-        {
+                //}  
+        //}
+        //catch (PDOException $ex)
+        //{
 	       // Please be aware that you don't want to output the Exception message in
 	       // a production environment
-	   echo "Error connecting to DB. Details: $ex";
-	   die();
-        }
+	   //echo "Error connecting to DB. Details: $ex";
+	   //die();
+        //}
         ?>
         
+<!--
         </div>
         
         <div class="checkbox">
         <label class="heading">Genres:</label><br />
+-->
         
         <?php
         //generate checkboxes
-            try {
-                $query = 'SELECT genre_id, genre_name FROM genre';
-                $stmt = $db->prepare($query);
-                //$stmt = $db->prepare('SELECT id, name FROM topic');
-                $stmt->execute();
-                //$topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //try {
+                //$query = 'SELECT genre_id, genre_name FROM genre';
+                //$stmt = $db->prepare($query);
+                //$stmt->execute();
 
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-                //foreach($topics as $topic)
-               {
-                  $id = $row['genre_id'];
-                  $name = $row['genre_name'];
+                //while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+               //{
+                  //$id = $row['genre_id'];
+                  //$name = $row['genre_name'];
                   // Notice that we want the value of the checkbox to be the id of the label
-                  echo "<input type='checkbox' name='chkGenres[]' id='chkGenres$id' value='$id'>";
+                  //echo "<input type='checkbox' name='chkGenres[]' id='chkGenres$id' value='$id'>";
                   // Also, so they can click on the label, and have it select the checkbox,
                   // we need to use a label tag, and have it point to the id of the input element.
                   // The trick here is that we need a unique id for each one. In this case,
                   // we use "chkTopics" followed by the id, so that it becomes something like
                   // "chkTopics1" and "chkTopics2", etc.
-                  echo "<label for='chkGenres$id'>$name</label><br />";
+                  //echo "<label for='chkGenres$id'>$name</label><br />";
                   // put a newline out there just to make our "view source" experience better
-                  echo "\n";
+                  //echo "\n";
 
-                    }  
-            }
-            catch (PDOException $ex)
-            {
+                    //}  
+            //}
+            //catch (PDOException $ex)
+            //{
                // Please be aware that you don't want to output the Exception message in
                // a production environment
-           echo "Error connecting to DB. Details: $ex";
-           die();
-            }
-            ?>
+           //echo "Error connecting to DB. Details: $ex";
+           //die();
+            //}
+            //?>
         
-        </div>
+<!--        </div>-->
         
         
 
