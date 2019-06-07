@@ -170,4 +170,4 @@ if(isset($_POST['search'])) { //name from button
     <?php include('templates/footer.php');?>
     
 
-</html  
+</html>
