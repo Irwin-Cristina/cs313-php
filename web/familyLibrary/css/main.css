@@ -336,7 +336,6 @@ p {
 
 .searchresults{
     font-size: 2em;
-    color:aqua;
-    background-color: gray;
+    background-color: #cec8d2;
     padding: 10px;
 }

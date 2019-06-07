@@ -36,7 +36,7 @@ if(isset($_POST['search'])) { //name from button
            $author=$row['author'];
            $count=$row['book_page_count'];
            
-           $output.='<div class="searchresults"><strong>Title: </strong>'.$book. ' <strong>Author: </strong>' .$author.' page count: ' .$count.'</div>';
+           $output.='<div class="searchresults"><strong>Title: </strong>'.$book. ','.'<strong>Author: </strong>' .$author.','.'<strong> page count:</strong> ' .$count.'</div>';
        }
    // }
     
