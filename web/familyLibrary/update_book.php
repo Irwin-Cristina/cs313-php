@@ -6,7 +6,6 @@ session_start();
 //if(isset($_POST['txtTitle'])) {
     
 $book=$_GET['txtTitle'];
-$id=$_SESSION['book_id'];
 
 //$book = $_POST['txtTitle'];
 //$book = $_SESSION['book_title'];
@@ -19,8 +18,6 @@ $id=$_SESSION['book_id'];
 
 echo "<b>TITLE:</b>".$_GET['txtTitle']."<br />";
 echo "<b>TITLE:</b>".$book."<br />";
-echo "<b>Id:</b>".$_SESSION['book_id']."<br />";
-echo "<b>Id:</b>".$id."<br />";
 
     
 //}
@@ -55,7 +52,7 @@ $db = get_db();
     <form id="mainForm" method="POST" action="update_bookinformation.php">
         
         
-        <input type="text" name="txtTitle" id="txtTitle" value="<?=$_GET['txtTitle'];?>">
+        <input type="text" name="txtTitle" id="txtTitle" value="<?=$_GET['txtTitle'];?>" readonly>
         <label for="txtTitle">Title</label>
         <br>
         <input type="text" id="txtCount" name="txtCount" value="<?php echo htmlspecialchars($count)?>"><label for="txtCount">Count</label>
