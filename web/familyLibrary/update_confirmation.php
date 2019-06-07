@@ -48,7 +48,7 @@ $db = get_db();
         try
         {
 
-                $query = 'SELECT book_id, book_title, book_page_count, book_summary, author FROM booktemp';
+                $query = 'SELECT book_id, book_title, book_page_count, book_summary, author FROM booktemp ORDER BY book_title ASC';
                 $stmt = $db->prepare($query);
 
                 //$stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');

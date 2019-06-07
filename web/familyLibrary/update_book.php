@@ -16,8 +16,8 @@ $book=$_GET['txtTitle'];
 //$genre_ids = $_SESSION['??????'];
 //    
 
-echo "<b>TITLE:</b>".$_GET['txtTitle']."<br />";
-echo "<b>TITLE:</b>".$book."<br />";
+//echo "<b>TITLE:</b>".$_GET['txtTitle']."<br />";
+//echo "<b>TITLE:</b>".$book."<br />";
 
     
 //}
@@ -27,9 +27,11 @@ $db = get_db();
 
 
 ?>
-<b>Title:</b><?=$_GET['txtTitle'];?><br />
-<?php echo "<b>MyVar:</b>".$_GET['txtTitle']."<br />";  ?>
-<?php echo "<b>id:</b>".$id."<br />";  ?>
+<!--
+<b>Title:</b><?//=$_GET['txtTitle'];?><br />
+<?php //echo "<b>MyVar:</b>".$_GET['txtTitle']."<br />";  ?>
+<?php //echo "<b>id:</b>".$id."<br />";  ?>
+-->
 
 
 
