@@ -37,7 +37,7 @@ if(isset($_GET['txtTitle'])) { //name from form input
     if ($num_rows==0) {
         $output = 'There are no search results!';
     }else{
-        foreach ($db->query($query as $row)
+        foreach ($db->query($query) as $row)
         //foreach ($results as $result)
        // while ($row = $stmt->fetch($query)) {
       // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
