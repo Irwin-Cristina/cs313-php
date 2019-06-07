@@ -26,7 +26,8 @@ $db = get_db();
 <?php include('templates/header.php');?>
 <main>
     <h1>Family Library</h1>
-    <h2>update Confirmation</h2>
+    <p class="extratitle">Update</p>
+    <h2 class="spacingfix">Confirmation</h2>
 
     <div class= "results">
         <?php
