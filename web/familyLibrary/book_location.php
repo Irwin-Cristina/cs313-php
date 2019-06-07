@@ -3,12 +3,21 @@ session_start();
 
 
 //variables from POST
-$book = $_POST['txtTitle'];
-$count = $_POST['txtCount'];
-$summary = $_POST['txtSummary'];
-$author = $_POST['txtAuthor'];
+//$book = $_POST['txtTitle'];
+//$count = $_POST['txtCount'];
+//$summary = $_POST['txtSummary'];
+//$author = $_POST['txtAuthor'];
+//$location_ids = $_POST['chkLocations'];
+//$genre_ids = $_POST['chkGenres'];
+
+
+$book = htmlspecialchars($_POST['txtTitle']);
+$count = htmlspecialchars($_POST['txtCount']);
+$summary = htmlspecialchars($_POST['txtSummary']);
+$author = htmlspecialchars($_POST['txtAuthor']);
 $location_ids = $_POST['chkLocations'];
 $genre_ids = $_POST['chkGenres'];
+
 
 //connection
 require('dbConnect.php');

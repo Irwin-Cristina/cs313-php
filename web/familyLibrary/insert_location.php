@@ -9,7 +9,6 @@ $summary = htmlspecialchars($_POST['txtSummary']);
 $author = htmlspecialchars($_POST['txtAuthor']);
 $location_ids = $_POST['chkLocations'];
 $genre_ids = $_POST['chkGenres'];
-//$topic_ids = htmlspecialchars($_POST['chkTopics']);
 
  
  //echo "book=$book\n";
