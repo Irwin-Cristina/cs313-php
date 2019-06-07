@@ -333,3 +333,10 @@ p {
 .fix {
     margin-top: 3em;
 }
+
+.search{
+    font-size: 2em;
+    color:aqua;
+    background-color: gray;
+    padding: 10px;
+}
