@@ -52,7 +52,7 @@ if(isset($_GET['txtTitle'])) { //name from form input
         
            //$output2 ='<div>'. $book . ' Author: ' . $author . ' page count: ' . $count . '<a href="update_book.php"> Update</a' . '</div>';
         
-            $output3 ="<div class='searchresults'> <strong>Title:</strong> $book , <strong>Author:</strong> $author ,<strong>page count:</strong> $count";
+            $output3 ="<div class='searchresults'> <strong>Title:</strong> $book,  <strong>Author:</strong> $author, <strong>page count:</strong> $count";
             //$href="<a href='update_book.php'>Update</a> </div>";
             $href="<a class='button' href='update_book.php?txtTitle=$searchq'>Update</a> </div>";
 
