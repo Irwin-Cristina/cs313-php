@@ -55,14 +55,14 @@ $db = get_db();
         <input type="text" name="txtTitle" id="txtTitle" value="<?=$_GET['txtTitle'];?>" readonly>
         <label for="txtTitle">Title</label>
         <br>
-        <input type="text" id="txtCount" name="txtCount" value="<?php echo htmlspecialchars($count)?>"><label for="txtCount">Count</label>
+        <input type="text" id="txtCount" name="txtCount" ><label for="txtCount">Count</label>
         <br>
         <input type="text" id="txtAuthor" name="txtAuthor">
-        <label for="txtAuthor" value="<?php echo htmlspecialchars($author)?>">Author</label>
+        <label for="txtAuthor" >Author</label>
         <br>
         <br>
         <label for="txtSummary">Summary:</label><br>
-        <textarea id="txtSummary" name="txtSummary" rows="4" cols="50" value="<?php echo htmlspecialchars($summary)?>"></textarea>
+        <textarea id="txtSummary" name="txtSummary" rows="4" cols="50" ></textarea>
         <br>
         
         
