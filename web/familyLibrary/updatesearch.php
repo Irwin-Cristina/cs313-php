@@ -39,11 +39,14 @@ if(isset($_GET['txtTitle'])) { //name from form input
     }else{
         foreach ($db->query($query) as $row)
         //foreach ($results as $result)
-       // while ($row = $stmt->fetch($query)) {
-      // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-           $book= $row['book_title'];
-           $author=$row['author'];
-           $count=$row['book_page_count'];
+        // while ($row = $stmt->fetch($query)) {
+        // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+           
+        $book= $row['book_title'];
+        $id= $row['book_id'];
+        $author=$row['author'];
+        $count=$row['book_page_count'];
+        
            
            //$output.='<div>'.$book. ' Author: ' .$author.' page count: ' .$count. '<a href="update_book.php"> Update</a' . '</div>';
         
@@ -90,8 +93,7 @@ if(isset($_GET['txtTitle'])) { //name from form input
              </div>   
                 
         </form>
-        <?php //print("$output");?>
-        <?php //echo $output2;?>
+        
         <?php echo $output3;?>
         <?php echo $href;?>
 
