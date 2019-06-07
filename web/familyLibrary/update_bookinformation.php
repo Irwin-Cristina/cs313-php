@@ -3,10 +3,10 @@ session_start();
 
 
 //variables from POST
-$book = $_POST['txtTitle'];
-$count = $_POST['txtCount'];
-$summary = $_POST['txtSummary'];
-$author = $_POST['txtAuthor'];
+$book = htmlspecialchars($_POST['txtTitle']);
+$count = htmlspecialchars($_POST['txtCount']);
+$summary = htmlspecialchars($_POST['txtSummary']);
+$author = htmlspecialchars($_POST['txtAuthor']);
 $location_ids = $_POST['chkLocations'];
 $genre_ids = $_POST['chkGenres'];
 //$topic_ids = htmlspecialchars($_POST['chkTopics']);
@@ -27,7 +27,7 @@ $db = get_db();
 //location
 try {
 //query
-$query = 'INSERT INTO booktemp(book_title, book_page_count, book_summary, author) VALUES(:book_title, :book_page_count, :book_summary, :author)';
+$query = 'UPDATE booktemp SET book_title=:book_title, book_page_count =:book_page_count, book_summary=:book_summary, author=:author WHERE book_id=:id';
 $stmt = $db->prepare($query);
 
 //bind variables to values
@@ -45,7 +45,7 @@ $book_id = $db->lastInsertId("booktemp_book_id_seq");
 foreach($location_ids as $location_id) {
     echo "book_id: $book_id, location_id: $location_id";
     //query
-    $query = 'INSERT INTO booktemp_locations(book_id, location_id) VALUES(:book_id, :location_id)';
+    $query = 'UPDATE booktemp_locations(book_id, location_id) VALUES(:book_id, :location_id)';
     //prepare first statement
     $stmt = $db->prepare($query);
     //bind values
@@ -78,7 +78,7 @@ foreach($location_ids as $location_id) {
 foreach($genre_ids as $genre_id) {
     echo "book_id: $book_id, genre_id: $genre_id";
     //query
-    $query = 'INSERT INTO booktemp_genres(book_id, genre_id) VALUES(:book_id, :genre_id)';
+    $query = 'UPDATE booktemp_genres(book_id, genre_id) VALUES(:book_id, :genre_id)';
     //prepare first statement
     $stmt = $db->prepare($query);
     //bind values
@@ -101,7 +101,7 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-header("Location: update_confirmation.php");
+header("Location: book_location.php");
 die();
 
 ?>

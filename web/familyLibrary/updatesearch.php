@@ -23,6 +23,11 @@ if(isset($_GET['txtTitle'])) { //name from form input
     $query="SELECT * FROM booktemp WHERE book_title LIKE '%$searchq%'";
 
     $stmt = $db->prepare($query) or die("could not search");
+   
+    
+    $stmt->bindValue(':book_title', $book);
+    $stmt->bindValue(':book_id', $id);
+    
     $stmt->execute();
     //$results=$stmt->fetch(PDO::FETCH_ASSOC);
     

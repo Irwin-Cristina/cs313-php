@@ -6,6 +6,7 @@ session_start();
 //if(isset($_POST['txtTitle'])) {
     
 $book=$_GET['txtTitle'];
+$id=$_SESSION['book_id'];
 
 //$book = $_POST['txtTitle'];
 //$book = $_SESSION['book_title'];
@@ -16,7 +17,11 @@ $book=$_GET['txtTitle'];
 //$genre_ids = $_SESSION['??????'];
 //    
 
-echo "<b>TITLE:</b>".$_GET['txtTitle']."<br />";    
+echo "<b>TITLE:</b>".$_GET['txtTitle']."<br />";
+echo "<b>TITLE:</b>".$book."<br />";
+echo "<b>Id:</b>".$_SESSION['book_id']."<br />";
+echo "<b>Id:</b>".$id."<br />";
+
     
 //}
 //connection
@@ -27,7 +32,8 @@ $db = get_db();
 ?>
 <b>Title:</b><?=$_GET['txtTitle'];?><br />
 <?php echo "<b>MyVar:</b>".$_GET['txtTitle']."<br />";  ?>
-<b>Title:</b><?=$search?><br />
+<?php echo "<b>id:</b>".$id."<br />";  ?>
+
 
 
 
